@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Jordan Licon - Blog</title>
+<meta name="description" content="Photography, headshot, commercial production, drone, and visual strategy articles from Jordan Licon Photography in El Paso, Texas.">
+<link rel="canonical" href="https://www.jordanliconphotography.com/blog.html">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Jordan Licon Photography">
+<meta property="og:title" content="Jordan Licon Photography Blog">
+<meta property="og:description" content="Articles on headshots, commercial photography, drone work, visual strategy, and photography planning for businesses.">
+<meta property="og:url" content="https://www.jordanliconphotography.com/blog.html">
+<meta property="og:image" content="https://static.wixstatic.com/media/00f94f_ca256c9c85ad4d26b3b9f7d61d8326d2~mv2.png/v1/fill/w_1000,h_563,al_c,q_90,usm_0.66_1.00_0.01/00f94f_ca256c9c85ad4d26b3b9f7d61d8326d2~mv2.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Jordan Licon Photography Blog">
+<meta name="twitter:description" content="El Paso photography articles on headshots, commercial visuals, drone production, and visual strategy.">
+<meta name="twitter:image" content="https://static.wixstatic.com/media/00f94f_ca256c9c85ad4d26b3b9f7d61d8326d2~mv2.png/v1/fill/w_1000,h_563,al_c,q_90,usm_0.66_1.00_0.01/00f94f_ca256c9c85ad4d26b3b9f7d61d8326d2~mv2.png">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Blog","name":"Jordan Licon Photography Blog","url":"https://www.jordanliconphotography.com/blog.html","description":"Photography, headshot, commercial production, drone, and visual strategy articles from Jordan Licon Photography.","publisher":{"@type":"ProfessionalService","name":"Jordan Licon Photography","url":"https://www.jordanliconphotography.com/"}}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,200;0,9..144,300;0,9..144,400;1,9..144,200;1,9..144,300;1,9..144,400&family=JetBrains+Mono:wght@400;500&family=Inter+Tight:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #060606;
+  --bg-2: #0d0d0d;
+  --bg-3: #141414;
+  --ink: #f0ebe2;
+  --ink-dim: #8c867c;
+  --ink-faint: #48433d;
+  --accent: #b8985f;
+  --line: rgba(240,235,226,.07);
+  --line-strong: rgba(240,235,226,.15);
+  --pad-x: clamp(20px,4vw,56px);
+  --max-w: 1240px;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  background: var(--bg);
+  color: var(--ink);
+  font-family: "Inter Tight", sans-serif;
+  font-weight: 300;
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+}
+a { color: inherit; text-decoration: none; }
+.wrap { max-width: var(--max-w); margin: 0 auto; padding: 0 var(--pad-x); }
+.mono {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 10px;
+  letter-spacing: .22em;
+  text-transform: uppercase;
+}
+nav {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  padding: 18px var(--pad-x);
+  background: rgba(6,6,6,.82);
+  border-bottom: 1px solid var(--line);
+  backdrop-filter: blur(20px);
+}
+.logo {
+  font-family: "Fraunces", serif;
+  font-weight: 300;
+  font-size: 18px;
+  letter-spacing: .04em;
+}
+.logo span { color: var(--accent); font-style: italic; }
+.back { color: var(--ink-dim); transition: color .25s ease; }
+.back:hover { color: var(--ink); }
+.hero {
+  padding: clamp(84px, 10vw, 140px) 0 clamp(46px, 6vw, 74px);
+  border-bottom: 1px solid var(--line);
+}
+.section-tag { color: var(--accent); margin-bottom: 22px; }
+h1 {
+  max-width: 11ch;
+  font-family: "Fraunces", serif;
+  font-size: clamp(48px, 9vw, 116px);
+  font-weight: 200;
+  line-height: .9;
+  letter-spacing: -.035em;
+}
+em { color: var(--accent); font-style: italic; }
+.intro {
+  max-width: 62ch;
+  margin-top: 26px;
+  color: var(--ink-dim);
+  font-size: clamp(16px, 1.7vw, 18px);
+  line-height: 1.7;
+}
+.blog-list {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 18px;
+  padding: clamp(52px, 7vw, 92px) 0;
+}
+.post-card {
+  display: grid;
+  grid-template-columns: 1fr;
+  background: var(--bg-3);
+  border: 1px solid var(--line-strong);
+  overflow: hidden;
+  transition: border-color .25s ease, transform .25s ease;
+}
+.post-card:hover {
+  border-color: var(--accent);
+  transform: translateY(-3px);
+}
+.post-image {
+  position: relative;
+  min-height: 220px;
+  aspect-ratio: 16 / 9;
+  background-color: #171513;
+  background-position: center;
+  background-size: cover;
+  overflow: hidden;
+}
+.post-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.post-content {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  padding: clamp(22px, 3vw, 34px);
+}
+.post-meta { color: var(--accent); font-size: 9px; }
+.post-card h2 {
+  max-width: 22ch;
+  font-family: "Fraunces", serif;
+  font-size: clamp(24px, 3.2vw, 38px);
+  font-weight: 300;
+  line-height: 1.05;
+}
+.post-card p {
+  max-width: 74ch;
+  color: var(--ink-dim);
+  font-size: 14px;
+  line-height: 1.65;
+}
+.post-link {
+  align-self: flex-start;
+  margin-top: 8px;
+  color: var(--accent);
+}
+@media (min-width: 860px) {
+  .post-card { grid-template-columns: minmax(280px, .42fr) 1fr; }
+  .post-image { min-height: 100%; aspect-ratio: auto; }
+}
+</style>
+</head>
+<body>
+<nav>
+  <a class="logo" href="index.html">Jordan <span>Licon</span></a>
+  <a class="back mono" href="index.html#blog">Back to Site</a>
+</nav>
+<main>
+  <section class="hero">
+    <div class="wrap">
+      <div class="section-tag mono">- Blog / Latest Insights</div>
+      <h1>All <em>posts.</em></h1>
+      <p class="intro">Photography, headshot, commercial production, drone, and visual strategy articles for brands, professionals, agencies, and businesses planning stronger image systems.</p>
+    </div>
+  </section>
+  <section>
+    <div class="wrap">
+      <div class="blog-list">
+        <article class="post-card"><div class="post-image"><img src="https://static.wixstatic.com/media/00f94f_ca256c9c85ad4d26b3b9f7d61d8326d2~mv2.png/v1/fill/w_1000,h_563,al_c,q_90,usm_0.66_1.00_0.01/00f94f_ca256c9c85ad4d26b3b9f7d61d8326d2~mv2.png" alt="Stay Ahead with the Latest Photography Trends in Commercial Photography blog cover image by Jordan Licon Photography" width="1000" height="563" loading="lazy"></div><div class="post-content"><div class="post-meta mono">Apr 13, 2026 - 4 min read</div><h2>Stay Ahead with the Latest Photography Trends in Commercial Photography</h2><p>In the fast-paced world of commercial photography, staying current with the latest photography trends is not just an advantage - it’s a necessity.</p><a class="post-link mono" href="post/stay-ahead-with-the-latest-photography-trends-in-commercial-photography-1.html">Read Article</a></div></article>
+        <article class="post-card"><div class="post-image"><img src="https://static.wixstatic.com/media/00f94f_be2483e6c77644c2a3a6bf471c54db08~mv2.png/v1/fill/w_1000,h_563,al_c,q_90,usm_0.66_1.00_0.01/00f94f_be2483e6c77644c2a3a6bf471c54db08~mv2.png" alt="Enhance Your Visuals with Aerial Photography Techniques blog cover image by Jordan Licon Photography" width="1000" height="563" loading="lazy"></div><div class="post-content"><div class="post-meta mono">Apr 6, 2026 - 4 min read</div><h2>Enhance Your Visuals with Aerial Photography Techniques</h2><p>When I first started exploring photography, I quickly realized that capturing unique perspectives is what truly makes an image stand out.</p><a class="post-link mono" href="post/enhance-your-visuals-with-aerial-photography-techniques-2.html">Read Article</a></div></article>
+        <article class="post-card"><div class="post-image"><img src="https://static.wixstatic.com/media/00f94f_1c59219a0950490d82a4832253d5bfbe~mv2.png/v1/fill/w_1000,h_563,al_c,q_90,usm_0.66_1.00_0.01/00f94f_1c59219a0950490d82a4832253d5bfbe~mv2.png" alt="Enhancing Your Image with Professional Headshot Tips blog cover image by Jordan Licon Photography" width="1000" height="563" loading="lazy"></div><div class="post-content"><div class="post-meta mono">Mar 30, 2026 - 3 min read</div><h2>Enhancing Your Image with Professional Headshot Tips</h2><p>When it comes to making a strong first impression in the professional world, your image speaks volumes.</p><a class="post-link mono" href="post/enhancing-your-image-with-professional-headshot-tips.html">Read Article</a></div></article>
+        <article class="post-card"><div class="post-image"><img src="https://static.wixstatic.com/media/00f94f_45e525d0c0d1493e99e8a14af5316dfa~mv2.png/v1/fill/w_1000,h_563,al_c,q_90,usm_0.66_1.00_0.01/00f94f_45e525d0c0d1493e99e8a14af5316dfa~mv2.png" alt="Perfecting Professional Headshot Tips in El Paso blog cover image by Jordan Licon Photography" width="1000" height="563" loading="lazy"></div><div class="post-content"><div class="post-meta mono">Mar 30, 2026 - 4 min read</div><h2>Perfecting Professional Headshot Tips in El Paso</h2><p>When it comes to making a strong first impression, your professional headshot plays a crucial role.</p><a class="post-link mono" href="post/perfecting-professional-headshot-tips-in-el-paso.html">Read Article</a></div></article>
+        <article class="post-card"><div class="post-image"><img src="https://static.wixstatic.com/media/00f94f_0eeb916ece204b2b8bed5eaf3fe76c26~mv2.png/v1/fill/w_1000,h_563,al_c,q_90,usm_0.66_1.00_0.01/00f94f_0eeb916ece204b2b8bed5eaf3fe76c26~mv2.png" alt="Enhance Your Visuals with Aerial Photography Techniques blog cover image by Jordan Licon Photography" width="1000" height="563" loading="lazy"></div><div class="post-content"><div class="post-meta mono">Mar 24, 2026 - 5 min read</div><h2>Enhance Your Visuals with Aerial Photography Techniques</h2><p>When I first started exploring photography, I quickly realized that capturing images from the ground only tells part of the story.</p><a class="post-link mono" href="post/enhance-your-visuals-with-aerial-photography-techniques-1.html">Read Article</a></div></article>
+        <article class="post-card"><div class="post-image"><img src="https://static.wixstatic.com/media/00f94f_31abed6c9fef438c9055c1c64bd5358f~mv2.png/v1/fill/w_1000,h_563,al_c,q_90,usm_0.66_1.00_0.01/00f94f_31abed6c9fef438c9055c1c64bd5358f~mv2.png" alt="Stay Ahead with the Latest Photography Trends in Commercial Photography blog cover image by Jordan Licon Photography" width="1000" height="563" loading="lazy"></div><div class="post-content"><div class="post-meta mono">Mar 24, 2026 - 4 min read</div><h2>Stay Ahead with the Latest Photography Trends in Commercial Photography</h2><p>In the fast-paced world of commercial photography, staying current with the latest photography trends is not just an advantage - it’s a necessity.</p><a class="post-link mono" href="post/stay-ahead-with-the-latest-photography-trends-in-commercial-photography.html">Read Article</a></div></article>
+        <article class="post-card"><div class="post-image"><img src="https://static.wixstatic.com/media/00f94f_fa670e149cf74d99a76a8da09e6c2743~mv2.png/v1/fill/w_1000,h_563,al_c,q_90,usm_0.66_1.00_0.01/00f94f_fa670e149cf74d99a76a8da09e6c2743~mv2.png" alt="Collaborating Effectively on Photography Projects: Client Collaboration Techniques blog cover image by Jordan Licon Photography" width="1000" height="563" loading="lazy"></div><div class="post-content"><div class="post-meta mono">Mar 24, 2026 - 3 min read</div><h2>Collaborating Effectively on Photography Projects: Client Collaboration Techniques</h2><p>Working on photography projects is always exciting, but it becomes even more rewarding when collaboration flows smoothly.</p><a class="post-link mono" href="post/collaborating-effectively-on-photography-projects-client-collaboration-techniques.html">Read Article</a></div></article>
+        <article class="post-card"><div class="post-image"><img src="https://static.wixstatic.com/media/00f94f_46a248fb08ed462b80a89b401d5b8151~mv2.png/v1/fill/w_1000,h_563,al_c,q_90,usm_0.66_1.00_0.01/00f94f_46a248fb08ed462b80a89b401d5b8151~mv2.png" alt="Mastering Photography and Videography for Impactful Visual Storytelling Techniques blog cover image by Jordan Licon Photography" width="1000" height="563" loading="lazy"></div><div class="post-content"><div class="post-meta mono">Mar 23, 2026 - 4 min read</div><h2>Mastering Photography and Videography for Impactful Visual Storytelling Techniques</h2><p>Creating visuals that truly resonate takes more than just pointing a camera and clicking.</p><a class="post-link mono" href="post/mastering-photography-and-videography-for-impactful-visual-storytelling-techniques-1.html">Read Article</a></div></article>
+        <article class="post-card"><div class="post-image"><img src="https://static.wixstatic.com/media/00f94f_b8ca4b38d3524e3a99657a9558cb128d~mv2.png/v1/fill/w_1000,h_563,al_c,q_90,usm_0.66_1.00_0.01/00f94f_b8ca4b38d3524e3a99657a9558cb128d~mv2.png" alt="Mastering Photography and Videography for Impactful Visual Storytelling Techniques blog cover image by Jordan Licon Photography" width="1000" height="563" loading="lazy"></div><div class="post-content"><div class="post-meta mono">Feb 23, 2026 - 4 min read</div><h2>Mastering Photography and Videography for Impactful Visual Storytelling Techniques</h2><p>Creating visuals that truly resonate takes more than just pointing a camera and clicking.</p><a class="post-link mono" href="post/mastering-photography-and-videography-for-impactful-visual-storytelling-techniques.html">Read Article</a></div></article>
+        <article class="post-card"><div class="post-image"><img src="https://static.wixstatic.com/media/00f94f_60a4713dc9eb4b29859486130a5a8c32~mv2.png/v1/fill/w_1000,h_563,al_c,q_90,usm_0.66_1.00_0.01/00f94f_60a4713dc9eb4b29859486130a5a8c32~mv2.png" alt="Enhance Your Visuals with Aerial Photography Techniques blog cover image by Jordan Licon Photography" width="1000" height="563" loading="lazy"></div><div class="post-content"><div class="post-meta mono">Feb 2, 2026 - 5 min read</div><h2>Enhance Your Visuals with Aerial Photography Techniques</h2><p>When I first started exploring photography, I quickly realized that capturing images from the ground only tells part of the story.</p><a class="post-link mono" href="post/enhance-your-visuals-with-aerial-photography-techniques.html">Read Article</a></div></article>
+        <article class="post-card"><div class="post-image"><img src="https://static.wixstatic.com/media/00f94f_0ec45161ea904645bff84f5eb31080e7~mv2.png/v1/fill/w_1000,h_563,al_c,q_90,usm_0.66_1.00_0.01/00f94f_0ec45161ea904645bff84f5eb31080e7~mv2.png" alt="Achieve Stunning Corporate Headshot Results: A Professional Headshot Guide blog cover image by Jordan Licon Photography" width="1000" height="563" loading="lazy"></div><div class="post-content"><div class="post-meta mono">Jan 12, 2026 - 4 min read</div><h2>Achieve Stunning Corporate Headshot Results: A Professional Headshot Guide</h2><p>When it comes to making a strong first impression in the business world, your corporate headshot plays a crucial role.</p><a class="post-link mono" href="post/achieve-stunning-corporate-headshot-results-a-professional-headshot-guide.html">Read Article</a></div></article>
+        <article class="post-card"><div class="post-image"><img src="https://static.wixstatic.com/media/00f94f_b223e9d9c4e64829be1981d6b9bf80ac~mv2.png/v1/fill/w_1000,h_563,al_c,q_90,usm_0.66_1.00_0.01/00f94f_b223e9d9c4e64829be1981d6b9bf80ac~mv2.png" alt="Strategic Photography Planning for Businesses: Mastering Your Photography Project Planning blog cover image by Jordan Licon Photography" width="1000" height="563" loading="lazy"></div><div class="post-content"><div class="post-meta mono">Jan 5, 2026 - 4 min read</div><h2>Strategic Photography Planning for Businesses: Mastering Your Photography Project Planning</h2><p>When it comes to elevating your business’s visual presence, strategic photography planning is a game changer.</p><a class="post-link mono" href="post/strategic-photography-planning-for-businesses-mastering-your-photography-project-planning.html">Read Article</a></div></article>
+        <article class="post-card"><div class="post-image"><img src="https://static.wixstatic.com/media/00f94f_8fd2a9b0310f465a950dd7a63029080c~mv2.png/v1/fill/w_1000,h_563,al_c,q_90,usm_0.66_1.00_0.01/00f94f_8fd2a9b0310f465a950dd7a63029080c~mv2.png" alt="Embracing Local Commercial Photography Trends for Business Growth blog cover image by Jordan Licon Photography" width="1000" height="563" loading="lazy"></div><div class="post-content"><div class="post-meta mono">Dec 22, 2025 - 3 min read</div><h2>Embracing Local Commercial Photography Trends for Business Growth</h2><p></p><a class="post-link mono" href="post/embracing-local-commercial-photography-trends.html">Read Article</a></div></article>
+        <article class="post-card"><div class="post-image"><img src="https://static.wixstatic.com/media/00f94f_b6a5110e86214383adece64f3c165cdd~mv2.png/v1/fill/w_1000,h_563,al_c,q_90,usm_0.66_1.00_0.01/00f94f_b6a5110e86214383adece64f3c165cdd~mv2.png" alt="Key Features of an Excellent Photo Studio: What Sets It Apart blog cover image by Jordan Licon Photography" width="1000" height="563" loading="lazy"></div><div class="post-content"><div class="post-meta mono">Dec 15, 2025 - 4 min read</div><h2>Key Features of an Excellent Photo Studio: What Sets It Apart</h2><p>When I first started exploring photography professionally, I quickly realized that the environment where you shoot can make or break your work.</p><a class="post-link mono" href="post/key-features-of-an-excellent-photo-studio-what-sets-it-apart.html">Read Article</a></div></article>
+        <article class="post-card"><div class="post-image"><img src="https://static.wixstatic.com/media/00f94f_00f107f7f3aa45c1a0331e0b46df829f~mv2.png/v1/fill/w_1000,h_571,al_c,q_90,usm_0.66_1.00_0.01/00f94f_00f107f7f3aa45c1a0331e0b46df829f~mv2.png" alt="Mastering Client Collaboration in Photography: Essential Photography Collaboration Tips blog cover image by Jordan Licon Photography" width="1000" height="563" loading="lazy"></div><div class="post-content"><div class="post-meta mono">Dec 3, 2025 - 4 min read</div><h2>Mastering Client Collaboration in Photography: Essential Photography Collaboration Tips</h2><p>Working closely with clients is one of the most rewarding parts of being a photographer. It’s where creativity meets communication, and the magic of a successful shoot truly begins.</p><a class="post-link mono" href="post/mastering-client-collaboration-in-photography-essential-photography-collaboration-tips.html">Read Article</a></div></article>
+        <article class="post-card"><div class="post-image"><img src="https://static.wixstatic.com/media/00f94f_b6eb21fad48649f5b3a534a3928393c3~mv2.png/v1/fill/w_1000,h_571,al_c,q_90,usm_0.66_1.00_0.01/00f94f_b6eb21fad48649f5b3a534a3928393c3~mv2.png" alt="Photography and Videography Tips for Success blog cover image by Jordan Licon Photography" width="1000" height="563" loading="lazy"></div><div class="post-content"><div class="post-meta mono">Nov 24, 2025 - 3 min read</div><h2>Photography and Videography Tips for Success</h2><p></p><a class="post-link mono" href="post/master-the-art-of-photography-and-videography.html">Read Article</a></div></article>
+        <article class="post-card"><div class="post-image"><img src="https://static.wixstatic.com/media/00f94f_eed2fa51bcba4c3bafbae3977cf4fbb9~mv2.png/v1/fill/w_1000,h_563,al_c,q_90,usm_0.66_1.00_0.01/00f94f_eed2fa51bcba4c3bafbae3977cf4fbb9~mv2.png" alt="Drone Photography &amp; Videography Tips blog cover image by Jordan Licon Photography" width="1000" height="563" loading="lazy"></div><div class="post-content"><div class="post-meta mono">Nov 17, 2025 - 4 min read</div><h2>Drone Photography &amp; Videography Tips</h2><p>When I first started exploring aerial photography, I quickly realized how much drone media benefits could transform the way we capture and share visuals.</p><a class="post-link mono" href="post/elevating-visuals-with-drone-photography-and-videography.html">Read Article</a></div></article>
+        <article class="post-card"><div class="post-image"><img src="https://static.wixstatic.com/media/00f94f_f9f456c33623442abd4d978bc9524ebc~mv2.png/v1/fill/w_1000,h_563,al_c,q_90,usm_0.66_1.00_0.01/00f94f_f9f456c33623442abd4d978bc9524ebc~mv2.png" alt="Headshots in El Paso: A Complete Guide blog cover image by Jordan Licon Photography" width="1000" height="563" loading="lazy"></div><div class="post-content"><div class="post-meta mono">Nov 11, 2025 - 4 min read</div><h2>Headshots in El Paso: A Complete Guide</h2><p>When it comes to making a strong first impression, nothing beats a professional headshot.</p><a class="post-link mono" href="post/achieving-professional-headshots-in-el-paso.html">Read Article</a></div></article>
+        <article class="post-card"><div class="post-image"><img src="https://static.wixstatic.com/media/00f94f_074045ae66ed4d568558dc3137220b91~mv2.png/v1/fill/w_1000,h_563,al_c,q_90,usm_0.66_1.00_0.01/00f94f_074045ae66ed4d568558dc3137220b91~mv2.png" alt="Jordan Licon Photography: El Paso's Best blog cover image by Jordan Licon Photography" width="1000" height="563" loading="lazy"></div><div class="post-content"><div class="post-meta mono">Oct 27, 2025 - 4 min read</div><h2>Jordan Licon Photography: El Paso's Best</h2><p>Photography is more than just capturing moments; it’s about telling stories through images.</p><a class="post-link mono" href="post/exploring-jordan-licon-photography-in-el-paso.html">Read Article</a></div></article>
+        <article class="post-card"><div class="post-image"><img src="https://static.wixstatic.com/media/00f94f_aa750bbe56004f9a933e4c72dec126c3~mv2.png/v1/fill/w_1000,h_563,al_c,q_90,usm_0.66_1.00_0.01/00f94f_aa750bbe56004f9a933e4c72dec126c3~mv2.png" alt="Corporate Headshot Photography Tips and Guide blog cover image by Jordan Licon Photography" width="1000" height="563" loading="lazy"></div><div class="post-content"><div class="post-meta mono">Oct 21, 2025 - 4 min read</div><h2>Corporate Headshot Photography Tips and Guide</h2><p>When it comes to making a strong first impression, your corporate headshot plays a crucial role.</p><a class="post-link mono" href="post/perfecting-your-corporate-headshot-photography.html">Read Article</a></div></article>
+      </div>
+    </div>
+  </section>
+</main>
+</body>
+</html>

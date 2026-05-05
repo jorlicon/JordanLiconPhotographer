@@ -1,0 +1,18 @@
+{
+  "destination": "Wix Media Manager",
+  "requiredUploads": [
+    {
+      "localPath": "../assets/test-production-01.mp4",
+      "replaceInHtml": "assets/test-production-01.mp4",
+      "purpose": "Playable video for Editorial Test Production 01"
+    },
+    {
+      "localPath": "../assets/test-production-02.mp4",
+      "replaceInHtml": "assets/test-production-02.mp4",
+      "purpose": "Playable video for Editorial Test Production 02"
+    }
+  ],
+  "hostedAssetsAlreadyExternal": true,
+  "contactEmail": "info@jordanliconphotography.com",
+  "wixHtmlFile": "pattern-1-landing.html"
+}
