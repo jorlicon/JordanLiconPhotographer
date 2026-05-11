@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1500 1000" role="img" aria-labelledby="title desc">
+  <title id="title">Architectural and interior photography service visual</title>
+  <desc id="desc">Modern architectural interior with glass, desert-toned materials, and cinematic light.</desc>
+  <defs>
+    <linearGradient id="sky" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#d8d4c7"/>
+      <stop offset=".42" stop-color="#8f938c"/>
+      <stop offset="1" stop-color="#171716"/>
+    </linearGradient>
+    <linearGradient id="floor" x1="0" x2="1" y1="0" y2="0">
+      <stop offset="0" stop-color="#181716"/>
+      <stop offset=".55" stop-color="#8b7455"/>
+      <stop offset="1" stop-color="#26221d"/>
+    </linearGradient>
+    <radialGradient id="sun" cx=".26" cy=".3" r=".5">
+      <stop offset="0" stop-color="#fff3d2" stop-opacity=".9"/>
+      <stop offset=".38" stop-color="#c7a66d" stop-opacity=".45"/>
+      <stop offset="1" stop-color="#060606" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="grain">
+      <feTurbulence type="fractalNoise" baseFrequency=".85" numOctaves="3"/>
+      <feColorMatrix type="saturate" values="0"/>
+      <feComponentTransfer>
+        <feFuncA type="table" tableValues="0 .12"/>
+      </feComponentTransfer>
+    </filter>
+  </defs>
+  <rect width="1500" height="1000" fill="#070707"/>
+  <rect width="1500" height="720" fill="url(#sky)"/>
+  <rect width="1500" height="1000" fill="url(#sun)"/>
+  <path d="M0 705h1500v295H0z" fill="url(#floor)"/>
+  <path d="M0 705h1500" stroke="#f0ebe2" stroke-opacity=".14" stroke-width="2"/>
+  <g opacity=".98">
+    <path d="M98 118h468v610H98z" fill="#111" fill-opacity=".58" stroke="#f0ebe2" stroke-opacity=".16"/>
+    <path d="M566 118h838v610H566z" fill="#161513" fill-opacity=".48" stroke="#f0ebe2" stroke-opacity=".13"/>
+    <path d="M135 155h386v520H135z" fill="#b9c3bd" fill-opacity=".2"/>
+    <path d="M620 158h718v498H620z" fill="#c4ccc7" fill-opacity=".14"/>
+    <g stroke="#f0ebe2" stroke-opacity=".22" stroke-width="3">
+      <path d="M265 118v610M402 118v610M566 118v610M760 118v610M955 118v610M1148 118v610M1338 118v610"/>
+      <path d="M98 288h1306M98 456h1306M98 616h1306"/>
+    </g>
+    <path d="M575 118 402 728" stroke="#f0ebe2" stroke-opacity=".2" stroke-width="5"/>
+    <path d="M1404 118 1168 728" stroke="#f0ebe2" stroke-opacity=".18" stroke-width="5"/>
+  </g>
+  <g opacity=".72">
+    <path d="M202 778h592l210 222H0z" fill="#120f0c"/>
+    <path d="M724 778h470l306 222H1004z" fill="#28231d"/>
+    <path d="M0 820h1500" stroke="#f0ebe2" stroke-opacity=".08"/>
+    <path d="M188 1000 696 705M544 1000 806 705M916 1000 930 705M1300 1000 1068 705" stroke="#f0ebe2" stroke-opacity=".08"/>
+  </g>
+  <g opacity=".9">
+    <rect x="1000" y="636" width="224" height="68" rx="4" fill="#0d0d0c"/>
+    <rect x="1024" y="610" width="64" height="96" fill="#151412"/>
+    <rect x="1132" y="610" width="64" height="96" fill="#151412"/>
+    <path d="M995 636h234" stroke="#b8985f" stroke-opacity=".45" stroke-width="2"/>
+  </g>
+  <rect width="1500" height="1000" filter="url(#grain)" opacity=".45"/>
+  <rect width="1500" height="1000" fill="none" stroke="#f0ebe2" stroke-opacity=".08"/>
+</svg>

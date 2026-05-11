@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="760" viewBox="0 0 1200 760" role="img" aria-labelledby="title desc">
+  <title id="title">Orthomosaic mapping graphic</title>
+  <desc id="desc">Abstract orthomosaic site map with grid, parcel shape, markers, and measurement overlays.</desc>
+  <defs>
+    <pattern id="mapgrid" width="42" height="42" patternUnits="userSpaceOnUse">
+      <path d="M42 0H0V42" fill="none" stroke="#92d48f" stroke-opacity=".2"/>
+    </pattern>
+    <linearGradient id="panel" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#15201e"/>
+      <stop offset="1" stop-color="#070908"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="760" fill="url(#panel)"/>
+  <rect x="54" y="54" width="1092" height="652" fill="url(#mapgrid)" stroke="#7fd7d7" stroke-opacity=".24"/>
+  <path d="M128 256 340 138 590 190 827 98 1074 308 998 582 708 642 426 554 172 638Z" fill="#b8985f" fill-opacity=".16" stroke="#b8985f" stroke-width="3"/>
+  <path d="M214 318 405 232 596 280 792 210 958 362 898 504 672 548 448 488 250 536Z" fill="#92d48f" fill-opacity=".12" stroke="#92d48f" stroke-width="2" stroke-dasharray="12 12"/>
+  <g stroke="#7fd7d7" stroke-width="2" stroke-opacity=".5">
+    <path d="M128 256H1074"/><path d="M172 638 827 98"/><path d="M340 138 998 582"/>
+  </g>
+  <g fill="#7fd7d7">
+    <circle cx="128" cy="256" r="8"/><circle cx="340" cy="138" r="8"/><circle cx="590" cy="190" r="8"/><circle cx="827" cy="98" r="8"/><circle cx="1074" cy="308" r="8"/><circle cx="998" cy="582" r="8"/><circle cx="708" cy="642" r="8"/><circle cx="426" cy="554" r="8"/><circle cx="172" cy="638" r="8"/>
+  </g>
+  <g font-family="JetBrains Mono, monospace" letter-spacing="3">
+    <text x="78" y="104" fill="#7fd7d7" font-size="18">ORTHOMOSAIC SITE REFERENCE</text>
+    <text x="78" y="666" fill="#92d48f" font-size="15">GRID PASS / OVERHEAD CAPTURE / STITCHED VISUAL RECORD</text>
+    <text x="874" y="666" fill="#9a968c" font-size="15">SCALE: VISUAL PLANNING</text>
+  </g>
+</svg>
