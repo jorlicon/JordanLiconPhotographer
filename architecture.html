@@ -23,7 +23,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,200;0,9..144,300;1,9..144,200;1,9..144,300&family=JetBrains+Mono:wght@400;500&family=Inter+Tight:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
-:root{--bg:#060606;--bg-2:#0d0d0d;--bg-3:#141414;--ink:#f0ebe2;--ink-dim:#8b857b;--accent:#b8985f;--line:rgba(240,235,226,.08);--line-strong:rgba(240,235,226,.15);--pad-x:clamp(20px,4vw,56px);--max-w:1440px}
+:root{--bg:#060606;--bg-2:#0d0d0d;--bg-3:#141414;--ink:#f0ebe2;--ink-dim:#8b857b;--accent:#b8985f;--cyan:#81daff;--cyan-soft:rgba(129,218,255,.14);--line:rgba(240,235,226,.08);--line-strong:rgba(240,235,226,.15);--pad-x:clamp(20px,4vw,56px);--max-w:1440px}
 *{box-sizing:border-box;margin:0;padding:0}
 body{background:var(--bg);color:var(--ink);font-family:"Inter Tight",sans-serif;font-weight:300;line-height:1.55;-webkit-font-smoothing:antialiased}
 a{color:inherit;text-decoration:none}
@@ -31,14 +31,14 @@ a{color:inherit;text-decoration:none}
 .mono{font-family:"JetBrains Mono",monospace;font-size:10px;letter-spacing:.22em;text-transform:uppercase}
 nav{position:sticky;top:0;z-index:10;display:flex;justify-content:space-between;align-items:center;padding:18px var(--pad-x);background:rgba(6,6,6,.82);border-bottom:1px solid var(--line);backdrop-filter:blur(20px)}
 .logo{font-family:"Fraunces",serif;font-weight:300;font-size:18px;letter-spacing:.04em}.logo span,em{color:var(--accent);font-style:italic}.back{color:var(--ink-dim)}.back:hover{color:var(--ink)}
-.hero{min-height:78svh;display:flex;align-items:end;position:relative;overflow:hidden;padding:0;background:#04111a}
-.hero-bg{position:absolute;inset:0;background:radial-gradient(circle at 72% 38%,rgba(99,204,255,.22),transparent 34%),radial-gradient(circle at 40% 68%,rgba(184,152,95,.12),transparent 28%),linear-gradient(120deg,#03080d 0%,#071926 48%,#050708 100%)}
-.hero-bg:before{content:"";position:absolute;inset:-20%;background-image:linear-gradient(rgba(129,218,255,.12) 1px,transparent 1px),linear-gradient(90deg,rgba(129,218,255,.12) 1px,transparent 1px),linear-gradient(rgba(129,218,255,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(129,218,255,.04) 1px,transparent 1px);background-size:44px 44px,44px 44px,11px 11px,11px 11px;transform:perspective(900px) rotateX(64deg) translateY(8%);transform-origin:center bottom;animation:gridDrift 16s linear infinite;opacity:.82}
-.hero-bg:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(3,8,13,.18),rgba(3,8,13,.1) 34%,rgba(3,8,13,.95)),linear-gradient(90deg,rgba(3,8,13,.72),transparent 58%)}
-.hero-visual{position:absolute;right:0;bottom:-2%;width:min(72vw,1080px);height:min(80svh,840px);z-index:1;pointer-events:none;opacity:.96}
+.hero{min-height:86svh;display:flex;align-items:end;position:relative;overflow:hidden;padding:0;background:#04080b}
+.hero-bg{position:absolute;inset:0;background-image:linear-gradient(90deg,rgba(6,6,6,.88) 0%,rgba(6,6,6,.64) 34%,rgba(6,6,6,.18) 62%,rgba(6,6,6,.72) 100%),linear-gradient(180deg,rgba(6,6,6,.2),rgba(6,6,6,.94)),url("assets/architecture-panoramic/live-architecture-panorama-01.jpg");background-size:cover;background-position:center 44%;transform:scale(1.02)}
+.hero-bg:before{content:"";position:absolute;inset:-18%;background-image:linear-gradient(rgba(129,218,255,.1) 1px,transparent 1px),linear-gradient(90deg,rgba(129,218,255,.1) 1px,transparent 1px),linear-gradient(rgba(184,152,95,.05) 1px,transparent 1px);background-size:64px 64px,64px 64px,16px 16px;transform:perspective(900px) rotateX(63deg) translateY(10%);transform-origin:center bottom;animation:gridDrift 20s linear infinite;opacity:.52;mix-blend-mode:screen}
+.hero-bg:after{content:"";position:absolute;inset:0;background:radial-gradient(circle at 78% 38%,rgba(129,218,255,.18),transparent 31%),radial-gradient(circle at 46% 72%,rgba(184,152,95,.14),transparent 26%),linear-gradient(180deg,transparent 46%,#060606 100%)}
+.hero-visual{position:absolute;right:-3vw;bottom:2svh;width:min(56vw,820px);height:min(68svh,700px);z-index:1;pointer-events:none;opacity:.72;filter:drop-shadow(0 32px 80px rgba(0,0,0,.45))}
 .hero-visual canvas{position:absolute;inset:0;width:100%;height:100%;display:block}
-.blueprint-label{position:absolute;z-index:2;color:rgba(129,218,255,.72);text-shadow:0 0 18px rgba(91,199,255,.25)}
-.blueprint-label.one{right:9%;top:24%}.blueprint-label.two{right:26%;bottom:23%}.blueprint-label.three{right:4%;bottom:40%}
+.blueprint-label{position:absolute;z-index:2;color:rgba(129,218,255,.62);text-shadow:0 0 18px rgba(91,199,255,.2)}
+.blueprint-label.one{right:12%;top:18%}.blueprint-label.two{right:31%;bottom:18%}.blueprint-label.three{right:7%;bottom:38%}
 .blueprint-label:before{content:"";display:inline-block;width:44px;height:1px;margin-right:10px;vertical-align:middle;background:rgba(129,218,255,.5)}
 .model-fallback{position:absolute;right:9%;bottom:13%;width:min(36vw,500px);height:min(36vw,500px);transform:rotateX(62deg) rotateZ(-38deg);transform-style:preserve-3d;opacity:.78}
 .model-fallback span{position:absolute;display:block;background:linear-gradient(135deg,rgba(99,204,255,.1),rgba(240,235,226,.03));border:1px solid rgba(129,218,255,.45);box-shadow:0 24px 80px rgba(0,0,0,.34),0 0 30px rgba(99,204,255,.08)}
@@ -47,11 +47,11 @@ nav{position:sticky;top:0;z-index:10;display:flex;justify-content:space-between;
 .model-fallback span:nth-child(3){inset:25% 58% 46% 4%;transform:translateZ(120px)}
 .model-fallback span:nth-child(4){inset:8% 34% 72% 24%;transform:translateZ(170px)}
 .model-fallback:after{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(129,218,255,.22) 1px,transparent 1px),linear-gradient(90deg,rgba(129,218,255,.22) 1px,transparent 1px);background-size:36px 36px;transform:translateZ(-10px);opacity:.52}
-.hero-content{position:relative;z-index:2;padding:clamp(100px,14vw,170px) var(--pad-x) clamp(44px,7vw,82px)}
+.hero-content{position:relative;z-index:2;padding:clamp(112px,15vw,190px) var(--pad-x) clamp(52px,7vw,90px)}
 @keyframes gridDrift{from{background-position:0 0,0 0}to{background-position:0 44px,44px 0}}
 .section-tag{color:var(--accent);margin-bottom:24px}
 h1{max-width:11ch;font-family:"Fraunces",serif;font-size:clamp(52px,10vw,128px);font-weight:200;line-height:.86;letter-spacing:-.035em}
-.intro{max-width:66ch;margin-top:28px;color:var(--ink-dim);font-size:clamp(16px,1.8vw,19px);line-height:1.7}
+.intro{max-width:62ch;margin-top:28px;color:#b7afa4;font-size:clamp(16px,1.8vw,19px);line-height:1.7;text-shadow:0 1px 18px rgba(0,0,0,.58)}
 .hero-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:32px}
 .btn{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:15px 24px;border:1px solid var(--ink);background:var(--ink);color:var(--bg);transition:.25s ease}
 .btn:hover{background:transparent;color:var(--ink)}
@@ -84,14 +84,37 @@ section{padding:clamp(70px,10vw,130px) 0}
 .price small{font-family:"Inter Tight",sans-serif;font-size:13px;color:var(--ink-dim);font-style:normal}
 .pricing-card ul{list-style:none;display:grid;gap:10px;margin-top:auto;color:var(--ink-dim)}
 .pricing-card li{padding-top:10px;border-top:1px solid var(--line)}
-.motion-section{background:radial-gradient(circle at 80% 20%,rgba(129,218,255,.12),transparent 32%),var(--bg-2);border-bottom:1px solid var(--line)}
+.motion-section{background:radial-gradient(circle at 82% 18%,rgba(129,218,255,.08),transparent 32%),linear-gradient(180deg,var(--bg-2),#080808);border-bottom:1px solid var(--line)}
 .motion-panel{display:grid;grid-template-columns:1fr;gap:24px;align-items:stretch}
-.motion-graphic{position:relative;min-height:360px;border:1px solid rgba(129,218,255,.22);background:linear-gradient(135deg,rgba(129,218,255,.08),rgba(184,152,95,.05)),#071019;overflow:hidden}
-.motion-graphic:before{content:"";position:absolute;inset:-30%;background-image:linear-gradient(rgba(129,218,255,.12) 1px,transparent 1px),linear-gradient(90deg,rgba(129,218,255,.12) 1px,transparent 1px);background-size:30px 30px;transform:rotate(-14deg);animation:gridDrift 18s linear infinite}
-.motion-graphic:after{content:"";position:absolute;inset:14%;border:1px solid rgba(184,152,95,.55);box-shadow:0 0 0 38px rgba(129,218,255,.035),0 0 80px rgba(129,218,255,.12)}
+.motion-graphic{position:relative;min-height:390px;border:1px solid rgba(129,218,255,.18);background:linear-gradient(135deg,rgba(129,218,255,.045),rgba(184,152,95,.055)),#071019;overflow:hidden}
+.motion-graphic:before{content:"";position:absolute;inset:-30%;background-image:linear-gradient(rgba(129,218,255,.1) 1px,transparent 1px),linear-gradient(90deg,rgba(129,218,255,.1) 1px,transparent 1px);background-size:32px 32px;transform:rotate(-14deg);animation:gridDrift 18s linear infinite;opacity:.72}
+.motion-graphic:after{content:"";position:absolute;inset:12%;border:1px solid rgba(184,152,95,.5);box-shadow:0 0 0 34px rgba(129,218,255,.026),0 0 80px rgba(129,218,255,.1)}
+.motion-map{position:absolute;inset:13%;z-index:2;border:1px solid rgba(129,218,255,.32);background:linear-gradient(90deg,transparent 49%,rgba(129,218,255,.18) 50%,transparent 51%),linear-gradient(transparent 49%,rgba(129,218,255,.18) 50%,transparent 51%);background-size:26% 26%;clip-path:polygon(4% 8%,86% 0,96% 36%,82% 92%,16% 98%,0 42%)}
+.motion-map span{position:absolute;border:1px solid rgba(240,235,226,.22);background:rgba(184,152,95,.08)}
+.motion-map span:nth-child(1){inset:14% 52% 48% 13%}.motion-map span:nth-child(2){inset:18% 16% 55% 55%}.motion-map span:nth-child(3){inset:54% 44% 18% 22%}.motion-map span:nth-child(4){inset:48% 14% 24% 62%}
+.motion-scan{position:absolute;left:9%;right:9%;top:44%;z-index:3;height:1px;background:linear-gradient(90deg,transparent,var(--cyan),transparent);box-shadow:0 0 18px rgba(129,218,255,.7);animation:scanSweep 4.4s ease-in-out infinite}
+.motion-drone{position:absolute;right:10%;top:16%;z-index:4;width:74px;height:74px;border:1px solid rgba(129,218,255,.45);border-radius:50%;background:radial-gradient(circle,rgba(129,218,255,.22),transparent 62%);box-shadow:0 0 40px rgba(129,218,255,.18)}
+.motion-drone:before,.motion-drone:after{content:"";position:absolute;left:50%;top:50%;width:122px;height:1px;background:rgba(129,218,255,.44);transform:translate(-50%,-50%)}.motion-drone:after{width:1px;height:122px}
+.motion-readout{position:absolute;left:18px;right:18px;bottom:18px;z-index:4;display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.motion-readout div{padding:11px 10px;border:1px solid rgba(129,218,255,.18);background:rgba(6,6,6,.58);color:rgba(240,235,226,.72)}
+.motion-readout strong{display:block;color:var(--accent);font-family:"Fraunces",serif;font-size:22px;font-weight:200;line-height:1}
+@keyframes scanSweep{0%,100%{transform:translateY(-116px);opacity:.16}50%{transform:translateY(116px);opacity:.86}}
 .motion-points{display:grid;gap:12px;margin-top:26px}
 .motion-points div{padding:16px;border:1px solid var(--line);background:rgba(6,6,6,.32);color:var(--ink-dim)}
 .motion-points strong{color:var(--ink);font-weight:400}
+.panorama-section{background:#070707;border-bottom:1px solid var(--line);overflow:hidden}
+.panorama-head{display:grid;grid-template-columns:1fr;gap:22px;margin-bottom:clamp(34px,5vw,60px)}
+.panorama-head h2{font-family:"Fraunces",serif;font-size:clamp(34px,5vw,70px);font-weight:200;line-height:.98;letter-spacing:-.025em}
+.panorama-head p{max-width:66ch;color:var(--ink-dim);line-height:1.75}
+.panorama-grid{display:flex;gap:14px;margin:0 calc(var(--pad-x) * -1);padding:0 var(--pad-x) 18px;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:thin;scrollbar-color:var(--accent) transparent}
+.panorama-grid::-webkit-scrollbar{height:4px}.panorama-grid::-webkit-scrollbar-track{background:transparent}.panorama-grid::-webkit-scrollbar-thumb{background:var(--accent)}
+.panorama-card{position:relative;flex:0 0 clamp(320px,45vw,680px);min-height:clamp(250px,34vw,470px);border:1px solid var(--line-strong);background:#111;overflow:hidden;cursor:zoom-in;scroll-snap-align:start}
+.panorama-card img{width:100%;height:100%;display:block;object-fit:cover;transition:transform .5s ease,filter .5s ease}
+.panorama-card:hover img{transform:scale(1.025);filter:saturate(1.08) brightness(1.03)}
+.panorama-card.featured{flex-basis:clamp(420px,62vw,920px);min-height:clamp(300px,42vw,620px)}
+.panorama-caption{position:absolute;left:16px;right:16px;bottom:16px;z-index:2;display:flex;justify-content:space-between;gap:16px;align-items:end;color:var(--ink);text-shadow:0 1px 18px rgba(0,0,0,.7)}
+.panorama-caption span{color:var(--accent)}
+.panorama-card:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 48%,rgba(0,0,0,.72));pointer-events:none}
 .portfolio-section{padding-top:clamp(54px,7vw,92px)}
 .portfolio-intro{display:grid;grid-template-columns:1fr;gap:24px;margin-bottom:clamp(44px,7vw,84px);padding-bottom:clamp(28px,4vw,44px);border-bottom:1px solid var(--line)}
 .portfolio-intro h2{font-family:"Fraunces",serif;font-size:clamp(34px,5vw,64px);font-weight:200;line-height:.98;letter-spacing:-.025em}
@@ -106,14 +129,18 @@ section{padding:clamp(70px,10vw,130px) 0}
 .category-heading p{max-width:56ch;color:var(--ink-dim)}
 .category-projects .project:last-child{border-bottom:1px solid var(--line);padding-bottom:clamp(70px,8vw,110px)}
 .category-group:last-child .category-projects .project:last-child{border-bottom:0;padding-bottom:0}
-.project{display:grid;grid-template-columns:1fr;gap:clamp(24px,4vw,44px);padding-bottom:clamp(70px,8vw,110px);margin-bottom:clamp(70px,8vw,110px);border-bottom:1px solid var(--line)}
+.project{display:grid;grid-template-columns:1fr;gap:clamp(24px,4vw,44px);padding:clamp(24px,4vw,42px) 0 clamp(70px,8vw,110px);margin-bottom:clamp(70px,8vw,110px);border-bottom:1px solid var(--line);position:relative}
+.project:before{content:"";position:absolute;left:0;right:0;top:0;height:1px;background:linear-gradient(90deg,var(--accent),transparent 42%)}
 .project:last-child{margin-bottom:0;padding-bottom:0;border-bottom:0}
 .project-copy{align-self:start;position:sticky;top:92px}
 .project-kicker{color:var(--accent);margin-bottom:18px}
 .project h2{font-family:"Fraunces",serif;font-size:clamp(34px,5vw,68px);font-weight:200;line-height:.95;letter-spacing:-.025em}
 .project p{max-width:54ch;margin-top:18px;color:var(--ink-dim);line-height:1.7}
+.project-meta{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:24px}
+.project-meta div{padding:12px;border:1px solid var(--line);background:rgba(240,235,226,.022);color:var(--ink-dim)}
+.project-meta strong{display:block;margin-bottom:5px;color:var(--accent);font-weight:400}
 .project-tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:24px}.project-tags span{padding:8px 10px;border:1px solid var(--line-strong);color:var(--ink-dim)}
-.gallery{display:grid;grid-template-columns:1fr;gap:14px}.photo{min-height:280px;background:#141414;border:1px solid var(--line-strong);overflow:hidden;cursor:zoom-in}.photo img{width:100%;height:100%;min-height:inherit;display:block;object-fit:cover;transition:transform .45s ease}.photo:hover img{transform:scale(1.025)}.photo.large{min-height:clamp(380px,52vw,680px)}.photo.tall{min-height:520px}
+.gallery{display:grid;grid-template-columns:1fr;gap:14px}.photo{min-height:280px;background:#141414;border:1px solid var(--line-strong);overflow:hidden;cursor:zoom-in}.photo img{width:100%;height:100%;min-height:inherit;display:block;object-fit:cover;transition:transform .45s ease,filter .45s ease}.photo:hover img{transform:scale(1.025);filter:saturate(1.06) brightness(1.04)}.photo.large{min-height:clamp(380px,52vw,680px)}.photo.tall{min-height:520px}
 .thumb-strip{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:14px}
 .thumb-strip button{height:clamp(74px,8vw,108px);padding:0;border:1px solid var(--line-strong);background:#101010;overflow:hidden;cursor:pointer}
 .thumb-strip img{width:100%;height:100%;object-fit:cover;display:block;filter:saturate(.88) brightness(.82);transition:filter .25s ease,transform .25s ease}
@@ -140,8 +167,8 @@ section{padding:clamp(70px,10vw,130px) 0}
 .lightbox-caption{position:absolute;left:clamp(18px,4vw,54px);right:clamp(18px,4vw,54px);bottom:18px;color:var(--ink-dim);text-align:center}
 @media(min-width:720px){.deliverables-grid,.pricing-grid{grid-template-columns:repeat(2,1fr)}.trust-row{grid-template-columns:repeat(2,1fr)}}
 @media(min-width:860px){.project{grid-template-columns:.42fr 1fr}.gallery{grid-template-columns:repeat(2,1fr)}.photo.large{grid-column:1/-1}.photo.tall{grid-row:span 2;min-height:auto}.motion-panel{grid-template-columns:.9fr 1.1fr}}
-@media(min-width:900px){.portfolio-intro,.pricing-head{grid-template-columns:.62fr 1fr}.category-heading{grid-template-columns:.36fr 1fr;align-items:end}.section-grid{grid-template-columns:.78fr 1fr}.pricing-grid{grid-template-columns:repeat(4,1fr)}.trust-row{grid-template-columns:repeat(4,1fr)}}
-@media(max-width:760px){.hero-visual{width:100%;height:48svh;opacity:.48}.hero-content{padding-top:clamp(160px,40vw,240px)}}
+@media(min-width:900px){.portfolio-intro,.pricing-head,.panorama-head{grid-template-columns:.62fr 1fr}.category-heading{grid-template-columns:.36fr 1fr;align-items:end}.section-grid{grid-template-columns:.78fr 1fr}.pricing-grid{grid-template-columns:repeat(4,1fr)}.trust-row{grid-template-columns:repeat(4,1fr)}}
+@media(max-width:760px){.hero{min-height:88svh}.hero-bg{background-position:60% center}.hero-visual{width:112%;height:38svh;opacity:.24;right:-24%;bottom:29%}.blueprint-label{display:none}.hero-content{padding-top:clamp(170px,42vw,250px)}.project-meta{grid-template-columns:1fr}.motion-readout{grid-template-columns:1fr}.panorama-card,.panorama-card.featured{flex-basis:82vw}}
 @media(prefers-reduced-motion:reduce){.hero-visual canvas{display:none}}
 .cta{background:var(--bg-2);border-top:1px solid var(--line)}
 .inquiry-grid{display:grid;grid-template-columns:1fr;gap:clamp(28px,5vw,70px);align-items:start}
@@ -181,9 +208,9 @@ section{padding:clamp(70px,10vw,130px) 0}
     <div class="hero-bg"></div>
     <div class="hero-visual" aria-hidden="true">
       <canvas id="architecture-model"></canvas>
-      <div class="blueprint-label one mono">Section A-01</div>
-      <div class="blueprint-label two mono">Elevation Grid</div>
-      <div class="blueprint-label three mono">Plan Datum</div>
+      <div class="blueprint-label one mono">Blueprint Overlay</div>
+      <div class="blueprint-label two mono">Built Form Study</div>
+      <div class="blueprint-label three mono">Perspective Control</div>
       <div class="model-fallback"><span></span><span></span><span></span><span></span></div>
     </div>
     <div class="hero-content">
@@ -300,7 +327,16 @@ section{padding:clamp(70px,10vw,130px) 0}
   <section class="motion-section" id="motion-aerial">
     <div class="wrap">
       <div class="motion-panel">
-        <div class="motion-graphic" aria-hidden="true"></div>
+        <div class="motion-graphic" aria-hidden="true">
+          <div class="motion-map"><span></span><span></span><span></span><span></span></div>
+          <div class="motion-drone"></div>
+          <div class="motion-scan"></div>
+          <div class="motion-readout mono">
+            <div><strong>01</strong>Site Context</div>
+            <div><strong>02</strong>Progress Grid</div>
+            <div><strong>03</strong>Flight Path</div>
+          </div>
+        </div>
         <div class="motion-copy">
           <div class="section-tag mono">- Motion, Drone + Construction Intelligence</div>
           <h2>More than finished-space photography.</h2>
@@ -311,6 +347,55 @@ section{padding:clamp(70px,10vw,130px) 0}
             <div><strong>Orthomosaic mapping:</strong> available by project scope when site planning, progress comparison, or high-level documentation is needed.</div>
           </div>
         </div>
+      </div>
+    </div>
+  </section>
+  <section class="panorama-section" id="panoramic-architecture">
+    <div class="wrap">
+      <div class="panorama-head">
+        <div>
+          <div class="section-tag mono">- Panoramic Architecture</div>
+          <h2>Wide-format views from the architectural archive.</h2>
+        </div>
+        <p>These panoramic frames pull from the architecture imagery already used across the live Jordan Licon Photography site. The edit now includes world architecture studies from New York, Toronto, resort environments, civic plazas, skylines, towers, and dense urban scenes before the sector-by-sector client archive.</p>
+      </div>
+      <div class="panorama-grid" aria-label="Panoramic architecture photography gallery">
+        <button class="panorama-card featured" type="button">
+          <img src="assets/architecture-panoramic/live-architecture-panorama-01.jpg" alt="Panoramic architecture photograph of the World Trade Center Oculus at night by Jordan Licon" width="2500" height="1687" loading="lazy">
+          <span class="panorama-caption mono"><span>World Trade Center Oculus</span>New York Architecture</span>
+        </button>
+        <button class="panorama-card" type="button">
+          <img src="assets/architecture-panoramic/world-panorama-00.jpg" alt="Panoramic skyline architecture photograph of Lower Manhattan by Jordan Licon" width="1434" height="514" loading="lazy">
+          <span class="panorama-caption mono"><span>Lower Manhattan</span>New York Skyline</span>
+        </button>
+        <button class="panorama-card" type="button">
+          <img src="assets/architecture-panoramic/world-panorama-02.jpg" alt="Panoramic sunset city architecture photograph of Toronto by Jordan Licon" width="1434" height="727" loading="lazy">
+          <span class="panorama-caption mono"><span>Toronto Skyline</span>Canada</span>
+        </button>
+        <button class="panorama-card" type="button">
+          <img src="assets/architecture-panoramic/world-panorama-03.jpg" alt="Panoramic street-level architecture photograph of downtown Toronto and the CN Tower by Jordan Licon" width="1434" height="597" loading="lazy">
+          <span class="panorama-caption mono"><span>CN Tower District</span>Toronto</span>
+        </button>
+        <button class="panorama-card" type="button">
+          <img src="assets/architecture-panoramic/world-panorama-04.jpg" alt="Architectural photograph looking up at the CN Tower against a blue sky by Jordan Licon" width="1434" height="704" loading="lazy">
+          <span class="panorama-caption mono"><span>Vertical Landmark</span>CN Tower</span>
+        </button>
+        <button class="panorama-card" type="button">
+          <img src="assets/architecture-panoramic/world-panorama-05.jpg" alt="Wide urban architecture photograph of a bridge and waterfront skyline by Jordan Licon" width="1434" height="731" loading="lazy">
+          <span class="panorama-caption mono"><span>Waterfront Structure</span>Urban Span</span>
+        </button>
+        <button class="panorama-card" type="button">
+          <img src="assets/architecture-panoramic/world-panorama-07.jpg" alt="Panoramic resort architecture photograph at night by Jordan Licon" width="1434" height="516" loading="lazy">
+          <span class="panorama-caption mono"><span>Resort Architecture</span>Hospitality</span>
+        </button>
+        <button class="panorama-card" type="button">
+          <img src="assets/architecture-panoramic/world-panorama-10.jpg" alt="Panoramic urban architecture photograph of a city plaza and skyline by Jordan Licon" width="1434" height="561" loading="lazy">
+          <span class="panorama-caption mono"><span>Urban Plaza</span>City Architecture</span>
+        </button>
+        <button class="panorama-card" type="button">
+          <img src="assets/architecture-panoramic/world-panorama-12.jpg" alt="Panoramic entertainment district architecture photograph in Toronto by Jordan Licon" width="1434" height="391" loading="lazy">
+          <span class="panorama-caption mono"><span>Downtown Entertainment</span>Toronto</span>
+        </button>
       </div>
     </div>
   </section>
@@ -565,6 +650,28 @@ section{padding:clamp(70px,10vw,130px) 0}
       const match = categoryByTitle.find(([pattern]) => pattern.test(title));
       const key = match ? match[1] : 'commercial';
       project.dataset.category = key;
+      if (!project.querySelector('.project-meta')) {
+        const meta = {
+          civic: ['Sector', 'Civic / public realm', 'Deliverables', 'Exterior, context, scale'],
+          education: ['Sector', 'Education / campus', 'Deliverables', 'Campus, athletics, facilities'],
+          healthcare: ['Sector', 'Healthcare / medical', 'Deliverables', 'Interior clarity, trust, wayfinding'],
+          hospitality: ['Sector', 'Hospitality / experience', 'Deliverables', 'Atmosphere, interiors, guest flow'],
+          commercial: ['Sector', 'Commercial / financial', 'Deliverables', 'Leasing, web, brand presentation'],
+          residential: ['Sector', 'Residential / multifamily', 'Deliverables', 'Property story, exterior, motion']
+        }[key] || ['Sector', 'Commercial architecture', 'Deliverables', 'Portfolio-ready image set'];
+        const metaNode = document.createElement('div');
+        metaNode.className = 'project-meta mono';
+        metaNode.innerHTML = `
+          <div><strong>${meta[0]}</strong>${meta[1]}</div>
+          <div><strong>${meta[2]}</strong>${meta[3]}</div>
+        `;
+        const tags = project.querySelector('.project-tags');
+        if (tags) {
+          tags.parentNode.insertBefore(metaNode, tags);
+        } else {
+          project.querySelector('.project-copy')?.appendChild(metaNode);
+        }
+      }
       groups.get(key).push(project);
     });
 
@@ -696,6 +803,21 @@ section{padding:clamp(70px,10vw,130px) 0}
       });
       gallery.appendChild(strip);
     });
+
+    const panoramaCards = Array.from(document.querySelectorAll('.panorama-card'));
+    if (panoramaCards.length) {
+      const panoramaImages = panoramaCards.map(card => {
+        const img = card.querySelector('img');
+        return {
+          type: 'image',
+          src: img.currentSrc || img.src,
+          alt: img.alt
+        };
+      });
+      panoramaCards.forEach((card, index) => {
+        card.addEventListener('click', () => openGallery(panoramaImages, index));
+      });
+    }
 
     lightbox.querySelector('.lightbox-close')?.addEventListener('click', closeGallery);
     lightbox.querySelector('.lightbox-prev')?.addEventListener('click', () => stepGallery(-1));
