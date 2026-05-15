@@ -146,6 +146,10 @@ section{padding:clamp(70px,10vw,130px) 0}
 .thumb-strip img{width:100%;height:100%;object-fit:cover;display:block;filter:saturate(.88) brightness(.82);transition:filter .25s ease,transform .25s ease}
 .thumb-strip button:hover img{filter:saturate(1) brightness(1);transform:scale(1.04)}
 .video-gallery{display:block}
+.inline-video-card{position:relative;border:1px solid var(--accent);background:#090909;overflow:hidden}
+.inline-video-card video{width:100%;aspect-ratio:16/9;display:block;background:#000;object-fit:cover}
+.inline-video-card .video-meta-card{pointer-events:none}
+.inline-video-card video:focus{outline:1px solid var(--accent);outline-offset:4px}
 .video-feature{position:relative;width:100%;min-height:clamp(420px,54vw,720px);border:1px solid var(--accent);background:#090909;overflow:hidden;cursor:pointer;padding:0;text-align:left;color:var(--ink)}
 .video-feature img{width:100%;height:100%;min-height:inherit;display:block;object-fit:cover;filter:saturate(.9) brightness(.72);transition:transform .45s ease,filter .45s ease}
 .video-feature:hover img{transform:scale(1.018);filter:saturate(1) brightness(.84)}
@@ -445,6 +449,10 @@ section{padding:clamp(70px,10vw,130px) 0}
 	        </div>
       </article>
       <article class="project">
+        <div class="project-copy"><div class="project-kicker mono">04 / Civic Sports Facility Film</div><h2>CDA <em>Sportspark</em></h2><p>Aerial architecture and site-context film for a sports complex, showing field layout, circulation, surrounding development, and the scale of the public recreation environment from above.</p><div class="project-tags mono"><span>Sports Facility</span><span>Aerial Video</span><span>Site Context</span></div><div class="project-note">This entry uses the CDA Sportspark video from the legacy drone portfolio, saved locally for the architectural portfolio.</div></div>
+        <div class="gallery video-gallery"><div class="inline-video-card"><video class="hls-inline-video" controls playsinline preload="metadata" poster="assets/downloads/cda-sportspark-video-poster.jpg" data-src="assets/videos/cda-sportspark-hls/index.m3u8" aria-label="CDA Sportspark architectural drone video"></video><span class="video-meta-card"><span><strong>Sports facility aerial film</strong><span class="mono">CDA Sportspark / Drone video</span></span></span></div></div>
+      </article>
+      <article class="project">
         <div class="project-copy"><div class="project-kicker mono">04 / Residential Estate</div><h2>51 Sierra <em>Crest</em></h2><p>Luxury residential architecture photographed as a complete property story, combining exterior form, amenity spaces, night views, and aerial context.</p><div class="project-tags mono"><span>Residential</span><span>Estate</span><span>Aerial</span></div></div>
         <div class="gallery"><div class="photo large"><img src="assets/downloads/00f94f_0be1e8dbed1448ea8a94f3b6fccf4843-mv2.jpg" alt="51 Sierra Crest luxury residential architecture photography image 1 by Jordan Licon" width="1600" height="900" loading="lazy"></div><div class="photo"><img src="assets/downloads/00f94f_c9ea17e2149947b697204db685d59b62-mv2.jpg" alt="51 Sierra Crest indoor pool architectural photography image 2 by Jordan Licon" width="900" height="600" loading="lazy"></div><div class="photo"><img src="assets/downloads/00f94f_fa4bf586ad7b41e1a8561de22acb311a-mv2.jpg" alt="51 Sierra Crest aerial residential architecture photography image 3 by Jordan Licon" width="900" height="600" loading="lazy"></div></div>
       </article>
@@ -588,7 +596,22 @@ section{padding:clamp(70px,10vw,130px) 0}
   <div class="lightbox-caption mono"></div>
 </div>
 <script src="https://unpkg.com/three@0.160.0/build/three.min.js"></script>
+<script src="assets/js/hls.min.js"></script>
 <script>
+  document.querySelectorAll('.hls-inline-video').forEach(video => {
+    const src = video.dataset.src;
+    if (!src) return;
+    if (video.canPlayType('application/vnd.apple.mpegurl')) {
+      video.src = src;
+    } else if (window.Hls && Hls.isSupported()) {
+      const hls = new Hls();
+      hls.loadSource(src);
+      hls.attachMedia(video);
+    } else {
+      video.src = src;
+    }
+  });
+
   (function organizeArchitecturePortfolio() {
     const parent = document.querySelector('#architecture-work .wrap');
     if (!parent) return;
@@ -633,7 +656,7 @@ section{padding:clamp(70px,10vw,130px) 0}
     ];
 
     const categoryByTitle = [
-      [/brio|rescue mission|zoo/i, 'civic'],
+      [/brio|rescue mission|zoo|cda sportspark/i, 'civic'],
       [/franklin|jefferson|reyes|rio bravo|paul l\. foster/i, 'education'],
       [/las palmas|cosmetic surgery|physician/i, 'healthcare'],
       [/carino|pieology|pokeworks|speaking rock|club spa/i, 'hospitality'],
@@ -711,6 +734,17 @@ section{padding:clamp(70px,10vw,130px) 0}
 
     let activeImages = [];
     let activeIndex = 0;
+    let hlsInstance = null;
+
+    function resetVideo() {
+      if (hlsInstance) {
+        hlsInstance.destroy();
+        hlsInstance = null;
+      }
+      lightboxVideo.pause();
+      lightboxVideo.removeAttribute('src');
+      lightboxVideo.load();
+    }
 
     function openGallery(images, index) {
       activeImages = images;
@@ -724,9 +758,7 @@ section{padding:clamp(70px,10vw,130px) 0}
       lightbox.classList.remove('open');
       document.body.style.overflow = '';
       lightboxImg.removeAttribute('src');
-      lightboxVideo.pause();
-      lightboxVideo.removeAttribute('src');
-      lightboxVideo.load();
+      resetVideo();
     }
 
     function updateLightbox() {
@@ -736,10 +768,19 @@ section{padding:clamp(70px,10vw,130px) 0}
         lightboxImg.hidden = true;
         lightboxVideo.hidden = false;
         lightboxVideo.poster = item.poster || '';
-        lightboxVideo.src = item.src;
+        resetVideo();
+        if (item.videoType === 'hls' && lightboxVideo.canPlayType('application/vnd.apple.mpegurl')) {
+          lightboxVideo.src = item.src;
+        } else if (item.videoType === 'hls' && window.Hls && Hls.isSupported()) {
+          hlsInstance = new Hls();
+          hlsInstance.loadSource(item.src);
+          hlsInstance.attachMedia(lightboxVideo);
+        } else {
+          lightboxVideo.src = item.src;
+        }
         lightboxVideo.load();
       } else {
-        lightboxVideo.pause();
+        resetVideo();
         lightboxVideo.hidden = true;
         lightboxImg.hidden = false;
         lightboxImg.src = item.src;
@@ -768,6 +809,7 @@ section{padding:clamp(70px,10vw,130px) 0}
         images.push({
           type: 'video',
           src: videoButton.dataset.videoSrc,
+          videoType: videoButton.dataset.videoType || 'mp4',
           poster,
           alt: videoButton.querySelector('img')?.alt || 'Architecture portfolio video'
         });
