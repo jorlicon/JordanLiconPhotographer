@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Jordan Licon Photography - Full Services Program Ad</title>
+<meta name="description" content="Full-page program advertisement for Jordan Licon Photography, featuring headshots, portraits, architecture, food, drone, brand productions, and cinematography in El Paso, Texas.">
+<style>
+  :root {
+    --ink: #f5efe5;
+    --soft: #cfc2af;
+    --dim: #8f8374;
+    --black: #080706;
+    --charcoal: #14110f;
+    --gold: #c6a15a;
+    --gold-soft: #ead0a1;
+    --line: rgba(245, 239, 229, 0.18);
+    --line-gold: rgba(198, 161, 90, 0.48);
+  }
+
+  * { box-sizing: border-box; }
+
+  html,
+  body {
+    margin: 0;
+    min-height: 100%;
+    background: #d8d6d1;
+  }
+
+  body {
+    display: grid;
+    place-items: center;
+    padding: 24px;
+    color: var(--ink);
+    font-family: Arial, Helvetica, sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .ad-page {
+    position: relative;
+    width: min(8.5in, calc(100vw - 32px));
+    aspect-ratio: 8.5 / 11;
+    overflow: hidden;
+    background:
+      radial-gradient(circle at 80% 6%, rgba(198, 161, 90, 0.2), transparent 25%),
+      linear-gradient(150deg, rgba(24, 20, 16, 0.96), rgba(5, 5, 5, 0.99) 60%),
+      var(--black);
+    box-shadow: 0 22px 80px rgba(0, 0, 0, 0.3);
+  }
+
+  .ad-page::before {
+    content: "";
+    position: absolute;
+    inset: 0.24in;
+    z-index: 6;
+    border: 1px solid var(--line-gold);
+    pointer-events: none;
+  }
+
+  .ad-page::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+    background:
+      linear-gradient(90deg, rgba(255,255,255,0.034) 1px, transparent 1px),
+      linear-gradient(0deg, rgba(255,255,255,0.024) 1px, transparent 1px);
+    background-size: 46px 46px;
+    opacity: 0.26;
+    pointer-events: none;
+  }
+
+  .hero {
+    position: absolute;
+    inset: 0 0 auto;
+    height: 48%;
+    z-index: 1;
+    display: grid;
+    grid-template-columns: 1fr 0.72fr;
+  }
+
+  .hero img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: saturate(0.98) contrast(1.05) brightness(0.78);
+  }
+
+  .hero img:first-child {
+    object-position: center 18%;
+  }
+
+  .hero img:last-child {
+    object-position: center;
+  }
+
+  .hero::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+      linear-gradient(180deg, rgba(8,7,6,0.08), rgba(8,7,6,0.16) 44%, rgba(8,7,6,0.98) 100%),
+      linear-gradient(90deg, rgba(8,7,6,0.58), rgba(8,7,6,0.15) 58%, rgba(8,7,6,0.7));
+  }
+
+  .content {
+    position: relative;
+    z-index: 3;
+    min-height: 100%;
+    padding: 0.52in 0.58in 0.44in;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+  }
+
+  .topline {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 0.28in;
+    color: var(--gold-soft);
+    font-size: 0.105in;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+  }
+
+  .mark {
+    width: 2.58in;
+    height: auto;
+    filter: brightness(1.42) contrast(0.9);
+  }
+
+  .topline span {
+    padding-top: 0.06in;
+    text-align: right;
+  }
+
+  .main-message {
+    align-self: end;
+    max-width: 6.15in;
+    margin-bottom: 0.22in;
+  }
+
+  .eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.12in;
+    margin-bottom: 0.16in;
+    color: var(--gold-soft);
+    font-size: 0.108in;
+    letter-spacing: 0.24em;
+    text-transform: uppercase;
+  }
+
+  .eyebrow::before {
+    content: "";
+    width: 0.58in;
+    height: 1px;
+    background: var(--gold);
+  }
+
+  h1,
+  h2,
+  h3,
+  .contact strong {
+    font-family: Georgia, "Times New Roman", serif;
+    font-weight: 400;
+  }
+
+  h1 {
+    margin: 0;
+    max-width: 6.05in;
+    font-size: 0.58in;
+    line-height: 0.96;
+    letter-spacing: -0.035em;
+  }
+
+  h1 em {
+    color: var(--gold-soft);
+    font-style: italic;
+  }
+
+  .subhead {
+    max-width: 5.35in;
+    margin: 0.19in 0 0;
+    color: var(--soft);
+    font-size: 0.16in;
+    line-height: 1.45;
+  }
+
+  .body-grid {
+    align-self: end;
+    display: grid;
+    grid-template-columns: 1.03fr 0.58fr;
+    gap: 0.2in;
+    align-items: start;
+  }
+
+  .panel,
+  .contact-card {
+    border: 1px solid var(--line);
+    background: rgba(10, 9, 8, 0.78);
+    backdrop-filter: blur(10px);
+  }
+
+  .panel {
+    padding: 0.24in 0.26in;
+  }
+
+  .label {
+    margin-bottom: 0.1in;
+    color: var(--gold-soft);
+    font-size: 0.1in;
+    letter-spacing: 0.24em;
+    text-transform: uppercase;
+  }
+
+  .panel h2 {
+    margin: 0;
+    font-size: 0.315in;
+    line-height: 1.03;
+  }
+
+  .panel h2 span {
+    color: var(--gold-soft);
+  }
+
+  .services {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.09in;
+    margin-top: 0.18in;
+  }
+
+  .service {
+    min-height: 0.72in;
+    padding: 0.105in;
+    border: 1px solid rgba(198, 161, 90, 0.24);
+    color: var(--soft);
+    font-size: 0.096in;
+    line-height: 1.34;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+
+  .service strong {
+    display: block;
+    margin-bottom: 0.035in;
+    color: var(--ink);
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 0.155in;
+    font-weight: 400;
+    line-height: 1.02;
+    letter-spacing: 0;
+    text-transform: none;
+  }
+
+  .proof-line {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 0.16in;
+    align-items: center;
+    margin-top: 0.18in;
+    padding-top: 0.15in;
+    border-top: 1px solid var(--line);
+    color: var(--soft);
+    font-size: 0.112in;
+    line-height: 1.42;
+  }
+
+  .proof-line b {
+    color: var(--ink);
+  }
+
+  .proof-tag {
+    color: var(--gold-soft);
+    font-size: 0.096in;
+    letter-spacing: 0.16em;
+    text-align: right;
+    text-transform: uppercase;
+  }
+
+  .contact-card {
+    padding: 0.18in;
+    display: grid;
+    gap: 0.12in;
+  }
+
+  .mini-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.08in;
+  }
+
+  .mini-grid img {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    border: 1px solid rgba(198, 161, 90, 0.32);
+    filter: saturate(0.98) contrast(1.03);
+  }
+
+  .mini-grid img:nth-child(1) {
+    object-position: 52% 18%;
+  }
+
+  .mini-grid img:nth-child(2) {
+    object-position: center;
+  }
+
+  .contact {
+    color: var(--soft);
+    font-size: 0.106in;
+    line-height: 1.42;
+  }
+
+  .contact strong {
+    display: block;
+    margin-bottom: 0.075in;
+    color: var(--ink);
+    font-size: 0.19in;
+    line-height: 1.05;
+  }
+
+  .contact a {
+    color: var(--gold-soft);
+    text-decoration: none;
+  }
+
+  .qr-row {
+    display: grid;
+    grid-template-columns: 0.72in 1fr;
+    gap: 0.1in;
+    align-items: center;
+    margin-top: 0.11in;
+    padding: 0.095in;
+    border: 1px solid rgba(198, 161, 90, 0.3);
+    background: rgba(255, 255, 255, 0.035);
+  }
+
+  .qr-row img {
+    width: 0.72in;
+    height: 0.72in;
+    padding: 0.045in;
+    background: #fff;
+  }
+
+  .qr-row span {
+    display: block;
+    color: var(--soft);
+    font-size: 0.094in;
+    line-height: 1.32;
+  }
+
+  .offer-note {
+    margin-top: 0.1in;
+    padding-top: 0.1in;
+    border-top: 1px solid var(--line);
+    color: var(--dim);
+    font-size: 0.086in;
+    line-height: 1.36;
+  }
+
+  .offer-note b {
+    color: var(--gold-soft);
+  }
+
+  .footer {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 0.2in;
+    align-items: end;
+    margin-top: 0.17in;
+    padding-top: 0.12in;
+    border-top: 1px solid var(--line);
+    color: var(--dim);
+    font-size: 0.092in;
+    letter-spacing: 0.16em;
+    line-height: 1.35;
+    text-transform: uppercase;
+  }
+
+  .footer span:last-child {
+    color: var(--gold-soft);
+    text-align: right;
+  }
+
+  body.export {
+    padding: 0;
+    background: #000;
+  }
+
+  body.export .ad-page {
+    width: 100vw;
+    height: 100vh;
+    box-shadow: none;
+  }
+
+  @media print {
+    @page { size: 8.5in 11in; margin: 0; }
+    html,
+    body {
+      width: 8.5in;
+      height: 11in;
+      padding: 0;
+      background: #000;
+    }
+    .ad-page {
+      width: 8.5in;
+      height: 11in;
+      box-shadow: none;
+    }
+  }
+</style>
+<script>
+  if (new URLSearchParams(window.location.search).has("export")) {
+    document.documentElement.style.background = "#000";
+    document.addEventListener("DOMContentLoaded", () => document.body.classList.add("export"));
+  }
+</script>
+</head>
+<body>
+  <article class="ad-page" aria-label="Jordan Licon Photography full services advertisement">
+    <div class="hero" aria-hidden="true">
+      <img src="assets/forms/miss-sun-city-usa-6488.jpg" alt="">
+      <img src="assets/optimized/architecture-ai-service-card-1200.jpg" alt="">
+    </div>
+
+    <div class="content">
+      <header class="topline">
+        <img class="mark" src="assets/downloads/Jordan-Licon-Photography-Logo-2.png" alt="Jordan Licon Photography">
+        <span>El Paso, Texas<br>Commercial Studio</span>
+      </header>
+
+      <section class="main-message">
+        <div class="eyebrow">Photography &amp; Cinematography</div>
+        <h1>Images built for <em>presence, trust,</em> and commercial use.</h1>
+        <p class="subhead">A full-service visual studio for leaders, brands, architects, restaurants, agencies, titleholders, and organizations that need polished images with purpose.</p>
+      </section>
+
+      <section class="body-grid">
+        <div class="panel">
+          <div class="label">Studio Services</div>
+          <h2>From personal portraits to full commercial productions. <span>One visual standard.</span></h2>
+
+          <div class="services">
+            <div class="service"><strong>Headshots</strong>Executive, actor, pageant, team, and personal brand portraits</div>
+            <div class="service"><strong>Portrait &amp; Fashion</strong>Editorial lighting, talent direction, campaign-ready imagery</div>
+            <div class="service"><strong>Architecture</strong>Interiors, exteriors, hospitality, real estate, and design portfolios</div>
+            <div class="service"><strong>Food &amp; Hospitality</strong>Restaurant, menu, chef, dish, and brand storytelling</div>
+            <div class="service"><strong>Drone &amp; Mapping</strong>Aerial photography, construction progress, reports, and mapping</div>
+            <div class="service"><strong>Cinematography</strong>Commercial motion, short films, interviews, and production support</div>
+          </div>
+
+          <div class="proof-line">
+            <div><b>Selected experience:</b> The CW, Food Network, National Geographic, Federal Reserve Bank of Dallas, Perkins&amp;Will, UCLA, and regional editorial publications.</div>
+            <div class="proof-tag">Commercial<br>Editorial<br>Institutional</div>
+          </div>
+        </div>
+
+        <aside class="contact-card">
+          <div class="mini-grid">
+            <img src="assets/downloads/jordan-licon-commercial-photographer-headshot.jpeg" alt="Executive headshot by Jordan Licon Photography">
+            <img src="assets/food/display/live-food-37.jpg" alt="Food photography by Jordan Licon Photography">
+            <img src="assets/optimized/commercial-brand-ai-service-card-1200.jpg" alt="Commercial brand production preview">
+            <img src="assets/drone/drone-01.jpg" alt="Drone photography portfolio preview">
+          </div>
+
+          <div class="contact">
+            <strong>Start with the right image.</strong>
+            <a href="https://jordan-licon-photography.bloom.io/Professional-Headshot">Book Professional Headshots</a><br>
+            <a href="mailto:info@jordanliconphotography.com">info@jordanliconphotography.com</a><br>
+            <a href="tel:+19152266037">915.226.6037</a><br>
+            @jordanliconphotography
+
+            <div class="qr-row">
+              <img src="assets/forms/bloom-headshot-booking-qr.png" alt="QR code for Jordan Licon Photography headshot booking">
+              <span>Scan to book a Professional Headshot session or begin your inquiry by email.</span>
+            </div>
+
+            <div class="offer-note"><b>Program offer:</b> mention this ad for 10% off a new studio headshot session. Commercial projects quoted by scope.</div>
+          </div>
+        </aside>
+      </section>
+
+      <footer class="footer">
+        <span>Studio at the El Paso Railyard<br>Photography, Drone &amp; Motion</span>
+        <span>JordanLiconPhotography.com</span>
+      </footer>
+    </div>
+  </article>
+</body>
+</html>

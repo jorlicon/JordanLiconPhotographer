@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Jordan Licon Photography - Miss Sun City USA Program Book Ad</title>
+<meta name="description" content="Full-page Miss Sun City USA program book advertisement for Jordan Licon Photography, pageant headshots, actor headshots, and personal branding portraits in El Paso, Texas.">
+<style>
+  :root {
+    --ink: #f5efe5;
+    --soft: #cfc2af;
+    --dim: #8f8374;
+    --black: #080706;
+    --charcoal: #14110f;
+    --charcoal-2: #1d1915;
+    --gold: #c6a15a;
+    --gold-soft: #ead0a1;
+    --line: rgba(245, 239, 229, 0.18);
+    --line-gold: rgba(198, 161, 90, 0.48);
+  }
+
+  * { box-sizing: border-box; }
+
+  html,
+  body {
+    margin: 0;
+    min-height: 100%;
+    background: #d8d6d1;
+  }
+
+  body {
+    display: grid;
+    place-items: center;
+    padding: 24px;
+    color: var(--ink);
+    font-family: Arial, Helvetica, sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .ad-page {
+    position: relative;
+    width: min(8.5in, calc(100vw - 32px));
+    aspect-ratio: 8.5 / 11;
+    overflow: hidden;
+    background:
+      radial-gradient(circle at 78% 10%, rgba(198, 161, 90, 0.18), transparent 26%),
+      linear-gradient(150deg, rgba(22, 18, 15, 0.96), rgba(5, 5, 5, 0.99) 62%),
+      var(--black);
+    box-shadow: 0 22px 80px rgba(0, 0, 0, 0.3);
+  }
+
+  .ad-page::before {
+    content: "";
+    position: absolute;
+    inset: 0.24in;
+    z-index: 5;
+    border: 1px solid var(--line-gold);
+    pointer-events: none;
+  }
+
+  .ad-page::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+    background:
+      linear-gradient(90deg, rgba(255,255,255,0.035) 1px, transparent 1px),
+      linear-gradient(0deg, rgba(255,255,255,0.026) 1px, transparent 1px);
+    background-size: 46px 46px;
+    opacity: 0.24;
+    pointer-events: none;
+  }
+
+  .hero-photo {
+    position: absolute;
+    inset: 0 0 auto;
+    height: 53%;
+    z-index: 1;
+  }
+
+  .hero-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 16%;
+    filter: saturate(1.06) contrast(1.04) brightness(0.82);
+  }
+
+  .hero-photo::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+      linear-gradient(180deg, rgba(8,7,6,0.04), rgba(8,7,6,0.18) 42%, rgba(8,7,6,0.96) 100%),
+      linear-gradient(90deg, rgba(8,7,6,0.82), rgba(8,7,6,0.2) 56%, rgba(8,7,6,0.52));
+  }
+
+  .content {
+    position: relative;
+    z-index: 3;
+    min-height: 100%;
+    padding: 0.52in 0.58in 0.44in;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+  }
+
+  .topline {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 0.28in;
+    color: var(--gold-soft);
+    font-size: 0.105in;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+  }
+
+  .mark {
+    width: 2.58in;
+    height: auto;
+    filter: brightness(1.42) contrast(0.9);
+  }
+
+  .topline span {
+    padding-top: 0.06in;
+    text-align: right;
+  }
+
+  .main-message {
+    align-self: end;
+    max-width: 5.8in;
+    margin-bottom: 0.24in;
+  }
+
+  .eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.12in;
+    margin-bottom: 0.16in;
+    color: var(--gold-soft);
+    font-size: 0.112in;
+    letter-spacing: 0.24em;
+    text-transform: uppercase;
+  }
+
+  .eyebrow::before {
+    content: "";
+    width: 0.58in;
+    height: 1px;
+    background: var(--gold);
+  }
+
+  h1,
+  h2,
+  .price,
+  .contact strong {
+    font-family: Georgia, "Times New Roman", serif;
+    font-weight: 400;
+  }
+
+  h1 {
+    margin: 0;
+    max-width: 5.65in;
+    font-size: 0.61in;
+    line-height: 0.96;
+    letter-spacing: -0.035em;
+  }
+
+  h1 em {
+    color: var(--gold-soft);
+    font-style: italic;
+  }
+
+  .subhead {
+    max-width: 4.9in;
+    margin: 0.2in 0 0;
+    color: var(--soft);
+    font-size: 0.166in;
+    line-height: 1.45;
+  }
+
+  .body-grid {
+    align-self: end;
+    display: grid;
+    grid-template-columns: 1.03fr 0.62fr;
+    gap: 0.2in;
+    align-items: start;
+  }
+
+  .offer,
+  .booking {
+    border: 1px solid var(--line);
+    background: rgba(10, 9, 8, 0.78);
+    backdrop-filter: blur(10px);
+  }
+
+  .left-stack {
+    display: grid;
+    gap: 0.14in;
+  }
+
+  .offer {
+    padding: 0.26in 0.28in;
+  }
+
+  .label {
+    margin-bottom: 0.1in;
+    color: var(--gold-soft);
+    font-size: 0.102in;
+    letter-spacing: 0.24em;
+    text-transform: uppercase;
+  }
+
+  .offer h2 {
+    margin: 0;
+    font-size: 0.325in;
+    line-height: 1.03;
+  }
+
+  .offer h2 span {
+    color: var(--gold-soft);
+  }
+
+  .service-strip {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.08in;
+    margin-top: 0.18in;
+  }
+
+  .service {
+    min-height: 0.67in;
+    padding: 0.1in;
+    border: 1px solid rgba(198, 161, 90, 0.26);
+    color: var(--soft);
+    font-size: 0.096in;
+    line-height: 1.32;
+    letter-spacing: 0.11em;
+    text-transform: uppercase;
+  }
+
+  .service strong {
+    display: block;
+    margin-bottom: 0.035in;
+    color: var(--ink);
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 0.158in;
+    font-weight: 400;
+    letter-spacing: 0;
+    line-height: 1;
+    text-transform: none;
+  }
+
+  .session-line {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: 0.16in;
+    align-items: center;
+    margin-top: 0.19in;
+    padding-top: 0.17in;
+    border-top: 1px solid var(--line);
+  }
+
+  .session-line p {
+    margin: 0;
+    color: var(--soft);
+    font-size: 0.128in;
+    line-height: 1.42;
+  }
+
+  .price {
+    color: var(--gold-soft);
+    font-size: 0.36in;
+    line-height: 1;
+    letter-spacing: -0.04em;
+  }
+
+  .bonus {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 0.12in;
+    align-items: center;
+    margin-top: 0.16in;
+    padding: 0.13in 0.15in;
+    border: 1px solid rgba(198, 161, 90, 0.42);
+    background: rgba(198, 161, 90, 0.08);
+  }
+
+  .bonus-badge {
+    display: grid;
+    place-items: center;
+    width: 0.72in;
+    height: 0.72in;
+    border: 1px solid var(--gold);
+    color: var(--gold-soft);
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 0.23in;
+    line-height: 0.9;
+    text-align: center;
+  }
+
+  .bonus p {
+    margin: 0;
+    color: var(--soft);
+    font-size: 0.116in;
+    line-height: 1.38;
+  }
+
+  .bonus b {
+    color: var(--ink);
+  }
+
+  .ad-note {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.16in;
+    padding: 0.18in 0.2in;
+    border: 1px solid var(--line);
+    background: rgba(10, 9, 8, 0.56);
+  }
+
+  .ad-note h3 {
+    margin: 0 0 0.07in;
+    color: var(--ink);
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 0.18in;
+    font-weight: 400;
+    line-height: 1.08;
+  }
+
+  .ad-note p {
+    margin: 0;
+    color: var(--soft);
+    font-size: 0.104in;
+    line-height: 1.42;
+  }
+
+  .booking {
+    padding: 0.18in;
+    display: grid;
+    align-content: space-between;
+    gap: 0.12in;
+  }
+
+  .portrait {
+    aspect-ratio: 1 / 1;
+    border: 1px solid rgba(198, 161, 90, 0.34);
+    overflow: hidden;
+    background: var(--charcoal-2);
+  }
+
+  .portrait img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 20%;
+    filter: saturate(1.04) contrast(1.03);
+  }
+
+  .contact {
+    color: var(--soft);
+    font-size: 0.108in;
+    line-height: 1.42;
+  }
+
+  .contact strong {
+    display: block;
+    margin-bottom: 0.075in;
+    color: var(--ink);
+    font-size: 0.19in;
+    line-height: 1.05;
+  }
+
+  .contact a {
+    color: var(--gold-soft);
+    text-decoration: none;
+  }
+
+  .qr-row {
+    display: grid;
+    grid-template-columns: 0.74in 1fr;
+    gap: 0.1in;
+    align-items: center;
+    margin-top: 0.11in;
+    padding: 0.095in;
+    border: 1px solid rgba(198, 161, 90, 0.3);
+    background: rgba(255, 255, 255, 0.035);
+  }
+
+  .qr-row img {
+    width: 0.74in;
+    height: 0.74in;
+    padding: 0.045in;
+    background: #fff;
+  }
+
+  .qr-row span {
+    display: block;
+    color: var(--soft);
+    font-size: 0.096in;
+    line-height: 1.32;
+  }
+
+  .fine-print {
+    display: block;
+    margin-top: 0.075in;
+    color: var(--dim);
+    font-size: 0.078in;
+    line-height: 1.35;
+  }
+
+  .footer {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 0.2in;
+    align-items: end;
+    margin-top: 0.17in;
+    padding-top: 0.12in;
+    border-top: 1px solid var(--line);
+    color: var(--dim);
+    font-size: 0.092in;
+    letter-spacing: 0.16em;
+    line-height: 1.35;
+    text-transform: uppercase;
+  }
+
+  .footer span:last-child {
+    color: var(--gold-soft);
+    text-align: right;
+  }
+
+  body.export {
+    padding: 0;
+    background: #000;
+  }
+
+  body.export .ad-page {
+    width: 100vw;
+    height: 100vh;
+    box-shadow: none;
+  }
+
+  @media print {
+    @page { size: 8.5in 11in; margin: 0; }
+    html,
+    body {
+      width: 8.5in;
+      height: 11in;
+      padding: 0;
+      background: #000;
+    }
+    .ad-page {
+      width: 8.5in;
+      height: 11in;
+      box-shadow: none;
+    }
+  }
+</style>
+<script>
+  if (new URLSearchParams(window.location.search).has("export")) {
+    document.documentElement.style.background = "#000";
+    document.addEventListener("DOMContentLoaded", () => document.body.classList.add("export"));
+  }
+</script>
+</head>
+<body>
+  <article class="ad-page" aria-label="Jordan Licon Photography Miss Sun City USA program book advertisement">
+    <div class="hero-photo">
+      <img src="assets/forms/miss-sun-city-usa-6488.jpg" alt="Miss Sun City USA titleholders photographed by Jordan Licon Photography">
+    </div>
+
+    <div class="content">
+      <header class="topline">
+        <img class="mark" src="assets/downloads/Jordan-Licon-Photography-Logo-2.png" alt="Jordan Licon Photography">
+        <span>El Paso, Texas<br>Private Studio</span>
+      </header>
+
+      <section class="main-message">
+        <div class="eyebrow">Pageant, Actor &amp; Personal Brand Headshots</div>
+        <h1>Look like the woman you are <em>becoming.</em></h1>
+        <p class="subhead">Cinematic headshots and editorial portraits for titleholders, actors, entrepreneurs, and leaders who need a portrait that feels polished, confident, and unmistakably professional.</p>
+      </section>
+
+      <section class="body-grid">
+        <div class="left-stack">
+          <div class="offer">
+            <div class="label">Professional Headshot Session</div>
+            <h2>Controlled light. Confident direction. <span>Magazine-ready finish.</span></h2>
+
+            <div class="service-strip">
+              <div class="service"><strong>Pageant</strong>Queen portraits, comp cards, appearance images</div>
+              <div class="service"><strong>Actor</strong>Theatrical, commercial, and casting headshots</div>
+              <div class="service"><strong>Brand</strong>Executive portraits and personal branding</div>
+            </div>
+
+            <div class="session-line">
+              <p>Studio session with guided posing, expression coaching, up to three outfits, and one fully retouched final image. Additional finalized headshots are available.</p>
+              <div class="price">$350</div>
+            </div>
+
+            <div class="bonus">
+              <div class="bonus-badge">10%<br>off</div>
+              <p><b>Show this ad or mention SUN CITY 10</b> when booking to receive 10% off your studio headshot session.</p>
+            </div>
+          </div>
+
+          <div class="ad-note">
+            <div>
+              <h3>Designed for pageant season.</h3>
+              <p>Use your portraits for program books, sponsor packets, appearances, social announcements, and casting profiles.</p>
+            </div>
+            <div>
+              <h3>Direction included.</h3>
+              <p>You will be coached through expression, posture, wardrobe changes, and image selection so the final portrait feels natural and polished.</p>
+            </div>
+          </div>
+        </div>
+
+        <aside class="booking">
+          <div class="portrait">
+            <img src="assets/forms/miss-sun-city-client-headshot-6333.jpg" alt="Pageant headshot by Jordan Licon Photography">
+          </div>
+
+          <div class="contact">
+            <strong>Reserve your session</strong>
+            <a href="https://jordan-licon-photography.bloom.io/Professional-Headshot">jordan-licon-photography.bloom.io</a><br>
+            <a href="mailto:info@jordanliconphotography.com">info@jordanliconphotography.com</a><br>
+            <a href="tel:+19152266037">915.226.6037</a><br>
+            @jordanliconphotography
+
+            <div class="qr-row">
+              <img src="assets/forms/bloom-headshot-booking-qr.png" alt="QR code for Jordan Licon Photography headshot booking">
+              <span>Scan to view availability and book the Professional Headshot session.</span>
+            </div>
+
+            <span class="fine-print">Offer valid for new studio bookings only. Cannot be combined with other offers. Subject to studio availability.</span>
+          </div>
+        </aside>
+      </section>
+
+      <footer class="footer">
+        <span>Studio at the El Paso Railyard<br>Photography &amp; Cinematography</span>
+        <span>Miss Sun City USA Program Feature</span>
+      </footer>
+    </div>
+  </article>
+</body>
+</html>
