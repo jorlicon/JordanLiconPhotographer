@@ -1,4 +1,17 @@
 User-agent: *
 Allow: /
+Disallow: /backups/
+Disallow: /wix-export/
+Disallow: /exports/
+Disallow: /index-mimic.html
+Disallow: /index-readability-preview.html
+Disallow: /website-style-options.html
+Disallow: /website-style-options-v2.html
+Disallow: /website-style-options-dark-luxury.html
+Disallow: /jordan-licon-business-ad.html
+Disallow: /jordan-licon-premium-business-ad.html
+Disallow: /jordan-licon-services-program-ad.html
+Disallow: /miss-sun-city-jordan-licon-ad.html
+Disallow: /miss-sun-city-program-book-ad-page.html
 
 Sitemap: https://www.jordanliconphotography.com/sitemap.xml

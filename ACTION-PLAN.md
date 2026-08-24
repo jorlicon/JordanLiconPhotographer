@@ -1,51 +1,28 @@
-# SEO Action Plan - Jordan Licon Photography
+# SEO Action Plan
 
-## Completed Local Fixes
+Date: 2026-08-24
 
-1. Removed the crawlable truncated backup page by renaming `index.truncated-2026-05-06.html` to `index.truncated-2026-05-06.html.bak`.
-2. Converted all canonical tags to absolute production URLs.
-3. Added or repaired meta descriptions on every crawlable page.
-4. Shortened long titles and long descriptions into crawler-friendly ranges.
-5. Improved the blog index title for stronger topical relevance.
-6. Added BreadcrumbList schema to all crawlable pages.
-7. Added missing BlogPosting schema to article pages.
-8. Added ImageGallery schema to the portrait and fashion portfolio.
-9. Added Service schema to the drone services page.
-10. Converted the three home page Photography Services cards to semantic images with alt text and dimensions.
-11. Added default alt text to portfolio lightbox images.
-12. Rechecked local links, local assets, image alt text, metadata, canonicals, and JSON-LD.
+## Completed
 
-## Local Verification Result
+- Fixed broken internal links found in public pages.
+- Removed noindex/success content from the sitemap.
+- Updated canonical and metadata coverage for public pages.
+- Eliminated duplicate titles and descriptions across indexed pages.
+- Fixed image crawler issues from blank lightbox placeholders.
+- Added robots exclusions for non-public folders and mockup pages.
+- Refreshed sitemap modification dates.
 
-The local audit now returns clean results:
+## Verification
 
-- Missing descriptions: `0`
-- Bad description lengths: `0`
-- Missing H1s: `0`
-- Multiple H1s: `0`
-- Broken local links: `0`
-- Missing local assets: `0`
-- Images missing alt text: `0`
-- Bad canonicals: `0`
-- Bad title lengths: `0`
-- JSON-LD parse errors: `0`
-- Missing breadcrumbs: `0`
+Final local public-page crawl:
 
-## Deployment Checklist
+- `issue_count`: 0
+- `broken_count`: 0
+- Indexed public files checked: 41
 
-1. Deploy the updated local files when you are ready.
-2. Confirm `index.truncated-2026-05-06.html.bak` is not uploaded as a public HTML page.
-3. Submit the sitemap in Google Search Console after deployment.
-4. Run Google PageSpeed Insights for mobile and desktop.
-5. Validate representative pages in Schema Validator:
-   - Home page
-   - Headshot portfolio
-   - Food portfolio
-   - Portrait/fashion portfolio
-   - Drone services
-   - One blog post
-6. Run a live broken-link checker against the deployed domain.
+## Recommended Ongoing Maintenance
 
-## Live-Only Path to a True 100
-
-The intranet build is clean by local SEO checks. A true public 100 still depends on live deployment behavior: Core Web Vitals, compression, cache headers, server response codes, external links, and Google indexing. Those should be tested after you explicitly ask me to update/deploy GitHub.
+- Re-run SEMrush after GitHub Pages finishes rebuilding.
+- Keep backup/mockup/export files out of the sitemap and internal navigation.
+- When adding a new page, include a unique title, meta description, canonical URL, and sitemap entry.
+- When adding a gallery or lightbox, avoid empty `src=""` placeholders.
