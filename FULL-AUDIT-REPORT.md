@@ -1,62 +1,67 @@
-# SEMrush-Style SEO Audit Report
+# SEO Audit Report - Jordan Licon Photography
 
 Date: 2026-08-24
 
-Scope: public GitHub Pages site files for `www.jordanliconphotography.com`.
+## Scope
 
-## Result
+This audit covered the local static website files in:
 
-Public-page audit result: PASS
+`/Users/thecave/Documents/Codex/2026-04-29/here-is-the-website-i-am`
 
-- Public HTML pages checked: 41
-- Broken internal links: 0
-- Missing local image/video assets: 0
-- Empty image sources: 0
-- Missing image alt attributes: 0
-- Duplicate public page titles: 0
-- Duplicate public meta descriptions: 0
+The shared ChatGPT audit URL could not be read directly because it opened to the logged-out ChatGPT shell instead of the report content. I therefore ran a fresh local SEO pass using the installed SEO skill criteria and source-level checks.
+
+## Results
+
+Source-level SEO audit: 100/100 locally
+
+- Public HTML pages checked: 53
+- Missing titles: 0
+- Title length issues: 0
+- Duplicate title issues: 0
+- Missing meta descriptions: 0
+- Meta description length issues: 0
+- Duplicate meta description issues: 0
 - Missing canonicals: 0
-- Noindex pages in sitemap: 0
-- Invalid JSON-LD structured data: 0
-- Direct media-file links formatted as page links: 0
-- Indexed public pages below 350 words: 0
-- Public pages with only one incoming internal link: 0
+- Restricted FAQPage schema: 0
+- Missing image alt text: 0
+- Missing image width/height attributes: 0
+- Long alt text warnings: 0
+- Thin blog posts under 1,500 words: 0
 
-## SEMrush Issue Review
+Structured data validation: 100/100 locally
 
-The Chrome SEMrush campaign showed 5 Errors, 2 Warnings, and 4 Notices. Each item was reviewed against the current website files.
+- Schema warnings: 0
+- The homepage schema graph now includes an explicit root `@type` for stricter validator compatibility.
+- FAQPage schema was removed from pages where Google no longer supports FAQ rich results for this type of site. Visible FAQ content remains on-page for users.
 
-| SEMrush issue | Local fix/status |
-| --- | --- |
-| 28 structured data items are invalid | Fixed. JSON-LD now parses cleanly across public HTML files. |
-| 14 pages have duplicate meta descriptions | Fixed. Public indexed pages now have unique meta descriptions. |
-| 12 issues with duplicate title tags | Fixed. Public indexed pages now have unique title tags. |
-| 3 internal links are broken | Fixed. Local internal-link crawl reports 0 broken internal links. |
-| 1 page returned a 4XX status code | Fixed in site files. Legacy/internal bad references are gone and `success.html` is no longer in the sitemap. |
-| 6 pages have a low word count | Fixed. Thin public indexed service/policy pages were expanded with useful content. |
-| 3 pages have low text-HTML ratio | Improved. Drone, commercial, food, policy, and accessibility pages now include stronger crawlable copy. |
-| 38 resources are formatted as page link | Fixed. Direct image/video file anchors were removed or converted to buttons/lightbox controls. |
-| 16 pages have only one incoming internal link | Fixed locally. Blog related-link blocks and service cross-links were added. |
-| 6 orphaned pages in sitemaps | Fixed locally. Sitemap URLs now have internal paths from the blog, homepage, service pages, or footer navigation. |
-| 2 subdomains don't support HSTS | Platform-level. `_headers` includes HSTS, but GitHub Pages does not serve custom security headers for custom domains. Full resolution requires Cloudflare or another CDN/proxy that can set HSTS headers. |
+Internal link validation: 100/100 locally
 
-## Fixes Completed
+- HTML files checked: 52
+- Missing local files/assets: 0
+- Missing same-page anchors: 0
+- Missing cross-page anchors: 0
+- JavaScript-generated architecture and portrait category navigation now has crawl-safe static fallback targets plus enhanced smooth-scroll behavior for users.
 
-- Replaced broken legacy Wix/about links with current internal destination pages.
-- Corrected the recognition link in `credits.html`.
-- Shortened and clarified the architectural portfolio title and meta description.
-- Removed `success.html` from the sitemap because it is intentionally noindexed.
-- Updated sitemap `lastmod` values to `2026-08-24`.
-- Added crawler exclusions for backups, Wix exports, exported ad graphics, and private design mockups.
-- Marked private mockup/ad pages as `noindex, nofollow` where needed.
-- Added safe placeholder `src` values and descriptive alt text for hidden lightbox images.
-- Rewrote duplicate blog/page metadata so indexed articles have unique titles and descriptions.
-- Added related article links across blog posts.
-- Added internal links from the headshot service page to executive, actor, and corporate headshot pages.
-- Expanded accessibility, privacy, terms, drone, commercial, and food pages to remove thin-content warnings.
-- Converted embedded-video “Play” file links into in-page video controls.
-- Updated the contact-form success redirect to the official domain.
+## Fixes Implemented
 
-## Notes
+- Marked the Stitch source mirror as `noindex, nofollow` so it does not compete with the main homepage.
+- Removed unsupported `FAQPage` structured data blocks while preserving visible FAQ sections.
+- Expanded all blog posts that were below the local SEO depth threshold.
+- Improved several short meta descriptions.
+- Shortened overlong image alt text.
+- Added missing `width` and `height` attributes to images and lightbox placeholders.
+- Fixed a dynamic architecture gallery thumbnail template to include explicit image dimensions.
+- Updated category navigation links so static crawlers no longer see broken hash anchors.
+- Added JavaScript enhancement so category links still scroll to the intended generated sections after page load.
 
-The original SEMrush export was not provided in the chat, so this report uses a local SEMrush-style crawl against the current website files. The crawl intentionally excludes archived backups and private mockups because those are not part of the public indexed site.
+## Remaining Items That Require Live Measurement
+
+These cannot be guaranteed from static source files alone:
+
+- Core Web Vitals / Lighthouse performance score
+- Live indexability after Google recrawls the published site
+- HTTPS/HSTS behavior from the hosting layer
+- CDN cache headers and compression behavior
+- Third-party crawl reports from SEMrush after republishing
+
+Recommendation: after publishing, rerun SEMrush and PageSpeed Insights on `https://www.jordanliconphotography.com/`.

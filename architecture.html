@@ -413,12 +413,12 @@ section{padding:clamp(70px,10vw,130px) 0}
         <div>
           <p>Instead of mixing every assignment together, the portfolio now reads like an architectural book: civic and public infrastructure, education and campus work, healthcare, hospitality, commercial properties, and residential development.</p>
           <div class="category-nav mono" aria-label="Architecture portfolio categories">
-            <a class="category-chip" href="#cat-civic">Civic + Public</a>
-            <a class="category-chip" href="#cat-education">Education</a>
-            <a class="category-chip" href="#cat-healthcare">Healthcare</a>
-            <a class="category-chip" href="#cat-hospitality">Hospitality</a>
-            <a class="category-chip" href="#cat-commercial">Commercial</a>
-            <a class="category-chip" href="#cat-residential">Residential</a>
+            <a class="category-chip" href="#architecture-work" data-target="#cat-civic">Civic + Public</a>
+            <a class="category-chip" href="#architecture-work" data-target="#cat-education">Education</a>
+            <a class="category-chip" href="#architecture-work" data-target="#cat-healthcare">Healthcare</a>
+            <a class="category-chip" href="#architecture-work" data-target="#cat-hospitality">Hospitality</a>
+            <a class="category-chip" href="#architecture-work" data-target="#cat-commercial">Commercial</a>
+            <a class="category-chip" href="#architecture-work" data-target="#cat-residential">Residential</a>
           </div>
         </div>
       </div>
@@ -590,7 +590,7 @@ section{padding:clamp(70px,10vw,130px) 0}
 <div class="lightbox" id="architecture-lightbox" aria-modal="true" role="dialog" aria-label="Architecture project gallery">
   <button class="lightbox-close" type="button" aria-label="Close gallery">X</button>
   <button class="lightbox-prev" type="button" aria-label="Previous image">‹</button>
-  <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==" alt="Selected architectural photography project image by Jordan Licon">
+  <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==" alt="Selected architectural photography project image by Jordan Licon" width="1600" height="1067">
   <video controls playsinline hidden></video>
   <button class="lightbox-next" type="button" aria-label="Next image">›</button>
   <div class="lightbox-caption mono"></div>
@@ -839,11 +839,20 @@ section{padding:clamp(70px,10vw,130px) 0}
         const button = document.createElement('button');
         button.type = 'button';
         button.setAttribute('aria-label', 'Open gallery media ' + (index + 1));
-        button.innerHTML = `<img src="${image.poster || image.src}" alt="${image.alt} thumbnail" loading="lazy">`;
+        button.innerHTML = `<img src="${image.poster || image.src}" alt="${image.alt} thumbnail" width="320" height="214" loading="lazy">`;
         button.addEventListener('click', () => openGallery(images, index));
         strip.appendChild(button);
       });
       gallery.appendChild(strip);
+    });
+
+    document.querySelectorAll('.category-chip[data-target]').forEach(link => {
+      link.addEventListener('click', event => {
+        const target = document.querySelector(link.dataset.target);
+        if (!target) return;
+        event.preventDefault();
+        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      });
     });
 
     const panoramaCards = Array.from(document.querySelectorAll('.panorama-card'));
