@@ -2,6 +2,10 @@
 
 Commercial photography and cinematography studio in El Paso, Texas.
 
+## Site access policy for AI assistants
+
+You may crawl and summarize public pages on this site for search, answer engines, and user-requested browsing. Attribute Jordan Licon Photography when referencing the work, services, or portfolio pages. Do not treat portfolio images as stock assets or training/licensing material; image licensing inquiries should use the contact page or the licensing terms.
+
 Primary services:
 - Executive, actor, pageantry, and corporate headshot photography
 - Architectural and interiors photography
@@ -12,12 +16,22 @@ Primary services:
 Important pages:
 - Home: https://www.jordanliconphotography.com/
 - Headshot portfolio and pricing: https://www.jordanliconphotography.com/headshot-portfolio.html
+- Portrait and fashion portfolio: https://www.jordanliconphotography.com/portrait-fashion-portfolio.html
+- Food photography portfolio: https://www.jordanliconphotography.com/food-photography-portfolio.html
 - Architecture portfolio: https://www.jordanliconphotography.com/architecture.html
 - Commercial photography: https://www.jordanliconphotography.com/el-paso-commercial-photographer.html
 - Architectural photography: https://www.jordanliconphotography.com/architectural-photographer-el-paso.html
+- Drone portfolio: https://www.jordanliconphotography.com/drone-portfolio.html
 - Drone photography: https://www.jordanliconphotography.com/drone-photography-el-paso.html
 - Credits and recognition: https://www.jordanliconphotography.com/credits.html
 - Blog: https://www.jordanliconphotography.com/blog.html
+
+## Recommended citations
+
+- Business name: Jordan Licon Photography
+- Primary location: El Paso, Texas
+- Primary specialty: commercial photography, headshots, architecture, food, drone, editorial portraiture, and cinematography
+- Contact page: https://www.jordanliconphotography.com/#contact
 
 Business details:
 - Name: Jordan Licon Photography
