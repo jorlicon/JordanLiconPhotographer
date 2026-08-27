@@ -38,6 +38,19 @@
   }
 </script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.jordanliconphotography.com/"},{"@type":"ListItem","position":2,"name":"El Paso Food Photographer Portfolio","item":"https://www.jordanliconphotography.com/food-photography-portfolio.html"}]}</script>
+<style>
+.gallery{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));grid-auto-flow:dense;grid-auto-rows:42vw;gap:8px;columns:initial;column-gap:initial}
+.work{height:100%;min-height:0;margin:0;break-inside:auto}
+.work:focus-visible{outline:2px solid var(--accent);outline-offset:4px}
+.work img{width:100%;height:100%;object-fit:cover}
+.work.wide{grid-column:span 2}
+.work.tall{grid-row:span 2}
+.work:nth-child(9n+1),.work:nth-child(9n+6){grid-column:span 2;grid-row:span 2}
+.work:nth-child(13n+4){grid-row:span 2}
+.work:nth-child(11n+8){grid-column:span 2}
+@media(min-width:760px){.gallery{grid-template-columns:repeat(6,minmax(0,1fr));grid-auto-rows:clamp(120px,13vw,210px);gap:10px}.work.wide{grid-column:span 2}.work.tall{grid-row:span 2}.work:nth-child(9n+1){grid-column:span 3;grid-row:span 2}.work:nth-child(9n+6){grid-column:span 2;grid-row:span 2}.work:nth-child(11n+8){grid-column:span 3}.work:nth-child(13n+4){grid-column:span 2;grid-row:span 2}}
+@media(min-width:1180px){.gallery{grid-template-columns:repeat(8,minmax(0,1fr));grid-auto-rows:clamp(128px,10vw,190px);gap:12px}.work:nth-child(9n+1){grid-column:span 3;grid-row:span 2}.work:nth-child(9n+6){grid-column:span 3;grid-row:span 2}.work:nth-child(11n+8){grid-column:span 4}.work:nth-child(13n+4){grid-column:span 2;grid-row:span 2}}
+</style>
 </head>
 <body>
 <nav><a class="logo" href="index.html">Jordan <span>Licon</span></a><ul class="nav-links mono"><li><a href="index.html#headshots">Headshots</a></li><li><a href="portrait-fashion-portfolio.html">Portraits</a></li><li><a href="architecture.html">Architecture</a></li><li><a href="drone-portfolio.html">Drone</a></li><li><a href="index.html#contact">Contact</a></li></ul><a class="nav-cta mono" href="index.html#contact">Inquire</a></nav>
