@@ -158,6 +158,42 @@ em { color: var(--accent); font-style: italic; }
   margin-top: 8px;
   color: var(--accent);
 }
+.service-links {
+  padding: 0 0 clamp(52px, 7vw, 92px);
+}
+.service-links-inner {
+  display: grid;
+  gap: 16px;
+  padding-top: 28px;
+  border-top: 1px solid var(--line);
+}
+.service-links h2 {
+  font-family: "Fraunces", serif;
+  font-size: clamp(28px, 4vw, 44px);
+  font-weight: 300;
+  line-height: 1.05;
+}
+.service-links p {
+  max-width: 70ch;
+  color: var(--ink-dim);
+  font-size: 14px;
+}
+.service-links ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  list-style: none;
+}
+.service-links a {
+  display: inline-flex;
+  padding: 10px 12px;
+  border: 1px solid var(--line-strong);
+  color: var(--accent);
+  font-size: 10px;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+}
+.service-links a:hover { border-color: var(--accent); }
 @media (min-width: 860px) {
   .post-card { grid-template-columns: minmax(280px, .42fr) 1fr; }
   .post-image { min-height: 100%; aspect-ratio: auto; }
@@ -218,6 +254,24 @@ em { color: var(--accent); font-style: italic; }
         <article class="post-card"><div class="post-image"><img src="assets/downloads/00f94f_45e525d0c0d1493e99e8a14af5316dfa-mv2.png" alt="LinkedIn profile photo guide professional headshot blog cover image by Jordan Licon Photography" width="1000" height="563" loading="lazy"></div><div class="post-content"><div class="post-meta mono">Nov 1, 2025 - 4 min read</div><h2>LinkedIn Profile Photo Guide for Professional Headshots</h2><p>How to build a stronger LinkedIn presence with a headshot that feels credible, current, approachable, and consistent with the way clients and employers evaluate you online.</p><a class="post-link mono" href="post/linkedin-profile-photo-guide-professional-headshot.html">Read Article</a></div></article>
         <article class="post-card"><div class="post-image"><img src="assets/downloads/00f94f_074045ae66ed4d568558dc3137220b91-mv2.png" alt="Jordan Licon Photography: El Paso's Best blog cover image by Jordan Licon Photography" width="1000" height="563" loading="lazy"></div><div class="post-content"><div class="post-meta mono">Oct 27, 2025 - 4 min read</div><h2>Jordan Licon Photography: El Paso's Best</h2><p>Photography is more than just capturing moments; it’s about telling stories through images.</p><a class="post-link mono" href="post/exploring-jordan-licon-photography-in-el-paso.html">Read Article</a></div></article>
         <article class="post-card"><div class="post-image"><img src="assets/downloads/00f94f_aa750bbe56004f9a933e4c72dec126c3-mv2.png" alt="Corporate Headshot Photography Tips and Guide blog cover image by Jordan Licon Photography" width="1000" height="563" loading="lazy"></div><div class="post-content"><div class="post-meta mono">Oct 21, 2025 - 4 min read</div><h2>Corporate Headshot Photography Tips and Guide</h2><p>When it comes to making a strong first impression, your corporate headshot plays a crucial role.</p><a class="post-link mono" href="post/perfecting-your-corporate-headshot-photography.html">Read Article</a></div></article>
+      </div>
+    </div>
+  </section>
+  <section class="service-links" aria-labelledby="service-pathways-title">
+    <div class="wrap">
+      <div class="service-links-inner">
+        <div class="section-tag mono">Service Pathways</div>
+        <h2 id="service-pathways-title">Explore core photography services.</h2>
+        <p>These pages connect readers from the blog into Jordan Licon Photography's primary commercial, headshot, architecture, and aerial service areas.</p>
+        <ul>
+          <li><a href="el-paso-headshot-photographer.html">El Paso Headshots</a></li>
+          <li><a href="executive-headshots-el-paso.html">Executive Headshots</a></li>
+          <li><a href="actor-headshots-el-paso.html">Actor Headshots</a></li>
+          <li><a href="corporate-team-headshots-el-paso.html">Corporate Team Headshots</a></li>
+          <li><a href="el-paso-commercial-photographer.html">Commercial Photography</a></li>
+          <li><a href="architectural-photographer-el-paso.html">Architecture Photography</a></li>
+          <li><a href="drone-photography-el-paso.html">Drone Photography</a></li>
+        </ul>
       </div>
     </div>
   </section>

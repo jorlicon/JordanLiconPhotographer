@@ -1,0 +1,22 @@
+source_path,target_path,action,status_reason
+/,https://www.jordanliconphotography.com/,301_required_in_cloudflare,Consolidate non-www homepage into canonical www host
+/post/achieve-stunning-corporate-headshot-results-a-professional-headshot-guide,/post/achieve-stunning-corporate-headshot-results-a-professional-headshot-guide.html,301_required_in_cloudflare,Extensionless legacy blog URL has a current canonical article
+/post/perfecting-your-corporate-headshot-photography,/post/perfecting-your-corporate-headshot-photography.html,301_required_in_cloudflare,Extensionless legacy blog URL has a current canonical article
+/post/exploring-jordan-licon-photography-in-el-paso,/post/exploring-jordan-licon-photography-in-el-paso.html,301_required_in_cloudflare,Extensionless legacy blog URL has a current canonical article
+/post/mastering-photography-and-videography-for-impactful-visual-storytelling-techniques,/post/mastering-photography-and-videography-for-impactful-visual-storytelling-techniques-1.html,301_required_in_cloudflare,Legacy duplicate should consolidate to preferred visual storytelling article
+/post/professional-headshot-photography-complete-guide,/post/professional-headshot-photography-complete-guide.html,301_required_in_cloudflare,Extensionless legacy blog URL has a current canonical article
+/elpasophotographerblog,/blog.html,301_required_in_cloudflare,Legacy blog path should consolidate to current blog hub
+/the-club-spa,/architecture.html,301_required_in_cloudflare,Legacy architecture portfolio path should consolidate to architecture portfolio
+/reyes-elementary-school,/architecture.html,301_required_in_cloudflare,Legacy architecture portfolio path should consolidate to architecture portfolio
+/rescue-mission-of-el-paso,/architecture.html,301_required_in_cloudflare,Legacy architecture portfolio path should consolidate to architecture portfolio
+/santa-fe-place-aparments,/architecture.html,301_required_in_cloudflare,Legacy architecture portfolio path should consolidate to architecture portfolio
+/51sierracrest,/architecture.html,301_required_in_cloudflare,Legacy architecture portfolio path should consolidate to architecture portfolio
+/speaking-rock-casino,/architecture.html,301_required_in_cloudflare,Legacy architecture portfolio path should consolidate to architecture portfolio
+/brio,/food-photography-portfolio.html,301_required_in_cloudflare,Legacy restaurant portfolio path should consolidate to food portfolio
+/pokeworks,/food-photography-portfolio.html,301_required_in_cloudflare,Legacy restaurant portfolio path should consolidate to food portfolio
+/pieology-pizzeria,/food-photography-portfolio.html,301_required_in_cloudflare,Legacy restaurant portfolio path should consolidate to food portfolio
+/carinos,/food-photography-portfolio.html,301_required_in_cloudflare,Legacy restaurant portfolio path should consolidate to food portfolio
+/physician-s-v,/headshot-portfolio.html,301_required_in_cloudflare,Legacy headshot portfolio path should consolidate to headshot portfolio
+/el-paso-zoo-bird-show,,leave_404_or_410,No confirmed equivalent current public page
+/post/connect-with-a-professional-photographer-in-texas,,leave_404_or_410,No confirmed equivalent current public page
+/post/jordan-licon-a-creative-photographer-in-el-paso,,leave_404_or_410,No confirmed equivalent current public page
