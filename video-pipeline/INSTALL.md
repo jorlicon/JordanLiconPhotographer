@@ -13,6 +13,7 @@ they play. Install in this order — later stages depend on earlier ones.
 
 - macOS/Linux workstation with a GPU recommended for whisperX (CPU works, just slower)
 - Python 3.10+
+- Node.js 18+ (for Remotion, the caption/title renderer)
 - Git
 - ~15GB free disk (whisperX models + vendored repos)
 
@@ -42,7 +43,23 @@ whisperX gives word-level timestamps, which is what lets an agent decide
 "cut from word X to word Y" instead of guessing at second-level cut points.
 Used by `scripts/01_transcribe.py`.
 
-## 3. Vendored reference repos (optional, clone as needed)
+## 3. Caption/title rendering (required for nicer social clip typography)
+
+```bash
+# remotion-dev/remotion — renders the animated caption overlays used by
+# scripts/04_generate_social_clips.py. Lives in video-pipeline/remotion/
+# as its own small Node project (Remotion is a React/Node tool, separate
+# from the Python side).
+cd remotion
+npm install
+cd ..
+```
+
+If you'd rather skip Node entirely, pass `--captions ffmpeg` to
+`scripts/04_generate_social_clips.py` to burn in plain ffmpeg `drawtext`
+captions instead — no visual polish, but zero extra dependencies.
+
+## 4. Vendored reference repos (optional, clone as needed)
 
 These are pulled in as read-only references/inspiration for the agent
 scripts rather than hard runtime dependencies — they're research-stage
@@ -71,14 +88,15 @@ Do not run these as black-box services in production — they're a source
 of ideas/code to fold into `scripts/` and `agents/` deliberately, reviewed
 before use, same as any third-party dependency.
 
-## 4. Verify
+## 5. Verify
 
 ```bash
 ffmpeg -version
 python3 -c "import ffmpeg, whisperx; print('ok')"
+(cd remotion && npx remotion versions)
 ```
 
-## 5. Configure
+## 6. Configure
 
 Copy and edit the pipeline config:
 

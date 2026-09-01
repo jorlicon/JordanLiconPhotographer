@@ -6,3 +6,5 @@ output/
 config/pipeline.yaml
 __pycache__/
 *.pyc
+remotion/node_modules/
+remotion/.remotion/

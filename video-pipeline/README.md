@@ -13,7 +13,8 @@ raw footage ──► 1. transcribe ──► 2. agent: editorial decisions ─�
                  word-level          transcript + shot list,
                  timestamps)         proposes an edit plan as JSON)
                                                                    └──► 4. render social clips → vertical/captioned
-                                                                        (ffmpeg-python)          promo clips
+                                                                        (ffmpeg trim/crop +      promo clips
+                                                                         Remotion captions)
 ```
 
 ## Why this shape
@@ -45,6 +46,9 @@ video-pipeline/
   agents/
     finishing_agent.md        — system prompt/spec for the long-form cut agent
     promo_agent.md            — system prompt/spec for the social-clip agent
+  remotion/                   — Remotion project, renders animated captions
+    src/SocialClipCaptions.tsx  — the caption/title composition
+    src/Root.tsx                 — registers it, derives duration per clip
   vendor/                     — optional cloned reference repos (gitignored)
 ```
 
@@ -63,8 +67,11 @@ python scripts/02_plan_edit.py --transcript work/transcript.json --mode promo   
 # 3a. Render the long-form client deliverable
 python scripts/03_render_finish.py --input raw/shoot-2026-09-01.mp4 --edl work/edl.json --out output/final-cut.mp4
 
-# 3b. Render short vertical social clips with burned-in captions
+# 3b. Render short vertical social clips — ffmpeg trims/crops to 9:16,
+#     then Remotion renders the animated captions on top
 python scripts/04_generate_social_clips.py --input raw/shoot-2026-09-01.mp4 --edl work/edl_promo.json --out output/social/
+# Skip Remotion/Node entirely and burn in plain captions with ffmpeg instead:
+python scripts/04_generate_social_clips.py --input raw/shoot-2026-09-01.mp4 --edl work/edl_promo.json --out output/social/ --captions ffmpeg
 ```
 
 Every stage writes plain JSON/MP4 to disk, so you can stop after step 2,
@@ -79,6 +86,7 @@ reviewable artifact, never a black box.
 | Python filtergraph API | [kkroening/ffmpeg-python](https://github.com/kkroening/ffmpeg-python) | required, `pip install` |
 | Word-level transcription | [m-bain/whisperX](https://github.com/m-bain/whisperX) | required, `pip install` |
 | Editorial decision agent | Claude (this repo's own agent prompts) | `agents/*.md` |
+| Animated caption/title rendering | [remotion-dev/remotion](https://github.com/remotion-dev/remotion) | required for `--captions remotion` (the default); `remotion/` |
 | AI orchestration reference | [browser-use/video-use](https://github.com/browser-use/video-use), [HKUDS/VideoAgent](https://github.com/HKUDS/VideoAgent) | optional, vendored for ideas |
 | Timeline/templating reference | [diffusionstudio/editor](https://github.com/diffusionstudio/editor), [aorthey/video_manipulation](https://github.com/aorthey/video_manipulation) | optional, vendored for ideas |
 | Claude-workflow patterns | [digitalsamba/claude-code-video-toolkit](https://github.com/digitalsamba/claude-code-video-toolkit), [ComposioHQ/awesome-claude-skills](https://github.com/ComposioHQ/awesome-claude-skills) | optional, vendored for ideas |
@@ -87,8 +95,9 @@ See `INSTALL.md` for the full install order and rationale for each.
 
 ## Status
 
-This is a scaffold: the two agent specs and the four scripts are written
-and runnable end-to-end against the required deps (ffmpeg, ffmpeg-python,
-whisperX). The vendored reference repos are not wired in yet — they're
-there to crib specific techniques from as the pipeline matures, not
-required dependencies.
+This is a scaffold: the two agent specs, the four scripts, and the
+Remotion caption composition are written and runnable end-to-end against
+the required deps (ffmpeg, ffmpeg-python, whisperX, Remotion). The
+vendored reference repos are not wired in yet — they're there to crib
+specific techniques from as the pipeline matures, not required
+dependencies.
