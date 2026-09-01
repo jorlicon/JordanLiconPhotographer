@@ -11,11 +11,18 @@ they play. Install in this order — later stages depend on earlier ones.
 
 ## 0. Prerequisites
 
-- macOS/Linux workstation with a GPU recommended for whisperX (CPU works, just slower)
+- macOS/Linux workstation with a GPU — **required, not optional, for footage running
+  hours long**. whisperX at `large-v3`/`float16` needs ~10GB VRAM (a 3060 12GB,
+  4070, or better works; 6-8GB cards should use `--model medium` or CPU
+  `int8` instead). On GPU, transcription runs roughly 20-40x realtime, so an
+  hour of footage takes a few minutes; on CPU the same hour can take
+  well over an hour. NVIDIA/CUDA is what whisperX and ffmpeg's hardware
+  encoder (`h264_nvenc`, worth using for long exports) both target — Apple
+  Silicon works for lighter loads but isn't the CUDA path whisperX assumes.
 - Python 3.10+
 - Node.js 18+ (for Remotion, the caption/title renderer)
 - Git
-- ~15GB free disk (whisperX models + vendored repos)
+- ~15GB free disk (whisperX models + vendored repos), more for multi-hour raw footage
 
 ## 1. Core processing engine (required)
 
