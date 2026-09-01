@@ -36,6 +36,14 @@ python3 -m venv venv && source venv/bin/activate
 pip install -r requirements.txt   # installs kkroening/ffmpeg-python, whisperx, pyyaml, etc.
 ```
 
+On Debian/Ubuntu you may hit `Failed building wheel for antlr4-python3-runtime`
+(a whisperX → omegaconf dependency pinned to a version with no prebuilt
+wheel, which fails to build against modern setuptools). Fix:
+
+```bash
+SETUPTOOLS_USE_DISTUTILS=stdlib pip install -r requirements.txt
+```
+
 `kkroening/ffmpeg-python` gives us a Python filtergraph API instead of
 hand-built CLI strings — this is what `scripts/03_render_finish.py` and
 `scripts/04_generate_social_clips.py` build on.
