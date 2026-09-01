@@ -13,13 +13,16 @@ ffmpeg instead (no Node/npm required).
 """
 import argparse
 import json
+import shutil
 import subprocess
 import tempfile
+import uuid
 from pathlib import Path
 
 import ffmpeg
 
 REMOTION_DIR = Path(__file__).parent.parent / "remotion"
+REMOTION_PUBLIC_DIR = REMOTION_DIR / "public"
 
 
 def trim_and_crop(input_path: str, clip: dict, out_path: str, aspect_ratio: str) -> None:
@@ -45,30 +48,43 @@ def burn_captions_remotion(trimmed_path: str, clip: dict, out_path: str) -> None
         for c in clip.get("captions", [])
     ]
 
-    with tempfile.NamedTemporaryFile("w", suffix=".json", delete=False) as f:
-        json.dump(
-            {
-                "videoSrc": str(Path(trimmed_path).resolve()),
-                "durationInSeconds": duration,
-                "captions": captions,
-            },
-            f,
-        )
-        props_path = f.name
+    # Remotion only serves video assets it can resolve via staticFile(), which
+    # means the file has to live under remotion/public/ — an absolute path
+    # elsewhere on disk 404s against Remotion's own render server. Copy the
+    # ffmpeg-trimmed clip in under a unique name, pass just that name as the
+    # videoSrc prop, and clean it up once the render is done either way.
+    REMOTION_PUBLIC_DIR.mkdir(parents=True, exist_ok=True)
+    public_filename = f"clip-{uuid.uuid4().hex}.mp4"
+    public_path = REMOTION_PUBLIC_DIR / public_filename
+    shutil.copyfile(trimmed_path, public_path)
 
-    subprocess.run(
-        [
-            "npx",
-            "remotion",
-            "render",
-            "src/index.ts",
-            "SocialClipCaptions",
-            str(Path(out_path).resolve()),
-            f"--props={props_path}",
-        ],
-        cwd=REMOTION_DIR,
-        check=True,
-    )
+    try:
+        with tempfile.NamedTemporaryFile("w", suffix=".json", delete=False) as f:
+            json.dump(
+                {
+                    "videoSrc": public_filename,
+                    "durationInSeconds": duration,
+                    "captions": captions,
+                },
+                f,
+            )
+            props_path = f.name
+
+        subprocess.run(
+            [
+                "npx",
+                "remotion",
+                "render",
+                "src/index.ts",
+                "SocialClipCaptions",
+                str(Path(out_path).resolve()),
+                f"--props={props_path}",
+            ],
+            cwd=REMOTION_DIR,
+            check=True,
+        )
+    finally:
+        public_path.unlink(missing_ok=True)
 
 
 def burn_captions_ffmpeg(trimmed_path: str, clip: dict, out_path: str) -> None:

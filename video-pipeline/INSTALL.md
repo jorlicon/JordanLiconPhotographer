@@ -66,6 +66,17 @@ If you'd rather skip Node entirely, pass `--captions ffmpeg` to
 `scripts/04_generate_social_clips.py` to burn in plain ffmpeg `drawtext`
 captions instead — no visual polish, but zero extra dependencies.
 
+On first render, Remotion downloads its own headless Chromium — this just
+works on a normal machine with internet access. It only fails in a locked-down
+sandbox that blocks `remotion.media`; if you hit that, point Remotion at any
+Chromium/Chrome you already have installed instead:
+
+```bash
+export REMOTION_BROWSER_EXECUTABLE=/path/to/chromium-or-chrome
+```
+
+(`remotion.config.ts` picks this up automatically when set — see that file.)
+
 ## 4. Vendored reference repos (optional, clone as needed)
 
 These are pulled in as read-only references/inspiration for the agent

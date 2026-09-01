@@ -8,3 +8,7 @@ __pycache__/
 *.pyc
 remotion/node_modules/
 remotion/.remotion/
+# scripts/04_generate_social_clips.py copies a clip in here at render time
+# and deletes it afterward — nothing should normally be left here to ignore,
+# this is a safety net.
+remotion/public/*

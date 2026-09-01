@@ -4,6 +4,7 @@ import {
   AbsoluteFill,
   OffthreadVideo,
   interpolate,
+  staticFile,
   useCurrentFrame,
   useVideoConfig,
 } from "remotion";
@@ -80,9 +81,16 @@ export const SocialClipCaptions: React.FC<Props> = ({ videoSrc, captions }) => {
   // durationInSeconds is consumed by Root.tsx's calculateMetadata, not needed here
   const { fps } = useVideoConfig();
 
+  // videoSrc is a filename relative to remotion/public/ (see
+  // scripts/04_generate_social_clips.py, which copies the ffmpeg-trimmed
+  // clip there before rendering) — staticFile() resolves it to whatever
+  // URL Remotion's own dev/render server actually serves it at. A full
+  // http(s) URL is passed through unchanged.
+  const resolvedSrc = /^https?:\/\//.test(videoSrc) ? videoSrc : staticFile(videoSrc);
+
   return (
     <AbsoluteFill style={{ backgroundColor: "black" }}>
-      <OffthreadVideo src={videoSrc} />
+      <OffthreadVideo src={resolvedSrc} />
       {captions.map((caption, i) => (
         <CaptionLine
           key={i}
