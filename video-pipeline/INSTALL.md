@@ -1,0 +1,92 @@
+# Video Pipeline — Install Plan
+
+This installs the tools behind the automated, agent-driven video editing
+workflow described in `README.md`. Run this on the machine that will
+actually edit video (your workstation or a render box) — **not** inside a
+Claude Code web/remote session, since nothing outside this git repo
+persists there.
+
+All ~9 tools surfaced in research are covered below, grouped by the role
+they play. Install in this order — later stages depend on earlier ones.
+
+## 0. Prerequisites
+
+- macOS/Linux workstation with a GPU recommended for whisperX (CPU works, just slower)
+- Python 3.10+
+- Git
+- ~15GB free disk (whisperX models + vendored repos)
+
+## 1. Core processing engine (required)
+
+```bash
+# FFmpeg/FFmpeg — the actual encode/decode/filter engine everything below wraps
+brew install ffmpeg        # macOS
+# or: sudo apt install ffmpeg   # Debian/Ubuntu
+
+cd video-pipeline
+python3 -m venv venv && source venv/bin/activate
+pip install -r requirements.txt   # installs kkroening/ffmpeg-python, whisperx, pyyaml, etc.
+```
+
+`kkroening/ffmpeg-python` gives us a Python filtergraph API instead of
+hand-built CLI strings — this is what `scripts/03_render_finish.py` and
+`scripts/04_generate_social_clips.py` build on.
+
+## 2. Transcription & forced alignment (required)
+
+```bash
+pip install whisperx   # m-bain/whisperX — already in requirements.txt
+```
+
+whisperX gives word-level timestamps, which is what lets an agent decide
+"cut from word X to word Y" instead of guessing at second-level cut points.
+Used by `scripts/01_transcribe.py`.
+
+## 3. Vendored reference repos (optional, clone as needed)
+
+These are pulled in as read-only references/inspiration for the agent
+scripts rather than hard runtime dependencies — they're research-stage
+projects, not stable libraries to pip-install. Clone whichever you want to
+borrow techniques or code from into `video-pipeline/vendor/` (gitignored):
+
+```bash
+mkdir -p vendor && cd vendor
+
+# AI-driven orchestration reference implementations
+git clone https://github.com/browser-use/video-use.git
+git clone https://github.com/HKUDS/VideoAgent.git
+
+# Editing/timeline & templating references
+git clone https://github.com/diffusionstudio/editor.git
+git clone https://github.com/aorthey/video_manipulation.git
+
+# Claude-specific workflow patterns
+git clone https://github.com/digitalsamba/claude-code-video-toolkit.git
+git clone https://github.com/ComposioHQ/awesome-claude-skills.git
+
+cd ..
+```
+
+Do not run these as black-box services in production — they're a source
+of ideas/code to fold into `scripts/` and `agents/` deliberately, reviewed
+before use, same as any third-party dependency.
+
+## 4. Verify
+
+```bash
+ffmpeg -version
+python3 -c "import ffmpeg, whisperx; print('ok')"
+```
+
+## 5. Configure
+
+Copy and edit the pipeline config:
+
+```bash
+cp config/pipeline.example.yaml config/pipeline.yaml
+```
+
+Set `raw_footage_dir`, `output_dir`, and the Anthropic API key env var
+(`ANTHROPIC_API_KEY`) used by the agent decision steps.
+
+Once this is done, see `README.md` for how to run the two pipelines.

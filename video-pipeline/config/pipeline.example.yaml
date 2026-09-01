@@ -1,0 +1,25 @@
+# Copy to pipeline.yaml and edit. pipeline.yaml is gitignored since paths
+# and keys are machine-specific.
+
+raw_footage_dir: "./raw"
+work_dir: "./work"
+output_dir: "./output"
+
+transcription:
+  model: "large-v3"          # whisperX model size
+  language: "en"
+  device: "cuda"              # "cuda" or "cpu"
+
+agent:
+  model: "claude-sonnet-5"
+  # Reads from ANTHROPIC_API_KEY in the environment — do not put keys here.
+
+finishing:
+  target_length_seconds: 180  # 0 = no target, let the agent decide
+  keep_silence_padding_ms: 150
+
+promo:
+  clip_count: 3
+  clip_length_seconds: 30
+  aspect_ratio: "9:16"
+  burn_in_captions: true
