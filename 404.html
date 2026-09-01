@@ -9,6 +9,37 @@
 <link rel="icon" href="/favicon.ico" sizes="any">
 <link rel="icon" type="image/png" sizes="48x48" href="/assets/brand/jl-favicon-48.png">
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<script>
+const legacyRedirects = {
+  "/contact": "/#contact",
+  "/about": "/#about",
+  "/services": "/#services",
+  "/aboutelpasophotographer": "/credits.html",
+  "/magazineeditorial": "/#work",
+  "/elpasophotographerblog": "/blog.html",
+  "/post/_blog": "/blog.html",
+  "/post/achieve-stunning-corporate-headshot-results-a-professional-headshot-guide": "/post/achieve-stunning-corporate-headshot-results-a-professional-headshot-guide.html",
+  "/post/perfecting-your-corporate-headshot-photography": "/post/perfecting-your-corporate-headshot-photography.html",
+  "/post/exploring-jordan-licon-photography-in-el-paso": "/post/exploring-jordan-licon-photography-in-el-paso.html",
+  "/post/mastering-photography-and-videography-for-impactful-visual-storytelling-techniques": "/post/mastering-photography-and-videography-for-impactful-visual-storytelling-techniques-1.html",
+  "/post/professional-headshot-photography-complete-guide": "/post/professional-headshot-photography-complete-guide.html",
+  "/the-club-spa": "/architecture.html",
+  "/reyes-elementary-school": "/architecture.html",
+  "/rescue-mission-of-el-paso": "/architecture.html",
+  "/santa-fe-place-aparments": "/architecture.html",
+  "/51sierracrest": "/architecture.html",
+  "/speaking-rock-casino": "/architecture.html",
+  "/brio": "/food-photography-portfolio.html",
+  "/pokeworks": "/food-photography-portfolio.html",
+  "/pieology-pizzeria": "/food-photography-portfolio.html",
+  "/carinos": "/food-photography-portfolio.html",
+  "/physician-s-v": "/headshot-portfolio.html"
+};
+const currentPath = window.location.pathname.replace(/\/$/, "");
+if (legacyRedirects[currentPath]) {
+  window.location.replace(legacyRedirects[currentPath]);
+}
+</script>
 <style>
 :root{--bg:#060606;--ink:#f0ebe2;--dim:#9a9388;--accent:#b8985f;--line:rgba(240,235,226,.14)}
 *{box-sizing:border-box;margin:0;padding:0}
