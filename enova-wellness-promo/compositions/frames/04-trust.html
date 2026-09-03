@@ -1,0 +1,95 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+  </head>
+  <body>
+    <template>
+      <style>
+        #root {
+          position: absolute;
+          inset: 0;
+          background: #f1efe4;
+          font-family: "Inter", sans-serif;
+          overflow: hidden;
+        }
+        .vo {
+          position: absolute;
+          left: 100px;
+          right: 100px;
+          top: 60px;
+          height: 130px;
+          font-size: 30px;
+          font-style: italic;
+          color: #2f3a2e;
+          opacity: 0;
+        }
+        .watermark {
+          position: absolute;
+          left: 140px;
+          right: 140px;
+          top: 220px;
+          bottom: 340px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          transform: rotate(-3deg);
+          font-size: 30px;
+          font-weight: 600;
+          letter-spacing: 0.03em;
+          color: #5c6e5a;
+          text-align: center;
+          line-height: 1.6;
+          white-space: pre;
+        }
+        .shotlist {
+          position: absolute;
+          left: 80px;
+          bottom: 32px;
+          right: 80px;
+          font-size: 22px;
+          color: #3f4c3d;
+        }
+        .chips {
+          position: absolute;
+          left: 0;
+          right: 0;
+          bottom: 130px;
+          display: flex;
+          justify-content: center;
+          gap: 28px;
+        }
+        .chip {
+          padding: 16px 32px;
+          border: 1px solid #8a6a30;
+          border-radius: 40px;
+          font-size: 28px;
+          color: #2f3a2e;
+          background: rgba(255, 255, 255, 0.6);
+          opacity: 0;
+        }
+      </style>
+      <div id="root" data-composition-id="04-trust" data-width="1920" data-height="1080">
+        <div id="vo" class="vo" data-layout-allow-overlap>"Every experience begins with an individualized assessment, allowing our professionals to understand your goals and create a treatment plan designed specifically for you."</div>
+        <div class="watermark" data-layout-allow-overlap>PLACEHOLDER — PROVIDER EXPERTISE / TRUST
+Provider explaining treatment, facial mapping, product prep
+professional interaction, Camryn relaxing, confident portraits</div>
+        <div class="chips">
+          <div id="c1" class="chip">Personalized care</div>
+          <div id="c2" class="chip">Advanced treatments</div>
+          <div id="c3" class="chip">Natural-looking results</div>
+        </div>
+        <div class="shotlist" data-layout-allow-overlap>Frame 4 · 0:30–0:43 · VO locked, needs recording · see MISSING-ASSETS.md items 19–21, 30</div>
+      </div>
+      <script>
+        window.__timelines = window.__timelines || {};
+        const tl = gsap.timeline({ paused: true });
+        tl.fromTo("#vo", { opacity: 0 }, { opacity: 1, duration: 1.2, ease: "power2.out" }, 0.4);
+        tl.fromTo("#c1", { opacity: 0, y: 12 }, { opacity: 1, y: 0, duration: 0.6, ease: "power2.out" }, 4.5);
+        tl.fromTo("#c2", { opacity: 0, y: 12 }, { opacity: 1, y: 0, duration: 0.6, ease: "power2.out" }, 5.5);
+        tl.fromTo("#c3", { opacity: 0, y: 12 }, { opacity: 1, y: 0, duration: 0.6, ease: "power2.out" }, 6.5);
+        window.__timelines["04-trust"] = tl;
+      </script>
+    </template>
+  </body>
+</html>

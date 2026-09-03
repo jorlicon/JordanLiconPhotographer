@@ -1,0 +1,69 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+  </head>
+  <body>
+    <template>
+      <style>
+        #root {
+          position: absolute;
+          inset: 0;
+          background: #f1efe4;
+          font-family: "Inter", sans-serif;
+          overflow: hidden;
+        }
+        .vo {
+          position: absolute;
+          left: 100px;
+          right: 100px;
+          top: 60px;
+          height: 130px;
+          font-size: 30px;
+          font-style: italic;
+          color: #2f3a2e;
+          opacity: 0;
+        }
+        .watermark {
+          position: absolute;
+          left: 140px;
+          right: 140px;
+          top: 220px;
+          bottom: 90px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          transform: rotate(-3deg);
+          font-size: 30px;
+          font-weight: 600;
+          letter-spacing: 0.03em;
+          color: #5c6e5a;
+          text-align: center;
+          line-height: 1.6;
+          white-space: pre;
+        }
+        .shotlist {
+          position: absolute;
+          left: 80px;
+          bottom: 32px;
+          right: 80px;
+          font-size: 22px;
+          color: #3f4c3d;
+        }
+      </style>
+      <div id="root" data-composition-id="02-personalized-experience" data-width="1920" data-height="1080">
+        <div id="vo" class="vo" data-layout-allow-overlap>"Welcome to Enova Wellness Center, where beauty, wellness, and personalized care come together in one private destination."</div>
+        <div class="watermark" data-layout-allow-overlap>PLACEHOLDER — WELCOME / CONSULTATION
+Camryn welcomed, speaking with provider, consultation
+mirror moment, individualized facial / skin assessment</div>
+        <div class="shotlist" data-layout-allow-overlap>Frame 2 · 0:06–0:16 · VO locked, needs recording · see MISSING-ASSETS.md items 7–10, 30</div>
+      </div>
+      <script>
+        window.__timelines = window.__timelines || {};
+        const tl = gsap.timeline({ paused: true });
+        tl.fromTo("#vo", { opacity: 0 }, { opacity: 1, duration: 1.2, ease: "power2.out" }, 0.4);
+        window.__timelines["02-personalized-experience"] = tl;
+      </script>
+    </template>
+  </body>
+</html>

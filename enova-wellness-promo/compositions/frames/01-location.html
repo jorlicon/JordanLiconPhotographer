@@ -1,0 +1,82 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+  </head>
+  <body>
+    <template>
+      <style>
+        #root {
+          position: absolute;
+          inset: 0;
+          background: #f6f2ea;
+          font-family: "Inter", sans-serif;
+          overflow: hidden;
+        }
+        .watermark {
+          position: absolute;
+          left: 140px;
+          right: 140px;
+          top: 140px;
+          bottom: 170px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          transform: rotate(-3deg);
+          font-size: 30px;
+          font-weight: 600;
+          letter-spacing: 0.03em;
+          color: #5c6e5a;
+          text-align: center;
+          line-height: 1.6;
+          white-space: pre;
+        }
+        .shotlist {
+          position: absolute;
+          left: 80px;
+          bottom: 32px;
+          right: 80px;
+          font-size: 22px;
+          color: #3f4c3d;
+        }
+        .titles {
+          position: absolute;
+          left: 0;
+          right: 0;
+          bottom: 220px;
+          text-align: center;
+        }
+        .title-1 {
+          font-size: 72px;
+          font-weight: 600;
+          color: #2f3a2e;
+          letter-spacing: 0.01em;
+        }
+        .title-2 {
+          margin-top: 14px;
+          font-size: 34px;
+          font-weight: 400;
+          color: #8a6a30;
+          letter-spacing: 0.02em;
+        }
+      </style>
+      <div id="root" data-composition-id="01-location" data-width="1920" data-height="1080">
+        <div class="watermark" data-layout-allow-overlap>PLACEHOLDER — EXTERIOR / INTERIOR ESTABLISHING SHOTS
+El Paso Country Club + Enova signage, reception, treatment rooms
+clean linens, lighting details, Camryn entering</div>
+        <div class="titles">
+          <div id="t1" class="title-1">Enova Wellness Center</div>
+          <div id="t2" class="title-2">Located inside the El Paso Country Club</div>
+        </div>
+        <div class="shotlist" data-layout-allow-overlap>Frame 1 · 0:00–0:06 · no voiceover · see MISSING-ASSETS.md items 1–6</div>
+      </div>
+      <script>
+        window.__timelines = window.__timelines || {};
+        const tl = gsap.timeline({ paused: true });
+        tl.fromTo("#t1", { opacity: 0, y: 24 }, { opacity: 1, y: 0, duration: 0.9, ease: "power2.out" }, 0.3);
+        tl.fromTo("#t2", { opacity: 0, y: 16 }, { opacity: 1, y: 0, duration: 0.8, ease: "power2.out" }, 0.7);
+        window.__timelines["01-location"] = tl;
+      </script>
+    </template>
+  </body>
+</html>
