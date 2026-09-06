@@ -22,7 +22,8 @@ they play. Install in this order — later stages depend on earlier ones.
 - Python 3.10+
 - Node.js 18+ (for Remotion, the caption/title renderer)
 - Git
-- ~15GB free disk (whisperX models + vendored repos), more for multi-hour raw footage
+- ~15GB free disk (whisperX models), plus ~250MB already committed under
+  `vendor/`, more for multi-hour raw footage
 
 ## 1. Core processing engine (required)
 
@@ -85,34 +86,31 @@ export REMOTION_BROWSER_EXECUTABLE=/path/to/chromium-or-chrome
 
 (`remotion.config.ts` picks this up automatically when set — see that file.)
 
-## 4. Vendored reference repos (optional, clone as needed)
+## 4. Vendored reference repos (already committed, nothing to install)
 
-These are pulled in as read-only references/inspiration for the agent
-scripts rather than hard runtime dependencies — they're research-stage
-projects, not stable libraries to pip-install. Clone whichever you want to
-borrow techniques or code from into `video-pipeline/vendor/` (gitignored):
+`video-pipeline/vendor/` carries a full, committed source snapshot (no
+`.git` history, no submodules) of six repos surfaced during tooling
+research. They're read-only references/inspiration for the agent scripts
+rather than hard runtime dependencies — research-stage projects, not
+stable libraries this pipeline `pip install`s or `npm install`s:
 
-```bash
-mkdir -p vendor && cd vendor
+| Directory | Upstream | Role |
+| --- | --- | --- |
+| `vendor/video-use/` | [browser-use/video-use](https://github.com/browser-use/video-use) | AI-driven video-editing agent orchestration reference |
+| `vendor/VideoAgent/` | [HKUDS/VideoAgent](https://github.com/HKUDS/VideoAgent) | Multi-modal prompt → timeline-graph orchestration reference; bundles its own nested third-party tools (`tools/seed-vc`, DiffSinger, ImageBind, CosyVoice, fish-speech) and demo assets |
+| `vendor/editor/` | [diffusionstudio/editor](https://github.com/diffusionstudio/editor) | Canvas-based JS timeline/editing library reference |
+| `vendor/video_manipulation/` | [aorthey/video_manipulation](https://github.com/aorthey/video_manipulation) | Python template-driven video assembly reference |
+| `vendor/claude-code-video-toolkit/` | [digitalsamba/claude-code-video-toolkit](https://github.com/digitalsamba/claude-code-video-toolkit) | Claude Code-oriented video rendering/orchestration template |
+| `vendor/awesome-claude-skills/` | [ComposioHQ/awesome-claude-skills](https://github.com/ComposioHQ/awesome-claude-skills) | Index of Claude skill/workflow utilities |
 
-# AI-driven orchestration reference implementations
-git clone https://github.com/browser-use/video-use.git
-git clone https://github.com/HKUDS/VideoAgent.git
-
-# Editing/timeline & templating references
-git clone https://github.com/diffusionstudio/editor.git
-git clone https://github.com/aorthey/video_manipulation.git
-
-# Claude-specific workflow patterns
-git clone https://github.com/digitalsamba/claude-code-video-toolkit.git
-git clone https://github.com/ComposioHQ/awesome-claude-skills.git
-
-cd ..
-```
-
-Do not run these as black-box services in production — they're a source
-of ideas/code to fold into `scripts/` and `agents/` deliberately, reviewed
-before use, same as any third-party dependency.
+Each keeps its own `README`/license/dependency files as shipped upstream —
+consult those before running anything inside a `vendor/` directory
+standalone (e.g. `vendor/editor/` is a separate npm project, `vendor/VideoAgent/`
+has its own `requirements.txt`/`pyproject.toml`). Nothing under `vendor/`
+is imported by `scripts/` or `agents/` automatically; treat it as a source
+of ideas/code to fold in deliberately, reviewed before use, same as any
+third-party dependency, and do not run any of it as a black-box service in
+production.
 
 ## 5. Verify
 

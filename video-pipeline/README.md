@@ -49,7 +49,7 @@ video-pipeline/
   remotion/                   — Remotion project, renders animated captions
     src/SocialClipCaptions.tsx  — the caption/title composition
     src/Root.tsx                 — registers it, derives duration per clip
-  vendor/                     — optional cloned reference repos (gitignored)
+  vendor/                     — committed source snapshots of 6 reference repos (see INSTALL.md)
 ```
 
 ## Running it
@@ -97,7 +97,7 @@ See `INSTALL.md` for the full install order and rationale for each.
 
 This is a scaffold: the two agent specs, the four scripts, and the
 Remotion caption composition are written and runnable end-to-end against
-the required deps (ffmpeg, ffmpeg-python, whisperX, Remotion). The
-vendored reference repos are not wired in yet — they're there to crib
-specific techniques from as the pipeline matures, not required
-dependencies.
+the required deps (ffmpeg, ffmpeg-python, whisperX, Remotion). The six
+vendored reference repos under `vendor/` are committed source snapshots,
+not wired in yet — they're there to crib specific techniques from as the
+pipeline matures, not required dependencies.
