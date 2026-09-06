@@ -6,12 +6,19 @@ source_path,target_path,action,status_reason
 /post/mastering-photography-and-videography-for-impactful-visual-storytelling-techniques,/post/mastering-photography-and-videography-for-impactful-visual-storytelling-techniques-1.html,301_required_in_cloudflare,Legacy duplicate should consolidate to preferred visual storytelling article
 /post/professional-headshot-photography-complete-guide,/post/professional-headshot-photography-complete-guide.html,301_required_in_cloudflare,Extensionless legacy blog URL has a current canonical article
 /elpasophotographerblog,/blog.html,301_required_in_cloudflare,Legacy blog path should consolidate to current blog hub
+/jordanliconphotography,/,301_required_in_cloudflare,Legacy branded path should consolidate to canonical homepage
+/elpasoarchitecturalphotographer,/architectural-photographer-el-paso.html,301_required_in_cloudflare,Legacy architectural service URL should consolidate to current service page
+/elpasofoodphotographer,/food-photography-portfolio.html,301_required_in_cloudflare,Legacy food photography URL should consolidate to current food portfolio page
 /the-club-spa,/architecture.html,301_required_in_cloudflare,Legacy architecture portfolio path should consolidate to architecture portfolio
 /reyes-elementary-school,/architecture.html,301_required_in_cloudflare,Legacy architecture portfolio path should consolidate to architecture portfolio
 /rescue-mission-of-el-paso,/architecture.html,301_required_in_cloudflare,Legacy architecture portfolio path should consolidate to architecture portfolio
 /santa-fe-place-aparments,/architecture.html,301_required_in_cloudflare,Legacy architecture portfolio path should consolidate to architecture portfolio
+/santa-fe-place-apartments,/architecture.html,301_required_in_cloudflare,Corrected-spelling variant should consolidate to architecture portfolio
 /51sierracrest,/architecture.html,301_required_in_cloudflare,Legacy architecture portfolio path should consolidate to architecture portfolio
 /speaking-rock-casino,/architecture.html,301_required_in_cloudflare,Legacy architecture portfolio path should consolidate to architecture portfolio
+/jefferson-high-school-stadium,/architecture.html,301_required_in_cloudflare,Legacy stadium architecture URL should consolidate to architecture portfolio
+/franklin-high-school-stadium,/architecture.html,301_required_in_cloudflare,Legacy stadium architecture URL should consolidate to architecture portfolio
+/las-palmas-del-sol,/architecture.html,301_required_in_cloudflare,Legacy healthcare architecture URL should consolidate to architecture portfolio
 /brio,/food-photography-portfolio.html,301_required_in_cloudflare,Legacy restaurant portfolio path should consolidate to food portfolio
 /pokeworks,/food-photography-portfolio.html,301_required_in_cloudflare,Legacy restaurant portfolio path should consolidate to food portfolio
 /pieology-pizzeria,/food-photography-portfolio.html,301_required_in_cloudflare,Legacy restaurant portfolio path should consolidate to food portfolio
