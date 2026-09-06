@@ -3,6 +3,22 @@
 Source: local DaVinci Resolve project **"2026-08-04 Hellas - Van Horn"**.
 Target: 5-minute overview video (`long-form-youtube` format).
 
+## Starting fresh — do not conform the existing v9 timeline
+
+The Resolve project already has a built timeline ("Van Horn - v9", ~5:50)
+assembled from raw footage at
+`/Volumes/JordanExternalDrive6 SSD/Pictures/2026/2026-08-04 Hellas - Van Horn/`
+(Mavic Mini 2, Phantom 4 Pro, iPhone 17 Pro Max, a7R IV stills, audio).
+**The client/editor has reviewed v9 and rejected it — a lot of the cuts
+aren't good. Do not use v9 as this job's `raw_clip`.** Start this pipeline
+from the raw camera sources instead, re-cutting from scratch.
+
+Practical step before `rough_cut.py` can run: the raw sources are four
+unsynced cameras plus separate audio — whisperX needs one coherent video
+file, not four. Do a **multicam sync pass in Resolve first** (align the
+sources, flatten to one exported file — no creative cutting decisions at
+this stage, just sync), then point `raw_clip` at that export.
+
 ## Why this job can't run past scaffolding in this session
 
 This is a remote Claude Code session with no path to:

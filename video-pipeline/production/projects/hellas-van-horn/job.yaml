@@ -1,8 +1,10 @@
 # Hellas / Van Horn Eagles Stadium — 5-minute overview
-# Set up from the "2026-08-04 Hellas - Van Horn" DaVinci Resolve project.
-# raw_clip below is a placeholder path — replace it once footage is exported
-# from DaVinci onto the machine actually running this pipeline (see notes.md
-# in this job folder for why that has to happen locally, not in this session).
+# Starting FRESH from raw camera sources — the existing "Van Horn - v9"
+# Resolve timeline has been reviewed and rejected (cuts aren't good), do
+# NOT export/use v9 here. See notes.md for the multicam-sync-first step
+# needed before raw_clip below can point at something real.
+# raw_clip below is a placeholder path — replace it once the synced export
+# exists on the machine actually running this pipeline.
 job: hellas-van-horn
 format: long-form-youtube   # short-explainer | short-tiktok-raw | long-form-youtube
 raw_clip: projects/hellas-van-horn/raw/source.mp4
