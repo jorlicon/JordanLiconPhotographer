@@ -33,3 +33,30 @@ Remaining:
 
 Publish record:
 - Published to `jorlicon/JordanLiconPhotographer` on `main` in commit `ffee006`.
+
+## Step 2 - Internal Linking
+
+Status: Locally complete, publish pending.
+
+Completed locally:
+- Updated homepage service cards so Architecture points directly to `/architectural-photographer-el-paso.html` and Commercial points directly to `/el-paso-commercial-photographer.html` instead of only same-page section anchors.
+- Added a service-link block to all 22 blog posts so articles pass authority to headshots, commercial photography, architectural photography, food photography, editorial portraits, and inquiry paths.
+
+Remaining:
+- Publish after network/DNS access is available.
+
+Verification:
+- Confirmed all 22 post HTML files now include the service-link block.
+- Confirmed the linked service/portfolio files exist locally.
+
+## Step 3 - Title And Meta CTR Tuning
+
+Status: Locally complete, publish pending.
+
+Completed locally:
+- Tuned titles and meta descriptions for the homepage, headshot service page, commercial service page, architectural service page, food portfolio page, and editorial portrait portfolio page.
+- Aligned copy with Search Console query opportunities: El Paso photographer, commercial photographer, professional headshots, architectural photographer, food photographer, and editorial portraits.
+- Kept titles around 54-62 characters and descriptions around 125-139 characters to improve snippet clarity without keyword stuffing.
+
+Remaining:
+- Publish after network/DNS access is available.
