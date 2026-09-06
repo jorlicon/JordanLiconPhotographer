@@ -4,7 +4,7 @@ Updated: 2026-09-05
 
 ## Step 1 - URL Consolidation
 
-Status: In progress, local implementation updated.
+Status: Published, live verification pending.
 
 Completed locally:
 - Confirmed `sitemap.xml` only lists current canonical `https://www.jordanliconphotography.com/` URLs.
@@ -28,6 +28,8 @@ Verification:
 - `404.html` legacy redirect map parses successfully.
 
 Remaining:
-- Publish the local changes when approved.
-- After publishing, verify live legacy URLs return redirects or the GitHub Pages fallback behavior.
+- Live verification is still pending because this environment could not resolve `www.jordanliconphotography.com` during the follow-up curl check.
 - Mirror the CSV mappings into Cloudflare bulk/page redirect rules once Cloudflare is active.
+
+Publish record:
+- Published to `jorlicon/JordanLiconPhotographer` on `main` in commit `ffee006`.
