@@ -1,0 +1,11 @@
+# Copy to projects/<job>/job.yaml and edit.
+job: my-job
+format: short-explainer   # short-explainer | short-tiktok-raw | long-form-youtube
+raw_clip: projects/my-job/raw/source.mp4
+
+# Optional — omit either to skip that step
+music: null   # e.g. projects/my-job/assets/music/audiio-uplift-corporate.mp3
+
+# whisperX settings, passed through to rough_cut.py
+device: cuda   # cuda | cpu
+model: large-v3

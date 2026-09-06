@@ -1,0 +1,19 @@
+# Format variant: long-form-youtube
+# Only steps 3 (graphics) and 5 (captions) read this file — every other
+# pipeline step is identical across formats.
+
+format: long-form-youtube
+aspect_ratio: "16:9"
+resolution: [1920, 1080]
+
+graphics:
+  layout: glass-and-zoom       # frosted-glass panels with a slow continuous zoom
+  preset: liquid-glass-style   # presets/liquid-glass-style.json
+
+captions:
+  enabled: false
+  note: "none — rely on YouTube's own auto-generated CC; do not burn in captions for this format"
+
+thumbnail:
+  generate: true
+  note: "always — long-form is discovered via thumbnail click-through"

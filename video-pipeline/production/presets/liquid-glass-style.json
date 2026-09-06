@@ -1,0 +1,15 @@
+{
+  "name": "liquid-glass-style",
+  "description": "Glassmorphism graphics treatment for long-form-youtube's 'glass + zoom' spec: frosted-glass panels over a slow, continuous camera zoom.",
+  "panel": {
+    "blur_px": 24,
+    "fill": "rgba(255,255,255,0.12)",
+    "border": "rgba(255,255,255,0.35)",
+    "corner_radius_px": 20
+  },
+  "motion": {
+    "zoom_percent_per_10s": 4,
+    "ease": "power1.inOut",
+    "note": "one continuous zoom for the panel's on-screen duration, not a per-beat re-zoom — see motion-doctrine on sustained motion"
+  }
+}

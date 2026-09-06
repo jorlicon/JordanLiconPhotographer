@@ -1,0 +1,15 @@
+{
+  "name": "jlp-video-pipeline-remotion",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Remotion composition for animated caption/title rendering in the video pipeline",
+  "scripts": {
+    "render": "remotion render src/index.ts SocialClipCaptions"
+  },
+  "dependencies": {
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "remotion": "^4.0.190",
+    "@remotion/cli": "^4.0.190"
+  }
+}
