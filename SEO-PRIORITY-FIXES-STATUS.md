@@ -80,3 +80,19 @@ Verification:
 
 Remaining:
 - Re-run PageSpeed after GitHub Pages finishes deployment so the live mobile LCP result can be confirmed.
+
+## Step 5 - Desktop CLS
+
+Status: Complete, publish pending.
+
+Completed locally:
+- Changed the homepage Google Fonts loading from delayed async stylesheet loading to a normal stylesheet load.
+- Kept the existing `display=optional` font behavior while preventing the hero text area from repainting after first render.
+
+Why this matters:
+- PageSpeed identified the homepage hero-bottom text block as the desktop layout shift culprit.
+- The listed contributors were web fonts, so stabilizing first paint font metrics should reduce the desktop CLS score.
+
+Remaining:
+- Publish the homepage update.
+- Re-run PageSpeed after GitHub Pages finishes deployment so the live desktop CLS result can be confirmed.
