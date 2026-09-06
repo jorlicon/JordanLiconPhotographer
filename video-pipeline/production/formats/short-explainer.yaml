@@ -1,0 +1,21 @@
+# Format variant: short-explainer
+# Only steps 3 (graphics) and 5 (captions) read this file — every other
+# pipeline step is identical across formats.
+
+format: short-explainer
+aspect_ratio: "9:16"
+resolution: [1080, 1920]
+
+graphics:
+  layout: top-half-cards       # stat/title/lower-third cards occupy the top half of frame
+  preset: signature-style      # presets/signature-style.json
+
+captions:
+  enabled: true
+  style: captions-style        # presets/captions-style.json
+  position: centered
+  timing: locked               # cues locked to sentence boundaries, not per-word on-beat
+
+thumbnail:
+  generate: false
+  note: "usually skip — short-explainer clips are consumed in-feed, not clicked from a thumbnail"

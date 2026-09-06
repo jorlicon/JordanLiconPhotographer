@@ -1,0 +1,8 @@
+{
+  "description": "Find/replace fixes applied to raw whisperX transcript text before it reaches rough_cut.py's script output or embedded_captions.py's caption plan — upstream brand-name and recurring mistranscription spelling fixes. Add entries as you catch them. Matching is case-insensitive and whole-phrase (longer keys are applied first so a longer match wins over a shorter substring).",
+  "corrections": {
+    "jordan lycon": "Jordan Licon",
+    "jordan lie con": "Jordan Licon",
+    "el paso country club": "El Paso Country Club"
+  }
+}

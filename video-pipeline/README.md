@@ -50,6 +50,9 @@ video-pipeline/
     src/SocialClipCaptions.tsx  — the caption/title composition
     src/Root.tsx                 — registers it, derives duration per clip
   vendor/                     — committed source snapshots of 6 reference repos (see INSTALL.md)
+  production/                 — separate 7-step, job-oriented, format-aware pipeline
+                                 (intake -> rough cut -> graphics -> review -> captions ->
+                                 music -> export); see production/README.md
 ```
 
 ## Running it

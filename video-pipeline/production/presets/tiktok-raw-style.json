@@ -1,0 +1,14 @@
+{
+  "name": "tiktok-raw-style",
+  "description": "Native/raw graphics treatment for short-tiktok-raw: minimal branding, a single hook card at open, otherwise untouched footage.",
+  "hook_card": {
+    "duration_seconds": 2.5,
+    "style_ref": "signature-style"
+  },
+  "grain": "light",
+  "avoid": [
+    "logo bug",
+    "lower-thirds mid-clip",
+    "any graphic that reads as 'produced' rather than native"
+  ]
+}

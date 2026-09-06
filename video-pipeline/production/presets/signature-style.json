@@ -1,0 +1,24 @@
+{
+  "name": "signature-style",
+  "description": "Default locked brand look for graphics beats (title cards, lower-thirds, stat callouts) used unless a format's preset overrides it. Referenced by graphics_plan.py and handed to the HyperFrames authoring pass as design direction.",
+  "fonts": {
+    "heading": "Inter",
+    "body": "Inter"
+  },
+  "colors": {
+    "brand_primary": "#2f3a2e",
+    "brand_accent": "#b08d57",
+    "text_on_dark": "#ffffff",
+    "text_on_light": "#1a1f19"
+  },
+  "card": {
+    "corner_radius_px": 24,
+    "shadow": "soft",
+    "entrance": "waterfall-cut",
+    "hold_seconds": 2.5
+  },
+  "logo": {
+    "placement": "bottom-right",
+    "safe_margin_px": 48
+  }
+}
