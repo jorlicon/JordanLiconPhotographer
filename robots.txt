@@ -14,4 +14,28 @@ Disallow: /jordan-licon-services-program-ad.html
 Disallow: /miss-sun-city-jordan-licon-ad.html
 Disallow: /miss-sun-city-program-book-ad-page.html
 
+User-agent: GPTBot
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Perplexity-User
+Allow: /
+
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
 Sitemap: https://www.jordanliconphotography.com/sitemap.xml
