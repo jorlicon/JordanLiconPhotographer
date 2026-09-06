@@ -1,2 +1,9 @@
 projects/*
 !projects/.gitkeep
+# per-job config and notes are tracked; raw footage, work artifacts, assets,
+# and outputs are not (they're per-machine, often large, and shouldn't live
+# in git history)
+!projects/*/
+projects/*/*
+!projects/*/job.yaml
+!projects/*/notes.md

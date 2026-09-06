@@ -1,0 +1,15 @@
+# Hellas / Van Horn Eagles Stadium — 5-minute overview
+# Set up from the "2026-08-04 Hellas - Van Horn" DaVinci Resolve project.
+# raw_clip below is a placeholder path — replace it once footage is exported
+# from DaVinci onto the machine actually running this pipeline (see notes.md
+# in this job folder for why that has to happen locally, not in this session).
+job: hellas-van-horn
+format: long-form-youtube   # short-explainer | short-tiktok-raw | long-form-youtube
+raw_clip: projects/hellas-van-horn/raw/source.mp4
+
+# Optional — omit either to skip that step
+music: null   # e.g. projects/hellas-van-horn/assets/music/audiio-uplift-corporate.mp3
+
+# whisperX settings, passed through to rough_cut.py
+device: cuda   # cuda | cpu
+model: large-v3
