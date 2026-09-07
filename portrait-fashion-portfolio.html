@@ -119,4 +119,57 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <section class="wrap" aria-labelledby="portrait-planning-title"><div class="section-head"><div><div class="eyebrow mono">Portfolio Direction</div><h2 id="portrait-planning-title">Portrait work shaped around <em>intent.</em></h2></div><p class="section-copy">Portrait and fashion sessions are planned around the role the images need to play: editorial storytelling, pageantry presence, actor identity, musician promotion, personal branding, or campaign imagery. Wardrobe, color, set texture, expression, gesture, and crop are selected together so the finished photographs feel specific rather than interchangeable.</p></div><p class="section-copy">For clients who need a usable image library, the session can include clean hero portraits, tighter beauty frames, wider editorial scenes, vertical social crops, horizontal website images, and detail images that support press kits or brand announcements. The goal is a polished set that has range while still feeling visually coherent.</p><p class="section-copy">This portfolio is intentionally organized by use case so buyers can quickly compare the difference between fashion editorial, beauty, actor and character portraits, pageantry, studio portraits, and men's editorial work before choosing the kind of direction that fits their project.</p></section></main><footer class="mono">© 2026 Jordan Licon Photography - Portrait & Fashion Photography - El Paso, Texas</footer>
 <div class="lightbox" id="lightbox"><button class="close mono" type="button">Close</button><button class="prev mono" type="button">Prev</button><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==" alt="Selected portrait and fashion portfolio image by Jordan Licon" width="1200" height="1500"><button class="next mono" type="button">Next</button></div>
 <script src="assets/js/portrait-fashion-portfolio.js"></script>
-</body></html>
+<script data-jlp-conversion-tracking>
+(function(){
+  function pushEvent(name, data){window.dataLayer=window.dataLayer||[];window.dataLayer.push(Object.assign({event:name,page_path:location.pathname},data||{}));}
+  document.querySelectorAll('a[href*="bloom.io"],a[href^="mailto:"],a[href^="tel:"],a[href="#contact"],button[type="submit"]').forEach(function(el){
+    if(el.dataset.jlpTracked)return;
+    el.dataset.jlpTracked="true";
+    el.addEventListener("click",function(){pushEvent("jlp_cta_click",{cta_label:(el.textContent||el.getAttribute("aria-label")||el.getAttribute("href")||"cta").trim(),cta_href:el.getAttribute("href")||""});});
+  });
+  document.querySelectorAll("form").forEach(function(form){
+    if(form.dataset.jlpFormTracked)return;
+    form.dataset.jlpFormTracked="true";
+    form.addEventListener("submit",function(){pushEvent("jlp_form_submit",{form_id:form.id||form.getAttribute("name")||"form"});});
+  });
+})();
+</script><style data-bloom-gray-button>
+[class*="bloom" i] button,
+[class*="bloom" i] [role="button"],
+button[class*="bloom" i],
+a[class*="bloom" i],
+[id*="bloom" i] button,
+[id*="bloom" i] [role="button"]{background:#6f7378!important;border-color:#6f7378!important;color:#fff!important}
+[class*="bloom" i] button:hover,
+[class*="bloom" i] [role="button"]:hover,
+button[class*="bloom" i]:hover,
+a[class*="bloom" i]:hover{background:#83878d!important;border-color:#83878d!important;color:#fff!important}
+</style>
+<script data-bloom-gray-button>
+(function(){
+  const base="#6f7378", hover="#83878d";
+  function labelFor(el){return [el.id,el.className,el.getAttribute("aria-label"),el.getAttribute("title"),el.getAttribute("href")].join(" ").toLowerCase();}
+  function apply(root){
+    root.querySelectorAll('button,a,[role="button"]').forEach(function(el){
+      if(!labelFor(el).includes("bloom"))return;
+      el.style.setProperty("background-color",base,"important");
+      el.style.setProperty("border-color",base,"important");
+      el.style.setProperty("color","#fff","important");
+      if(!el.dataset.bloomGrayHover){
+        el.dataset.bloomGrayHover="true";
+        el.addEventListener("mouseenter",function(){el.style.setProperty("background-color",hover,"important")});
+        el.addEventListener("mouseleave",function(){el.style.setProperty("background-color",base,"important")});
+      }
+    });
+  }
+  document.addEventListener("DOMContentLoaded",function(){apply(document)});
+  new MutationObserver(function(mutations){
+    apply(document);
+    mutations.forEach(function(mutation){
+      mutation.addedNodes.forEach(function(node){
+        if(node.nodeType===1&&node.shadowRoot)apply(node.shadowRoot);
+      });
+    });
+  }).observe(document.documentElement,{childList:true,subtree:true});
+})();
+</script></body></html>

@@ -197,5 +197,19 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <script>
 document.querySelectorAll(".hls-video").forEach(video=>{const src=video.dataset.src;if(!src)return;if(video.canPlayType("application/vnd.apple.mpegurl")){video.src=src}else if(window.Hls&&Hls.isSupported()){const hls=new Hls();hls.loadSource(src);hls.attachMedia(video)}});
 </script>
-</body>
+<script data-jlp-conversion-tracking>
+(function(){
+  function pushEvent(name, data){window.dataLayer=window.dataLayer||[];window.dataLayer.push(Object.assign({event:name,page_path:location.pathname},data||{}));}
+  document.querySelectorAll('a[href*="bloom.io"],a[href^="mailto:"],a[href^="tel:"],a[href="#contact"],button[type="submit"]').forEach(function(el){
+    if(el.dataset.jlpTracked)return;
+    el.dataset.jlpTracked="true";
+    el.addEventListener("click",function(){pushEvent("jlp_cta_click",{cta_label:(el.textContent||el.getAttribute("aria-label")||el.getAttribute("href")||"cta").trim(),cta_href:el.getAttribute("href")||""});});
+  });
+  document.querySelectorAll("form").forEach(function(form){
+    if(form.dataset.jlpFormTracked)return;
+    form.dataset.jlpFormTracked="true";
+    form.addEventListener("submit",function(){pushEvent("jlp_form_submit",{form_id:form.id||form.getAttribute("name")||"form"});});
+  });
+})();
+</script></body>
 </html>

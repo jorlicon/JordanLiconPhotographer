@@ -1197,5 +1197,58 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     }
   })();
 </script>
-</body>
+<script data-jlp-conversion-tracking>
+(function(){
+  function pushEvent(name, data){window.dataLayer=window.dataLayer||[];window.dataLayer.push(Object.assign({event:name,page_path:location.pathname},data||{}));}
+  document.querySelectorAll('a[href*="bloom.io"],a[href^="mailto:"],a[href^="tel:"],a[href="#contact"],button[type="submit"]').forEach(function(el){
+    if(el.dataset.jlpTracked)return;
+    el.dataset.jlpTracked="true";
+    el.addEventListener("click",function(){pushEvent("jlp_cta_click",{cta_label:(el.textContent||el.getAttribute("aria-label")||el.getAttribute("href")||"cta").trim(),cta_href:el.getAttribute("href")||""});});
+  });
+  document.querySelectorAll("form").forEach(function(form){
+    if(form.dataset.jlpFormTracked)return;
+    form.dataset.jlpFormTracked="true";
+    form.addEventListener("submit",function(){pushEvent("jlp_form_submit",{form_id:form.id||form.getAttribute("name")||"form"});});
+  });
+})();
+</script><style data-bloom-gray-button>
+[class*="bloom" i] button,
+[class*="bloom" i] [role="button"],
+button[class*="bloom" i],
+a[class*="bloom" i],
+[id*="bloom" i] button,
+[id*="bloom" i] [role="button"]{background:#6f7378!important;border-color:#6f7378!important;color:#fff!important}
+[class*="bloom" i] button:hover,
+[class*="bloom" i] [role="button"]:hover,
+button[class*="bloom" i]:hover,
+a[class*="bloom" i]:hover{background:#83878d!important;border-color:#83878d!important;color:#fff!important}
+</style>
+<script data-bloom-gray-button>
+(function(){
+  const base="#6f7378", hover="#83878d";
+  function labelFor(el){return [el.id,el.className,el.getAttribute("aria-label"),el.getAttribute("title"),el.getAttribute("href")].join(" ").toLowerCase();}
+  function apply(root){
+    root.querySelectorAll('button,a,[role="button"]').forEach(function(el){
+      if(!labelFor(el).includes("bloom"))return;
+      el.style.setProperty("background-color",base,"important");
+      el.style.setProperty("border-color",base,"important");
+      el.style.setProperty("color","#fff","important");
+      if(!el.dataset.bloomGrayHover){
+        el.dataset.bloomGrayHover="true";
+        el.addEventListener("mouseenter",function(){el.style.setProperty("background-color",hover,"important")});
+        el.addEventListener("mouseleave",function(){el.style.setProperty("background-color",base,"important")});
+      }
+    });
+  }
+  document.addEventListener("DOMContentLoaded",function(){apply(document)});
+  new MutationObserver(function(mutations){
+    apply(document);
+    mutations.forEach(function(mutation){
+      mutation.addedNodes.forEach(function(node){
+        if(node.nodeType===1&&node.shadowRoot)apply(node.shadowRoot);
+      });
+    });
+  }).observe(document.documentElement,{childList:true,subtree:true});
+})();
+</script></body>
 </html>
