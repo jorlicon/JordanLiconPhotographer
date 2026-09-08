@@ -19,6 +19,10 @@ file, not four. Do a **multicam sync pass in Resolve first** (align the
 sources, flatten to one exported file — no creative cutting decisions at
 this stage, just sync), then point `raw_clip` at that export.
 
+**Excluded clips**: every clip marked with the **Tan** color tag in the
+Resolve project has been reviewed and rejected — exclude these from the
+multicam sync/export entirely, don't carry them into `raw_clip`.
+
 ## Why this job can't run past scaffolding in this session
 
 This is a remote Claude Code session with no path to:
