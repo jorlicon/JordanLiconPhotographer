@@ -1,0 +1,213 @@
+<template>
+  <div id="root" data-composition-id="06-brand-close" data-width="1080" data-height="1920" data-duration="3">
+    <style>
+      @font-face {
+        font-family: "Fraunces";
+        font-style: normal;
+        font-weight: 400;
+        font-display: block;
+        src: url("assets/fonts/Fraunces-400.woff2") format("woff2");
+      }
+
+      @font-face {
+        font-family: "Inter Tight";
+        font-style: normal;
+        font-weight: 400 500;
+        font-display: block;
+        src: url("assets/fonts/InterTight-400.woff2") format("woff2");
+      }
+
+      #root {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        container-type: size;
+      }
+
+      #root .brand-close-bg {
+        position: absolute;
+        inset: 0;
+        background-color: #f0ebe2;
+      }
+
+      #root .brand-close-content {
+        position: absolute;
+        inset: 0;
+        top: 0;
+        height: 82.99%; /* caption keep-out: content confined to top ~83% of 1920 */
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+      }
+
+      #root .brand-close-label {
+        font-family: "Inter Tight", sans-serif;
+        font-size: 14px;
+        font-weight: 500;
+        letter-spacing: 3px;
+        text-transform: uppercase;
+        color: #72695e;
+        margin: 0 0 20px;
+        opacity: 0;
+      }
+
+      #root .brand-close-mark {
+        position: relative;
+        width: 40cqw;
+        height: 40cqw;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      #root .brand-close-ring {
+        position: absolute;
+        inset: 0;
+        border-radius: 50%;
+        border: 1px solid #b8985f;
+        opacity: 0.35;
+      }
+
+      #root .brand-close-ring::before {
+        content: "";
+        position: absolute;
+        inset: 13%;
+        border-radius: 50%;
+        border: 1px dashed #b8985f;
+        opacity: 0.6;
+      }
+
+      #root .brand-close-logo {
+        position: relative;
+        width: 20cqw;
+        height: auto;
+        display: block;
+        opacity: 0;
+        transform-origin: 50% 50%;
+        will-change: transform;
+      }
+
+      #root .brand-close-wordmark {
+        font-family: "Fraunces", serif;
+        font-weight: 400;
+        font-style: normal;
+        font-size: 6.2cqw;
+        line-height: 1.06;
+        color: #060606;
+        margin: 2.4cqw 0 0;
+        opacity: 0;
+      }
+
+      #root .brand-close-accent {
+        width: 18cqw;
+        height: 1px;
+        background-color: #060606;
+        margin: 1.8cqw auto 0;
+        transform-origin: 50% 50%;
+        opacity: 0;
+      }
+
+      #root .brand-close-attribution {
+        font-family: "Inter Tight", sans-serif;
+        font-size: 15px;
+        font-weight: 400;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        color: #72695e;
+        margin: 1.6cqw 0 0;
+        opacity: 0;
+      }
+    </style>
+
+    <div
+      id="brand-close-bg"
+      class="brand-close-bg clip"
+      data-start="0"
+      data-duration="3"
+      data-track-index="0"
+    ></div>
+
+    <div
+      id="brand-close-content"
+      class="brand-close-content clip"
+      data-start="0"
+      data-duration="3"
+      data-track-index="1"
+    >
+      <div id="brand-close-label" class="brand-close-label">
+        EL PASO PHOTOGRAPHY STUDIO
+      </div>
+
+      <div class="brand-close-mark">
+        <div class="brand-close-ring"></div>
+        <img
+          id="brand-close-logo"
+          class="brand-close-logo"
+          src="assets/jl-logo-512.png"
+          alt=""
+        />
+      </div>
+
+      <h1 id="brand-close-wordmark" class="brand-close-wordmark">
+        Jordan Licon
+      </h1>
+      <div id="brand-close-accent" class="brand-close-accent"></div>
+      <div id="brand-close-attribution" class="brand-close-attribution">
+        jordanliconphotography.com
+      </div>
+    </div>
+
+    <script src="assets/vendor/gsap.min.js"></script>
+    <script>
+      (function () {
+        window.__timelines = window.__timelines || {};
+        var tl = gsap.timeline({ paused: true });
+
+        // Scene 1 (0.0-0.4s): static bg-primary ground, geo-ring already
+        // faintly present as atmosphere -- no draw-on, nothing to tween here.
+
+        // Scene 2 (0.4-1.6s): the ONE move -- logo mark settles 95% -> 100%
+        // scale dead-center (spring-pop-entrance: fromTo, power3.out, no
+        // overshoot), with the taupe label fading in on the same beat.
+        tl.fromTo(
+          "#brand-close-logo",
+          { scale: 0.95, opacity: 0 },
+          { scale: 1, opacity: 1, duration: 0.7, ease: "power3.out" },
+          0.4,
+        );
+        tl.fromTo(
+          "#brand-close-label",
+          { opacity: 0, y: 8 },
+          { opacity: 1, y: 0, duration: 0.6, ease: "power3.out" },
+          0.4,
+        );
+
+        // Scene 3 (1.6-3.0s): wordmark settles below the mark, then the
+        // ink horizontal-accent draws beneath it, then the attribution
+        // line resolves last -- and it holds fully static to the cut.
+        tl.fromTo(
+          "#brand-close-wordmark",
+          { opacity: 0, y: 16 },
+          { opacity: 1, y: 0, duration: 0.5, ease: "power3.out" },
+          1.6,
+        );
+        tl.fromTo(
+          "#brand-close-accent",
+          { scaleX: 0, opacity: 0 },
+          { scaleX: 1, opacity: 1, duration: 0.4, ease: "power2.out" },
+          2.0,
+        );
+        tl.fromTo(
+          "#brand-close-attribution",
+          { opacity: 0, y: 8 },
+          { opacity: 1, y: 0, duration: 0.5, ease: "power3.out" },
+          2.3,
+        );
+
+        window.__timelines["06-brand-close"] = tl;
+      })();
+    </script>
+  </div>
+</template>

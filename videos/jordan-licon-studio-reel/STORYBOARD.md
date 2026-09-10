@@ -28,7 +28,7 @@ music: warm cinematic ambient underscore, slow build, no vocals
 - voiceover:
 - duration: 3.5s
 - transition_in: crossfade
-- status: outline
+- status: animated
 - src: compositions/frames/01-window-room.html
 - type: hook
 - persuasion: Visual spectacle / establishing
@@ -49,7 +49,7 @@ Scene 1 (0.0–3.5s): full-bleed centered composition, symmetrical window dead-c
 - voiceover:
 - duration: 3.5s
 - transition_in: crossfade
-- status: outline
+- status: animated
 - src: compositions/frames/02-loft-wide.html
 - type: feature_showcase
 - persuasion: Show-don't-tell proof
@@ -70,7 +70,7 @@ Scene 1 (0.0–3.5s): full-bleed, framed wide/asymmetric (the room's depth runs 
 - voiceover:
 - duration: 3.5s
 - transition_in: zoom-through
-- status: outline
+- status: animated
 - src: compositions/frames/03-lighting-corner.html
 - type: feature_showcase
 - persuasion: Show-don't-tell proof
@@ -91,7 +91,7 @@ Scene 1 (0.0–3.5s): full-bleed, asymmetric 60/40 (the softbox + grip stand clu
 - voiceover:
 - duration: 3s
 - transition_in: blur-crossfade
-- status: outline
+- status: animated
 - src: compositions/frames/04-warehouse.html
 - type: feature_showcase
 - persuasion: Scale & atmosphere proof
@@ -112,7 +112,7 @@ Scene 1 (0.0–3.0s): full-bleed cover-fit crop centered on the receding column 
 - voiceover:
 - duration: 3.5s
 - transition_in: blur-crossfade
-- status: outline
+- status: animated
 - src: compositions/frames/05-lounge-kitchen.html
 - type: benefit_highlight
 - persuasion: Show-don't-tell proof
@@ -134,7 +134,7 @@ Scene 2 (1.4–3.5s): the push resolves and HOLDS — no further drift, no re-pu
 - voiceover:
 - duration: 3s
 - transition_in: zoom-through
-- status: outline
+- status: animated
 - src: compositions/frames/06-brand-close.html
 - type: branding
 - persuasion: Brand authority
