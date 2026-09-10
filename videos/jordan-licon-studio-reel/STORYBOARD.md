@@ -22,6 +22,8 @@ music: warm cinematic ambient underscore, slow build, no vocals
 
 **Caption band** — bottom ~17% kept clear on every frame even though captions are disabled for this silent film (bottom-edge consistency).
 
+**Render-stability note (post-hoc):** the sandbox this project renders in has no GPU (software WebGL/SwiftShader only). A full-quality render stalled at T=13.5s — the second `blur-crossfade`, where a CSS blur filter composited on top of two already-multipass graded full-frame layers simultaneously. `index.html`'s injected transitions were hand-simplified to drop the `blur()` CSS filter from all four scene transitions (keeping scale/opacity only) to reduce peak per-frame shader cost; `blur-crossfade`/`zoom-through` labels above describe the original intent, not the as-rendered transitions.
+
 ## Frame 1 — Window room, establishing
 
 - scene: Symmetrical window-lit room — vintage Coca-Cola machine, pampas grass, iron stool, brick wall, warm pooled light

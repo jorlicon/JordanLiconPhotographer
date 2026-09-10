@@ -110,14 +110,14 @@
       (function () { var tl = window.__timelines["main"];
         tl.to("#el-01-window-room", { opacity: 0, duration: 0.5, ease: "power2.inOut" }, 3.5);
         tl.fromTo("#el-02-loft-wide", { opacity: 0 }, { opacity: 1, duration: 0.5, ease: "power2.inOut" }, 3.5);
-        tl.to("#el-02-loft-wide", { scale: 2.5, opacity: 0, filter: "blur(8px)", duration: 0.4, ease: "power3.in" }, 7);
-        tl.fromTo("#el-03-lighting-corner", { scale: 0.5, opacity: 0, filter: "blur(8px)" }, { scale: 1, opacity: 1, filter: "blur(0px)", duration: 0.4, ease: "power3.out" }, 7);
-        tl.to("#el-03-lighting-corner", { filter: "blur(10px)", scale: 1.03, opacity: 0, duration: 0.6, ease: "power2.inOut" }, 10.5);
-        tl.fromTo("#el-04-warehouse", { filter: "blur(10px)", scale: 0.97, opacity: 0 }, { filter: "blur(0px)", scale: 1, opacity: 1, duration: 0.6, ease: "power2.inOut" }, 10.5);
-        tl.to("#el-04-warehouse", { filter: "blur(10px)", scale: 1.03, opacity: 0, duration: 0.6, ease: "power2.inOut" }, 13.5);
-        tl.fromTo("#el-05-lounge-kitchen", { filter: "blur(10px)", scale: 0.97, opacity: 0 }, { filter: "blur(0px)", scale: 1, opacity: 1, duration: 0.6, ease: "power2.inOut" }, 13.5);
-        tl.to("#el-05-lounge-kitchen", { scale: 2.5, opacity: 0, filter: "blur(8px)", duration: 0.4, ease: "power3.in" }, 17);
-        tl.fromTo("#el-06-brand-close", { scale: 0.5, opacity: 0, filter: "blur(8px)" }, { scale: 1, opacity: 1, filter: "blur(0px)", duration: 0.4, ease: "power3.out" }, 17);
+        tl.to("#el-02-loft-wide", { scale: 2.5, opacity: 0, duration: 0.4, ease: "power3.in" }, 7);
+        tl.fromTo("#el-03-lighting-corner", { scale: 0.5, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.4, ease: "power3.out" }, 7);
+        tl.to("#el-03-lighting-corner", { opacity: 0, duration: 0.6, ease: "power2.inOut" }, 10.5);
+        tl.fromTo("#el-04-warehouse", { opacity: 0 }, { opacity: 1, duration: 0.6, ease: "power2.inOut" }, 10.5);
+        tl.to("#el-04-warehouse", { opacity: 0, duration: 0.6, ease: "power2.inOut" }, 13.5);
+        tl.fromTo("#el-05-lounge-kitchen", { opacity: 0 }, { opacity: 1, duration: 0.6, ease: "power2.inOut" }, 13.5);
+        tl.to("#el-05-lounge-kitchen", { scale: 2.5, opacity: 0, duration: 0.4, ease: "power3.in" }, 17);
+        tl.fromTo("#el-06-brand-close", { scale: 0.5, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.4, ease: "power3.out" }, 17);
         tl.to({}, { duration: 20 }, 0); // full-span anchor — main.duration() == composition total (Studio master duration)
       })();
     </script>
