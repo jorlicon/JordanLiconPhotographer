@@ -1,0 +1,90 @@
+<template>
+<div id="root" data-composition-id="05-lounge-kitchen" data-width="1080" data-height="1920" data-duration="3.9">
+  <style>
+    #root {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      background: transparent;
+    }
+    #root .lounge-kitchen-scene {
+      position: absolute;
+      inset: 0;
+      overflow: hidden;
+      background: #e8decb; /* bg-secondary — fallback ground behind the camera push */
+    }
+    #root .lounge-kitchen-camera {
+      position: absolute;
+      inset: 0;
+      display: grid;
+      place-items: center;
+      transform-origin: 50% 50%;
+      will-change: transform;
+    }
+    #root .lounge-kitchen-camera img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+  </style>
+
+  <div class="lounge-kitchen-scene">
+    <div class="lounge-kitchen-camera" id="lounge-kitchen-camera" data-layout-allow-overflow="">
+      <img id="lounge-kitchen-photo" class="clip" data-start="0" data-duration="3.9" data-track-index="0" src="assets/05-lounge-kitchen-graded.jpg" alt="">
+    </div>
+  </div>
+
+  <script>
+    (function () {
+      window.__timelines = window.__timelines || {};
+
+      var camera = document.getElementById("lounge-kitchen-camera");
+
+      // Scene 1 (0.0-1.4s): a brief settle-push onto the seating, ~3% scale, power3.
+      var PUSH_AT = 0;
+      var PUSH_DUR = 1.4;
+      var PUSH_SCALE = 1.03;
+
+      // Scene 2 (1.4-3.5s): the push resolves and HOLDS — no re-push, no breathing,
+      // just a low-amplitude jitter (sine-wave-loop, low end of its range) so the
+      // deliberate stillness doesn't read dead.
+      var TOTAL_DURATION = 3.5;
+      var JITTER_START = 1.5; // entry settle (1.4s) + ~0.1s, per sine-wave-loop
+      var JITTER_DUR = TOTAL_DURATION - JITTER_START;
+      var JITTER_CYCLES = 1;
+      var JITTER_AMP_X = 3;
+      var JITTER_AMP_Y = 2;
+      var JITTER_FREQ_RATIO = 1.3;
+
+      // One writer of camera.style.transform — phase scale composes with jitter offset.
+      var phase = { scale: 1.0 };
+      var jitter = { p: 0 };
+
+      function render() {
+        var dx = Math.sin(jitter.p) * JITTER_AMP_X;
+        var dy = Math.sin(jitter.p * JITTER_FREQ_RATIO) * JITTER_AMP_Y;
+        camera.style.transform = "scale(" + phase.scale + ") translate(" + dx + "px, " + dy + "px)";
+      }
+      render();
+
+      var tl = gsap.timeline({ paused: true });
+
+      tl.to(
+        phase,
+        { scale: PUSH_SCALE, duration: PUSH_DUR, ease: "power3.out", onUpdate: render },
+        PUSH_AT,
+      );
+
+      tl.to(
+        jitter,
+        { p: Math.PI * 2 * JITTER_CYCLES, duration: JITTER_DUR, ease: "none", onUpdate: render },
+        JITTER_START,
+      );
+
+      window.__timelines["05-lounge-kitchen"] = tl;
+    })();
+  </script>
+</div>
+</template>
