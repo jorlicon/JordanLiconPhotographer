@@ -391,7 +391,7 @@ faqTabs.forEach(tab=>tab.addEventListener("click",()=>{faqTabs.forEach(t=>t.clas
 </script>
 <script data-jlp-conversion-tracking>
 (function(){
-  function pushEvent(name, data){window.dataLayer=window.dataLayer||[];window.dataLayer.push(Object.assign({event:name,page_path:location.pathname},data||{}));}
+  function pushEvent(name, data){window.dataLayer=window.dataLayer||[];window.gtag=window.gtag||function(){window.dataLayer.push(arguments);};window.gtag("event",name,Object.assign({page_path:location.pathname},data||{}));}
   document.querySelectorAll('a[href*="bloom.io"],a[href^="mailto:"],a[href^="tel:"],a[href="#contact"],button[type="submit"]').forEach(function(el){
     if(el.dataset.jlpTracked)return;
     el.dataset.jlpTracked="true";
