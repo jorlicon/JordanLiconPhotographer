@@ -4,7 +4,7 @@ Each article and archive card uses a distinct optimized image. The 22 lead deriv
 
 | Article group | Lead derivative | Source project folder |
 | --- | --- | --- |
-| Commercial photography trends | `commercial-trends-01.jpg` | `07 Food & Commercial/Brand Campaigns/2025-11-20 - Various/Lotus Proofs` |
+| Commercial photography trends | `commercial-trends-01.jpg` | `07 Food & Commercial/Food & Beverage/2025-07-04 - Various/DeadBeach Brewery-Finals/HD` |
 | Aerial photography techniques | `aerial-01.jpg` | `06 Aerial & Real Estate/Drone & Aerial/2025-05-19 - Various/Providence/Photos` |
 | Executive headshot tips | `portrait-01.jpg` | `02 Headshots & Portraits/2025-06-05 - Various/Annie Headshots` |
 | Professional headshot tips in El Paso | `portrait-02.jpg` | `02 Headshots & Portraits/2025-08-09 - Various/Wayne` |
