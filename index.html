@@ -404,4 +404,11 @@ faqTabs.forEach(tab=>tab.addEventListener("click",()=>{faqTabs.forEach(t=>t.clas
   });
 })();
 </script></body>
+<script>
+document.querySelectorAll('.credit-name').forEach(function (credit) {
+  if (credit.textContent.includes('Mike Pence')) {
+    credit.innerHTML = 'Advancing American Freedom <em>Mike Pence</em>';
+  }
+});
+</script>
 </html>
