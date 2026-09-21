@@ -4,17 +4,17 @@ Each article and archive card uses a distinct optimized image. The 22 lead deriv
 
 | Article group | Lead derivative | Source project folder |
 | --- | --- | --- |
-| Commercial photography trends | `architecture-01.jpg` | `07 Food & Commercial/Brand Campaigns/2025-08-07 - Various` |
+| Commercial photography trends | `commercial-trends-01.jpg` | `07 Food & Commercial/Brand Campaigns/2025-11-20 - Various/Lotus Proofs` |
 | Aerial photography techniques | `aerial-01.jpg` | `06 Aerial & Real Estate/Drone & Aerial/2025-05-19 - Various/Providence/Photos` |
 | Executive headshot tips | `portrait-01.jpg` | `02 Headshots & Portraits/2025-06-05 - Various/Annie Headshots` |
 | Professional headshot tips in El Paso | `portrait-02.jpg` | `02 Headshots & Portraits/2025-08-09 - Various/Wayne` |
 | Client collaboration techniques | `architecture-02.jpg` | `07 Food & Commercial/Industrial & Corporate/2025-05-21 - Various` |
-| Visual storytelling techniques | `food-01.jpg` | `07 Food & Commercial/Food & Beverage/2025-10-03 - Various/Desxter` |
+| Visual storytelling techniques | `storytelling-01.jpg` | `07 Food & Commercial/Brand Campaigns/2026-05-15 - Various/Miss Sun City USA` |
 | Corporate headshot guide | `corporate-01.jpg` | `02 Headshots & Portraits/2025-05-27 - Various/Bafidis Law` |
 | Photography project planning | `architecture-03.jpg` | `06 Aerial & Real Estate/Architecture & Interiors/2025-05-18 - Various` |
 | Local commercial photography trends | `food-02.jpg` | `07 Food & Commercial/Medical & Professional/2025-08-11 - Gastro Care/HD` |
 | Photo studio features | `portrait-03.jpg` | `02 Headshots & Portraits/2025-05-13 - karla` |
-| Client collaboration guide | `aerial-02.jpg` | `07 Food & Commercial/Industrial & Corporate/2025-06-01 - Various/Asset Guard El Paso Tank - 2025-05-30/Photo` |
+| Client collaboration guide | `collaboration-01.jpg` | `Beautique MD Proofs v2.0/Group Shots` |
 | Photography and videography tips | `food-03.jpg` | `07 Food & Commercial/Brand Campaigns/2025-11-20 - Various/Lotus Proofs` |
 | Drone photography guide | `aerial-03.jpg` | `06 Aerial & Real Estate/Drone & Aerial/2025-03-25 - The Hospitals of Providence East Campus/03-24-2025/Photos` |
 | Headshots in El Paso | `portrait-04.jpg` | `02 Headshots & Portraits/2025-08-26 - Various/mar` |
