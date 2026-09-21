@@ -1,7 +1,10 @@
 User-agent: *
 Allow: /
 Disallow: /backups/
+Disallow: /wix-export/
 Disallow: /exports/
+Disallow: /index-mimic.html
+Disallow: /index-readability-preview.html
 Disallow: /website-style-options.html
 Disallow: /website-style-options-v2.html
 Disallow: /website-style-options-dark-luxury.html
