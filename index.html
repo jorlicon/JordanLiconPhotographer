@@ -192,6 +192,16 @@ button.cover,button.talent{border:0;padding:0;text-align:left;font:inherit;color
 .cover-arrow.prev{left:-21px}.cover-arrow.next{right:-21px}
 @media(min-width:720px){.cover{flex-basis:clamp(260px,24vw,340px)}}
 @media(max-width:640px){.covers-gallery{padding:0 12px}.cover-arrow{width:38px;height:38px}.cover-arrow.prev{left:0}.cover-arrow.next{right:0}}
+@media(max-width:640px){
+  #work{padding-bottom:clamp(48px,10vw,72px)}
+  #work .covers-gallery{padding:0 20px;overflow:visible}
+  #work .covers-strip{display:flex;align-items:stretch;gap:12px;padding:0 8px 10px;overflow-x:auto}
+  #work .covers-strip .cover{display:block;flex:0 0 clamp(220px,78vw,304px);width:clamp(220px,78vw,304px);height:clamp(293px,104vw,406px);min-height:0;max-height:none;aspect-ratio:auto}
+  #work .covers-strip .cover img{width:100%;height:100%;min-width:100%;min-height:100%;object-fit:cover}
+  #work .cover-arrow{top:50%;width:40px;height:40px}
+  #work .cover-arrow.prev{left:0}
+  #work .cover-arrow.next{right:0}
+}
 .cover:after,.talent:before{content:"";position:absolute;inset:55% 0 0;background:linear-gradient(180deg,transparent,rgba(0,0,0,.86))}
 .cover-label,.talent-tag{position:absolute;z-index:2;left:14px;right:14px;bottom:14px;color:var(--ink);font-size:9px}
 .cover-lightbox{position:fixed;inset:0;z-index:500;display:grid;place-items:center;padding:clamp(18px,4vw,48px);background:rgba(6,6,6,.88);backdrop-filter:blur(18px)}
