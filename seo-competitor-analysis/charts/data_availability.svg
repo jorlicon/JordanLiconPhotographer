@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="360" viewBox="0 0 900 360">
+<rect width="900" height="360" fill="#101010"/><text x="35" y="42" fill="#f4efe7" font-family="Arial" font-size="24">Data source readiness</text>
+<g font-family="Arial" font-size="15" fill="#f4efe7"><text x="40" y="95">Public site / sitemap</text><text x="40" y="140">Google Search Console</text><text x="40" y="185">Semrush</text><text x="40" y="230">GA4</text><text x="40" y="275">Ahrefs / Similarweb</text></g>
+<g fill="#b08b4f"><rect x="260" y="78" width="560" height="24"/><rect x="260" y="123" width="390" height="24"/><rect x="260" y="168" width="300" height="24"/><rect x="260" y="213" width="250" height="24"/></g><g fill="#3a3a3a"><rect x="650" y="123" width="170" height="24"/><rect x="560" y="168" width="260" height="24"/><rect x="510" y="213" width="310" height="24"/><rect x="260" y="258" width="560" height="24"/></g>
+<text x="40" y="325" fill="#b9ad9b" font-family="Arial" font-size="13">Gold = available or partial; gray = unavailable for numeric reporting</text>
+</svg>
