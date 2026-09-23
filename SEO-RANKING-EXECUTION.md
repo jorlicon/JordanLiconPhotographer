@@ -66,8 +66,10 @@ After three consecutive mature monthly reviews, the automation should report com
 ## Current state
 
 - Local implementation: complete for this cycle.
-- Publication: complete in commit `f56c5f1` (`Improve SEO intent and conversion measurement`).
-- GitHub Pages deployment: run `35570733417` completed successfully on 2026-09-21.
+- Publication: complete in commit `a49459f3` (`Apply GA4-informed SEO and mobile improvements`).
+- GitHub Pages deployment: the latest push completed successfully; browser verification confirmed the live homepage and inquiry options load.
 - Live validation: homepage, blog, cinematography, inquiry confirmation, and sitemap returned `HTTP 200`. The live blog showed 18 unique optimized article cards; the live cinematography title and sitemap dates matched the release; the live confirmation page contained GTM and one `generate_lead` command.
 - GA4 event receipt: still requires a real successful form submission or a controlled DebugView test. No test inquiry was submitted because that would create a false lead.
+- CDN refresh: the live browser still displayed older Studio, corporate, and Mike Pence copy during the first verification pass. Recheck after cache refresh before treating those text changes as live.
+- Documentation: this log is now synchronized with the latest publication commit.
 - Monthly automation: active until the maturity rule is met.
