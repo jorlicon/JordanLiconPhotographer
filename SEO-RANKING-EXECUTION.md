@@ -8,6 +8,9 @@ Updated: 2026-09-20
 - Confirmed every sitemap page has one H1, a unique title, a non-empty description, an indexable robots directive, and at least three internal links from other sitemap pages.
 - Added GTM to `success.html` and added a `generate_lead` event on the confirmed inquiry page. This is a stronger lead signal than counting a submit-button click.
 - Confirmed the open GTM workspace has no custom-event triggers. Updated the sitewide listener to queue standard Google tag event commands so `jlp_cta_click`, `jlp_form_submit`, and `generate_lead` can reach the existing Google tag without a second GA4 event tag.
+- Added GA4 lead context to the inquiry flow: project type, form name, landing page, page title, referrer, and UTM values are retained through the confirmation redirect and sent with `generate_lead`.
+- Added explicit Studio session and Natural light session choices to the inquiry form, plus search-focused copy for Railyard Studio and on-site corporate team headshots.
+- Added a mobile form pass for in-app browsers: 16px controls to prevent iOS zoom, full-width submit and CTA buttons, and a stacked client-access block.
 - Assigned one primary search intent to every commercial page in `SEO-KEYWORD-MAP.md`.
 - Repositioned `cinematography.html` for the local commercial intent `El Paso cinematographer` while preserving film and DP proof.
 - Removed four duplicate cards from `blog.html`. The archive now has one card per canonical article.

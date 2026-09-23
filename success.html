@@ -58,7 +58,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <script data-jlp-conversion-tracking>
 (function(){
   function pushEvent(name, data){window.dataLayer=window.dataLayer||[];window.gtag=window.gtag||function(){window.dataLayer.push(arguments);};window.gtag("event",name,Object.assign({page_path:location.pathname},data||{}));}
-  pushEvent("generate_lead",{form_id:"project-inquiry",lead_source:"website_form"});
+  var leadContext={form_id:"project-inquiry",form_name:"project-inquiry",lead_source:"website_form",landing_page:"unknown",project_type:"unknown"};
+  try{var stored=sessionStorage.getItem("jlp_lead_context");if(stored)leadContext=Object.assign(leadContext,JSON.parse(stored));sessionStorage.removeItem("jlp_lead_context");}catch(error){}
+  pushEvent("generate_lead",leadContext);
   document.querySelectorAll('a[href*="bloom.io"],a[href^="mailto:"],a[href^="tel:"],a[href="#contact"],button[type="submit"]').forEach(function(el){
     if(el.dataset.jlpTracked)return;
     el.dataset.jlpTracked="true";
