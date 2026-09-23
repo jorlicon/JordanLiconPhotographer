@@ -74,4 +74,5 @@ After three consecutive mature monthly reviews, the automation should report com
 - Documentation: this log is now synchronized with the latest publication commit.
 - Current verification: Chrome can load the published domain and article pages; shell DNS still cannot resolve the public host, so command-line HTTP checks remain unavailable in this environment.
 - Follow-up recheck: all 37 sitemap URLs map to existing local files, and the local HTML metadata pass found no page-level issues.
+- Tracking recheck: the inquiry page stores attribution context and fires one `jlp_form_submit`; the confirmation page fires one `generate_lead`. GA4 receipt still needs signed-in DebugView evidence.
 - Monthly automation: active until the maturity rule is met.
