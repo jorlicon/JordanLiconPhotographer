@@ -1,0 +1,64 @@
+<template>
+  <style>
+    #root {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+    }
+
+    .f04-warehouse-scene {
+      position: absolute;
+      inset: 0;
+      overflow: hidden; /* required — camera phase scale starts > 1 */
+      background: #f0ebe2; /* scene ground lives here, never on #root or the camera */
+    }
+
+    .f04-warehouse-camera {
+      position: absolute;
+      inset: 0;
+      display: grid;
+      place-items: center;
+      transform-origin: 50% 50%;
+      will-change: transform;
+    }
+
+    .f04-warehouse-img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      /* landscape source, 9:16 cover-fit crop centered on the receding column line */
+      object-position: 58% 46%;
+    }
+  </style>
+
+  <div id="root" data-composition-id="04-warehouse" data-width="1080" data-height="1920" data-duration="3.6">
+    <div id="warehouse-scene-clip" class="f04-warehouse-scene clip" data-start="0" data-duration="3.6" data-track-index="0">
+      <div class="f04-warehouse-camera" id="f04-warehouse-camera">
+        <img class="f04-warehouse-img" src="assets/04-warehouse-graded.jpg" alt="">
+      </div>
+    </div>
+  </div>
+
+  <script>
+    (function () {
+      window.__timelines = window.__timelines || {};
+
+      var camera = document.getElementById("f04-warehouse-camera");
+
+      // Single-phase pull-back: starts slightly tighter and eases the
+      // frame open ~5% over the full shot — the inverse read of the
+      // push-in beats in frames 1–3, marking this as the "scale" beat.
+      // No drift channel (per packet): scale is the only motion, one
+      // writer, power3 easing, no CSS transform is set on this element
+      // elsewhere so there is nothing for GSAP to clobber.
+      gsap.set(camera, { scale: 1.05, transformOrigin: "50% 50%" });
+
+      var tl = gsap.timeline({ paused: true });
+      tl.to(camera, { scale: 1.0, duration: 3, ease: "power3.out" }, 0);
+
+      window.__timelines["04-warehouse"] = tl;
+    })();
+  </script>
+</template>
