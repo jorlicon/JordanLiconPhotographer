@@ -70,7 +70,18 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   document.querySelectorAll("form").forEach(function(form){
     if(form.dataset.jlpFormTracked)return;
     form.dataset.jlpFormTracked="true";
-    form.addEventListener("submit",function(){pushEvent("jlp_form_submit",{form_id:form.id||form.getAttribute("name")||"form"});});
+    var formStarted=false;
+    form.addEventListener("focusin",function(){
+      if(formStarted)return;
+      formStarted=true;
+      pushEvent("form_start",{form_id:form.id||form.getAttribute("name")||"form",form_name:form.getAttribute("name")||form.id||"project-inquiry",page_path:location.pathname});
+    });
+    form.addEventListener("submit",function(){
+      var leadData={form_id:form.id||form.getAttribute("name")||"form",lead_type:"project_inquiry"};
+      pushEvent("jlp_form_submit",leadData);
+      pushEvent("submit_project_inquiry",leadData);
+      pushEvent("generate_lead",leadData);
+    });
   });
 })();
 </script></body>

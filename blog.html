@@ -281,7 +281,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <li><a href="corporate-team-headshots-el-paso.html">Corporate Team Headshots</a></li>
           <li><a href="el-paso-commercial-photographer.html">Commercial Photography</a></li>
           <li><a href="architectural-photographer-el-paso.html">Architecture Photography</a></li>
-          <li><a href="drone-photography-el-paso.html">Drone Photography</a></li>
+          <li><a href="drone-photography-el-paso.html">Drone Photography</a></li><li><a href="https://jordan-licon-photography.bloom.io/discovery">Start a Consultation</a></li>
         </ul>
       </div>
     </div>
@@ -290,15 +290,37 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <script data-jlp-conversion-tracking>
 (function(){
   function pushEvent(name, data){window.dataLayer=window.dataLayer||[];window.gtag=window.gtag||function(){window.dataLayer.push(arguments);};window.gtag("event",name,Object.assign({page_path:location.pathname},data||{}));}
+  function trackCta(el){
+    var href=el.getAttribute("href")||"", label=(el.textContent||el.getAttribute("aria-label")||href||"cta").trim(), eventName="jlp_cta_click", ctaType="other";
+    if(href.indexOf("Professional-Headshot")!==-1){eventName="click_book_headshot";ctaType="headshot_booking";}
+    else if(href.indexOf("/discovery")!==-1){eventName="click_start_consultation";ctaType="consultation_booking";}
+    else if(href.indexOf("mailto:")===0){eventName="click_email_brief";ctaType="email_inquiry";}
+    else if(href.indexOf("tel:")===0){eventName="click_phone";ctaType="phone_inquiry";}
+    else if(href==="#contact"){eventName="click_inquire";ctaType="inquiry_form";}
+    var data={cta_label:label,cta_href:href,cta_type:ctaType};
+    pushEvent("jlp_cta_click",data);
+    if(eventName!=="jlp_cta_click")pushEvent(eventName,data);
+  }
   document.querySelectorAll('a[href*="bloom.io"],a[href^="mailto:"],a[href^="tel:"],a[href="#contact"],button[type="submit"]').forEach(function(el){
     if(el.dataset.jlpTracked)return;
     el.dataset.jlpTracked="true";
-    el.addEventListener("click",function(){pushEvent("jlp_cta_click",{cta_label:(el.textContent||el.getAttribute("aria-label")||el.getAttribute("href")||"cta").trim(),cta_href:el.getAttribute("href")||""});});
+    el.addEventListener("click",function(){trackCta(el);});
   });
   document.querySelectorAll("form").forEach(function(form){
     if(form.dataset.jlpFormTracked)return;
     form.dataset.jlpFormTracked="true";
-    form.addEventListener("submit",function(){pushEvent("jlp_form_submit",{form_id:form.id||form.getAttribute("name")||"form"});});
+    var formStarted=false;
+    form.addEventListener("focusin",function(){
+      if(formStarted)return;
+      formStarted=true;
+      pushEvent("form_start",{form_id:form.id||form.getAttribute("name")||"form",form_name:form.getAttribute("name")||form.id||"project-inquiry",page_path:location.pathname});
+    });
+    form.addEventListener("submit",function(){
+      var leadData={form_id:form.id||form.getAttribute("name")||"form",lead_type:"project_inquiry"};
+      pushEvent("jlp_form_submit",leadData);
+      pushEvent("submit_project_inquiry",leadData);
+      pushEvent("generate_lead",leadData);
+    });
   });
 })();
 </script></body>

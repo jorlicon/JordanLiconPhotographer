@@ -126,22 +126,44 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <button class="work" type="button" data-index="42" aria-label="Open Woman in red pantsuit, sunglasses; fashion portrait"><img src="assets/downloads/DSC08233-1-Large.jpeg" alt="Woman in red pantsuit, sunglasses; fashion portrait" width="492" height="740" loading="lazy"></button>
 <button class="work" type="button" data-index="43" aria-label="Open Portrait of a man holding a vintage camera"><img src="assets/downloads/DSC04972-Large.jpeg" alt="Portrait of a man holding a vintage camera" width="492" height="736" loading="lazy"></button>
 <button class="work" type="button" data-index="44" aria-label="Open Close-up portrait of a man wearing sunglasses"><img src="assets/downloads/DSC04944-Large.jpeg" alt="Close-up portrait of a man wearing sunglasses" width="492" height="736" loading="lazy"></button></div></section>
-<section class="geo-answers" data-geo-answers="true"><h2>Quick answers about editorial portraits</h2><div class="geo-answer-grid"><article><h3>What is editorial portrait photography by Jordan Licon?</h3><p>Editorial portrait photography by Jordan Licon is directed portrait work for actors, musicians, models, pageant titleholders, founders, personal brands, publications, and commercial campaigns. Sessions are shaped around expression, wardrobe, lighting, color, mood, crop, and final usage so the images feel intentional, cinematic, and useful beyond a single profile photo.</p></article><article><h3>How is portrait and fashion work different from a standard headshot?</h3><p>Portrait and fashion work allows more room for concept, styling, story, gesture, scene, and image variety than a standard headshot. A session may include clean hero portraits, beauty frames, wider editorial scenes, social crops, press-kit images, and campaign-style photographs. The goal is a cohesive image set with range, not just one polished portrait.</p></article><article><h3>Who uses editorial portraits in El Paso?</h3><p>Editorial portraits are used by performers, titleholders, entrepreneurs, creatives, speakers, brands, and publications that need a stronger visual identity. The images can support casting, album or release promotion, pageantry visibility, personal branding, campaign launches, magazine features, websites, press announcements, and social media systems.</p></article></div></section><section class="cta"><h2>Build a portrait session<br><em>with editorial direction.</em></h2><p>Send the goal, usage, wardrobe direction, and the mood you want the images to carry. I will shape the session around light, expression, styling, and the final places the portraits need to work.</p><div class="actions" style="justify-content:center"><a class="btn primary mono" href="./#contact">Plan a Portrait Session</a><a class="btn mono" href="mailto:info@jordanliconphotography.com?subject=Portrait%20and%20Fashion%20Inquiry">Email Studio</a></div></section>
+<section class="geo-answers" data-geo-answers="true"><h2>Quick answers about editorial portraits</h2><div class="geo-answer-grid"><article><h3>What is editorial portrait photography by Jordan Licon?</h3><p>Editorial portrait photography by Jordan Licon is directed portrait work for actors, musicians, models, pageant titleholders, founders, personal brands, publications, and commercial campaigns. Sessions are shaped around expression, wardrobe, lighting, color, mood, crop, and final usage so the images feel intentional, cinematic, and useful beyond a single profile photo.</p></article><article><h3>How is portrait and fashion work different from a standard headshot?</h3><p>Portrait and fashion work allows more room for concept, styling, story, gesture, scene, and image variety than a standard headshot. A session may include clean hero portraits, beauty frames, wider editorial scenes, social crops, press-kit images, and campaign-style photographs. The goal is a cohesive image set with range, not just one polished portrait.</p></article><article><h3>Who uses editorial portraits in El Paso?</h3><p>Editorial portraits are used by performers, titleholders, entrepreneurs, creatives, speakers, brands, and publications that need a stronger visual identity. The images can support casting, album or release promotion, pageantry visibility, personal branding, campaign launches, magazine features, websites, press announcements, and social media systems.</p></article></div></section><section class="cta"><h2>Build a portrait session<br><em>with editorial direction.</em></h2><p>Send the goal, usage, wardrobe direction, and the mood you want the images to carry. I will shape the session around light, expression, styling, and the final places the portraits need to work.</p><div class="actions" style="justify-content:center"><a class="btn primary mono" href="./#contact">Plan a Portrait Session</a><a class="btn mono" href="mailto:info@jordanliconphotography.com?subject=Portrait%20and%20Fashion%20Inquiry">Email Studio</a><a class="btn mono" href="https://jordan-licon-photography.bloom.io/discovery">Start a Consultation</a></div></section>
 <section class="wrap" aria-labelledby="portrait-planning-title"><div class="section-head"><div><div class="eyebrow mono">Portfolio Direction</div><h2 id="portrait-planning-title">Portrait work shaped around <em>intent.</em></h2></div><p class="section-copy">Portrait and fashion sessions are planned around the role the images need to play: editorial storytelling, pageantry presence, actor identity, musician promotion, personal branding, or campaign imagery. Wardrobe, color, set texture, expression, gesture, and crop are selected together so the finished photographs feel specific rather than interchangeable.</p></div><p class="section-copy">For clients who need a usable image library, the session can include clean hero portraits, tighter beauty frames, wider editorial scenes, vertical social crops, horizontal website images, and detail images that support press kits or brand announcements. The goal is a polished set that has range while still feeling visually coherent.</p><p class="section-copy">This portfolio is intentionally organized by use case so buyers can quickly compare the difference between fashion editorial, beauty, actor and character portraits, pageantry, studio portraits, and men's editorial work before choosing the kind of direction that fits their project.</p></section></main><footer class="mono">© 2026 Jordan Licon Photography - Portrait & Fashion Photography - El Paso, Texas</footer>
 <div class="lightbox" id="lightbox"><button class="close mono" type="button">Close</button><button class="prev mono" type="button">Prev</button><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==" alt="Selected portrait and fashion portfolio image by Jordan Licon" width="1200" height="1500"><button class="next mono" type="button">Next</button></div>
 <script src="assets/js/portrait-fashion-portfolio.js"></script>
 <script data-jlp-conversion-tracking>
 (function(){
   function pushEvent(name, data){window.dataLayer=window.dataLayer||[];window.gtag=window.gtag||function(){window.dataLayer.push(arguments);};window.gtag("event",name,Object.assign({page_path:location.pathname},data||{}));}
+  function trackCta(el){
+    var href=el.getAttribute("href")||"", label=(el.textContent||el.getAttribute("aria-label")||href||"cta").trim(), eventName="jlp_cta_click", ctaType="other";
+    if(href.indexOf("Professional-Headshot")!==-1){eventName="click_book_headshot";ctaType="headshot_booking";}
+    else if(href.indexOf("/discovery")!==-1){eventName="click_start_consultation";ctaType="consultation_booking";}
+    else if(href.indexOf("mailto:")===0){eventName="click_email_brief";ctaType="email_inquiry";}
+    else if(href.indexOf("tel:")===0){eventName="click_phone";ctaType="phone_inquiry";}
+    else if(href==="#contact"){eventName="click_inquire";ctaType="inquiry_form";}
+    var data={cta_label:label,cta_href:href,cta_type:ctaType};
+    pushEvent("jlp_cta_click",data);
+    if(eventName!=="jlp_cta_click")pushEvent(eventName,data);
+  }
   document.querySelectorAll('a[href*="bloom.io"],a[href^="mailto:"],a[href^="tel:"],a[href="#contact"],button[type="submit"]').forEach(function(el){
     if(el.dataset.jlpTracked)return;
     el.dataset.jlpTracked="true";
-    el.addEventListener("click",function(){pushEvent("jlp_cta_click",{cta_label:(el.textContent||el.getAttribute("aria-label")||el.getAttribute("href")||"cta").trim(),cta_href:el.getAttribute("href")||""});});
+    el.addEventListener("click",function(){trackCta(el);});
   });
   document.querySelectorAll("form").forEach(function(form){
     if(form.dataset.jlpFormTracked)return;
     form.dataset.jlpFormTracked="true";
-    form.addEventListener("submit",function(){pushEvent("jlp_form_submit",{form_id:form.id||form.getAttribute("name")||"form"});});
+    var formStarted=false;
+    form.addEventListener("focusin",function(){
+      if(formStarted)return;
+      formStarted=true;
+      pushEvent("form_start",{form_id:form.id||form.getAttribute("name")||"form",form_name:form.getAttribute("name")||form.id||"project-inquiry",page_path:location.pathname});
+    });
+    form.addEventListener("submit",function(){
+      var leadData={form_id:form.id||form.getAttribute("name")||"form",lead_type:"project_inquiry"};
+      pushEvent("jlp_form_submit",leadData);
+      pushEvent("submit_project_inquiry",leadData);
+      pushEvent("generate_lead",leadData);
+    });
   });
 })();
 </script></body></html>
