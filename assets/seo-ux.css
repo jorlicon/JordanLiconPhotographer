@@ -35,6 +35,9 @@
   .path-copy{padding:20px}
   .path-card h2{font-size:clamp(26px,8vw,36px);line-height:1.05}
   .path-card p{font-size:15px;line-height:1.55}
+  nav{padding:10px 12px;gap:8px}
+  nav .logo{font-size:15px}
   nav .nav-actions{gap:6px}
   nav .nav-cta{padding:9px 10px;font-size:9px;letter-spacing:.1em}
+  nav .nav-cta-dark{background:var(--accent);border-color:var(--accent);color:#080808;box-shadow:0 6px 16px rgba(184,152,95,.22)}
 }

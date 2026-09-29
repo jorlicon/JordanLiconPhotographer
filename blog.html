@@ -89,6 +89,11 @@ nav {
 .logo span { color: var(--accent); font-style: italic; }
 .back { color: var(--ink-dim); transition: color .25s ease; }
 .back:hover { color: var(--ink); }
+@media (max-width: 720px) {
+  nav { padding: 10px 14px; gap: 10px; }
+  .logo { font-size: 15px; }
+  .back { font-size: 9px; letter-spacing: .12em; }
+}
 .hero {
   padding: clamp(84px, 10vw, 140px) 0 clamp(46px, 6vw, 74px);
   border-bottom: 1px solid var(--line);
