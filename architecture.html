@@ -561,6 +561,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <input type="hidden" name="_subject" value="Architecture Photography Inquiry">
         <input type="hidden" name="_template" value="table">
         <input type="hidden" name="_captcha" value="false">
+        <input type="hidden" name="_next" value="https://www.jordanliconphotography.com/success.html">
         <div class="field-grid">
           <label class="mono">Name
             <input type="text" name="name" autocomplete="name" required>
@@ -1230,7 +1231,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       var leadData={form_id:form.id||form.getAttribute("name")||"form",lead_type:"project_inquiry"};
       pushEvent("jlp_form_submit",leadData);
       pushEvent("submit_project_inquiry",leadData);
-      pushEvent("generate_lead",leadData);
     });
   });
 })();
