@@ -26,6 +26,9 @@
   .service-jump{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;margin:-8px 0 32px;padding:10px}
   .service-jump a{display:block;min-width:0;padding:11px 10px;font-size:11px;line-height:1.35}
   .service-jump span:last-child{display:block;margin-top:5px}
+  .service-jump a.service-jump-inquire{background:var(--accent);border-color:var(--accent);color:#080808;font-weight:500;box-shadow:0 8px 22px rgba(184,152,95,.24)}
+  .service-jump a.service-jump-inquire span:last-child{color:#080808}
+  .service-jump a.service-jump-inquire:active{transform:translateY(1px);box-shadow:0 4px 12px rgba(184,152,95,.18)}
   .path-card{min-height:0}
   .path-media{min-height:0;aspect-ratio:16 / 10}
   .path-media img{min-height:0;height:100%}

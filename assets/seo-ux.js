@@ -9,7 +9,7 @@
     var nav=document.createElement('nav');
     nav.className='service-jump';
     nav.setAttribute('aria-label','Photography service paths');
-    nav.innerHTML='<a href="#headshots"><span>Headshots</span><span>01</span></a><a href="#architecture"><span>Architecture</span><span>02</span></a><a href="#food"><span>Food and beverage</span><span>03</span></a><a href="#services"><span>Commercial work</span><span>04</span></a><a href="drone-photography-el-paso.html"><span>Aerial production</span><span>05</span></a><a href="cinematography.html"><span>Cinematography</span><span>06</span></a>';
+    nav.innerHTML='<a href="#headshots"><span>Headshots</span><span>01</span></a><a href="#architecture"><span>Architecture</span><span>02</span></a><a href="#food"><span>Food and beverage</span><span>03</span></a><a href="#services"><span>Commercial work</span><span>04</span></a><a href="drone-photography-el-paso.html"><span>Aerial production</span><span>05</span></a><a href="cinematography.html"><span>Cinematography</span><span>06</span></a><a href="#studio"><span>Studio Photography</span><span>07</span></a><a class="service-jump-inquire" href="#contact"><span>Inquire</span><span>Start here</span></a>';
     lede.insertAdjacentElement('afterend',nav);
   }
   function addTopServiceCards(){
