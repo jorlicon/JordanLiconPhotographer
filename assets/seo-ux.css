@@ -65,7 +65,7 @@ body.mobile-menu-open{overflow:hidden}
   .mobile-menu-links a,.mobile-menu-links a:nth-child(odd),.mobile-menu-links a:nth-child(even){padding:15px 0;border-right:0;font-size:24px}
   .mobile-menu-links a span{font-size:9px}
   .hero-image{inset:62px 0 0}
-  .hero-image img{object-position:50% 50%}
+  .hero-image img{object-position:8% 18%}
   .hero-corner{top:78px}
   .hero-meta-row{display:grid;grid-template-columns:1fr;gap:9px;margin-bottom:28px;align-items:start}
   .hero-meta-row>*{min-width:0}
