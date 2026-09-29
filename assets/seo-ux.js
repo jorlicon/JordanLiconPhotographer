@@ -26,8 +26,13 @@
     contents.className='article-contents';
     contents.setAttribute('aria-label','Guide contents');
     contents.innerHTML='<h2>In this guide</h2><ol><li><a href="#what-is-a-professional-headshot">What makes a professional headshot?</a></li><li><a href="#five-elements">The five elements of a strong headshot</a></li><li><a href="#choose-photographer">How to choose a photographer</a></li><li><a href="#session">What to expect during the session</a></li><li><a href="#cost">Costs and final image choices</a></li></ol>';
+    var checklist=document.createElement('section');
+    checklist.className='article-checklist';
+    checklist.setAttribute('aria-labelledby','checklist-title');
+    checklist.innerHTML='<h2 id="checklist-title">Before you book</h2><ul><li>Decide where the image will appear: LinkedIn, a team page, press, casting, or a campaign.</li><li>Bring two or three wardrobe options that support your role and intended audience.</li><li>Ask about final crops, retouching, delivery timing, and licensing before the session.</li></ul>';
     trust.insertAdjacentElement('afterend',answer);
     answer.insertAdjacentElement('afterend',contents);
+    contents.insertAdjacentElement('afterend',checklist);
   }
   function addScrollTracking(){
     var sent={50:false,75:false,90:false};
