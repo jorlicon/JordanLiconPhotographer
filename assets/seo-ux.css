@@ -67,4 +67,8 @@ body.mobile-menu-open{overflow:hidden}
   .hero-image{inset:62px 0 0}
   .hero-image img{object-position:8% 18%}
   .hero-corner{top:78px}
+  .hero-meta-row{display:grid;grid-template-columns:1fr;gap:9px;margin-bottom:28px;align-items:start}
+  .hero-meta-row>*{min-width:0}
+  .review-badge{display:block;line-height:1.45;white-space:normal}
+  .hero-meta-row>span{line-height:1.45}
 }
