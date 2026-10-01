@@ -56,14 +56,19 @@ def main():
 
     webp_ref = {}
     for ref in refs:
-        path = ref[len(DOMAIN):].lstrip('/') if ref.startswith(DOMAIN) else ref.lstrip('/')
-        dst = os.path.splitext(path)[0] + '.webp'
-        if not os.path.exists(path):
-            print('skip missing', path)
+        base = ref[len(DOMAIN):].lstrip('/') if ref.startswith(DOMAIN) else ref.lstrip('/')
+        src = None
+        for ext in ('.jpg', '.jpeg', '.png'):
+            if os.path.exists(base + ext):
+                src = base + ext
+                break
+        if src is None:
+            print('skip missing', base)
             continue
+        dst = os.path.splitext(base)[0] + '.webp'
         if not os.path.exists(dst):
             from PIL import Image
-            img = Image.open(path)
+            img = Image.open(src)
             img.save(dst, 'WEBP', quality=82, method=6)
         webp_ref[ref] = os.path.splitext(ref)[0] + '.webp'
 
