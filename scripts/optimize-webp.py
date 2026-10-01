@@ -14,7 +14,7 @@ import re
 DOMAIN = "https://www.jordanliconphotography.com"
 URL_RE = re.compile(
     r'(?P<pre>["\'(\s])'
-    r'(?P<url>(?:' + re.escape(DOMAIN) + r')?/assets/[^"\'()\s]+?)\.(?:jpg|jpeg|png)'
+    r'(?P<url>(?:' + re.escape(DOMAIN) + r')?/?assets/[^"\'()\s]+?)\.(?:jpg|jpeg|png)'
     r'(?P<desc>(?:\s+\d+w)?)'
     r'(?=["\'\s,)])'
 )
