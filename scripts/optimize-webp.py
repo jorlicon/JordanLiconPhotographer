@@ -10,7 +10,6 @@ Usage: python3 scripts/optimize-webp.py --page architecture.html
 import argparse
 import os
 import re
-import subprocess
 
 DOMAIN = "https://www.jordanliconphotography.com"
 URL_RE = re.compile(
@@ -63,8 +62,10 @@ def main():
             print('skip missing', path)
             continue
         if not os.path.exists(dst):
-            subprocess.run(['cwebp', '-quiet', '-q', '82', path, '-o', dst], check=True)
-        webp_ref[ref] = ref + '.webp'
+            from PIL import Image
+            img = Image.open(path)
+            img.save(dst, 'WEBP', quality=82, method=6)
+        webp_ref[ref] = os.path.splitext(ref)[0] + '.webp'
 
     out, last, rewritten = [], 0, 0
     for m in URL_RE.finditer(html):
