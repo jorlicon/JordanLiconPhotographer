@@ -61,6 +61,10 @@ def main():
     parser.add_argument('--page', required=True)
     args = parser.parse_args()
 
+    if args.page == 'blog.html':
+        import subprocess
+        subprocess.run(['node', 'scripts/update-homepage-blog.mjs'], check=True)
+
     with open(args.page, encoding='utf-8') as fh:
         html = fh.read()
     spans = protected_spans(html)
