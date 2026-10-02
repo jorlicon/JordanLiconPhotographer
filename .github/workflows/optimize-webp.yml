@@ -27,6 +27,7 @@ jobs:
           python3 scripts/optimize-webp.py --page architecture.html
           python3 scripts/optimize-webp.py --page headshot-portfolio.html
           python3 scripts/optimize-webp.py --page portrait-fashion-portfolio.html
+          python3 scripts/optimize-webp.py --page blog.html
       - name: Commit converted files
         run: |
           git config user.name "github-actions[bot]"
