@@ -1,6 +1,26 @@
 # SEO ranking execution
 
-Updated: 2026-09-23
+Updated: 2026-10-04
+
+## Search Console baseline: October 4, 2026
+
+The signed-in Search Console property was checked for September 5 through October 2, 2026:
+
+- 63 clicks, 1,582 impressions, 4% CTR, and average position 11.9.
+- `headshots el paso`: 20 impressions, 1 click, average position 6.0. The homepage received the impression and click.
+- `best photographer el paso`: 53 impressions, 0 clicks, average position 17.3. The homepage received all impressions.
+- `photojournalism photographers`: 100 impressions, 0 clicks, average position 7.6. The homepage received all impressions.
+- `headshot-portfolio.html`: 72 impressions, 0 clicks, average position 5.0. Its visible query set was mostly branded, so this is a CTR and query-fit follow-up, not proof of a technical indexing failure.
+
+The current local response is to keep the dedicated credits page as the photojournalism destination, add direct service links to the comparison article, correct the stale team estimate and delivery FAQ wording, and mention photojournalism in the homepage search descriptions. These edits are locally verified and await an approved publication step.
+
+GA4 was also checked for September 6 through October 3, 2026. It recorded 316 active users, 3 `jlp_form_submit` events, and 1 `generate_lead` event. The homepage had 262 active users, the headshot portfolio had 27, and the blog archive had 8. Lead measurement is receiving data. The homepage inquiry prompt now names commercial photography and video production alongside headshots and architecture so the final CTA matches the full service offer. The next conversion test is to compare homepage CTA clicks and completed inquiries after the updated copy is published.
+
+The aerial-drone article now has a dedicated inquiry CTA with a link to the drone portfolio and the project form. A local crawl check found no remaining indexable HTML page or article without a `#contact` path.
+
+The local internal-link check found no orphaned current sitemap page. The lowest-link current files are the two newest articles, each linked from the blog archive or homepage and now carrying a direct inquiry path; older low-link files are canonical aliases for consolidated articles.
+
+The sitemap contains 39 URLs and parses as valid XML. Its homepage, comparison article, and aerial article entries now use `2026-10-04` as their `lastmod` date to match the local changes.
 
 ## Work completed in this cycle
 
@@ -87,3 +107,17 @@ After three consecutive mature monthly reviews, the automation should report com
 - Ahrefs Site Audit snapshot: Health Score `100`; 337 successful URLs; 0 client-error URLs; 1 redirect; 35 oversized image findings; 0 missing image alt texts; 3 uncrawled links; and 13 URLs blocked by robots.txt. These findings are read-only evidence for the next review; no crawl settings or site files were changed.
 - Ahrefs API status: the key is stored outside the repository in `/Users/thecave/Documents/Codex/.secrets/ahrefs-api-key`. The account limits endpoint could not be reached because `api.ahrefs.com` did not resolve from the shell, so API quota and response validity remain unverified. The signed-in Ahrefs UI remains the usable free-plan source.
 - Monthly automation: active until the maturity rule is met.
+
+## Local release update: 2026-10-04
+
+- Search Console baseline for the latest 28-day window: 63 clicks, 1,582 impressions, 4% CTR, and average position 11.9.
+- GA4 baseline for the latest 28-day window: 316 active users, 3 `jlp_form_submit` events, and 1 `generate_lead` event. This measures received lead signals, not a proven increase in closed business.
+- Updated the homepage team estimate from $3,750 to $4,125 and clarified the FAQ so the digital-file restriction applies to portrait, fashion, and fine-art sessions rather than headshot packages.
+- Updated the 2026 article title, metadata, homepage card, article links, and the aerial article inquiry CTA.
+- Replaced relative `og:image` values with absolute canonical URLs on the current service pages, blog index, and current article pages so social crawlers can resolve share images from any URL depth.
+- Local XML, metadata, sitemap, inquiry-path, and ranking regression checks pass.
+- This release is local only. The GitHub remote could not be reached from the current environment, and no temporary clone or valid GitHub session is available. Do not treat these changes as live until the files are pushed and production is checked.
+- Added a direct `Video Production` CTA from the homepage inquiry section to the cinematography production inquiry.
+- Normalized the remaining blog index Twitter share image to an absolute canonical URL.
+- GitHub connector verification on 2026-10-04: repository reads succeed, but the contents write API returns `403 Resource not accessible by integration`; no remote commit was created by that attempt.
+- GitHub permission check: the connector reports no installed accounts and no repositories for the account, confirming that write access must be restored outside the local workspace before publication.
