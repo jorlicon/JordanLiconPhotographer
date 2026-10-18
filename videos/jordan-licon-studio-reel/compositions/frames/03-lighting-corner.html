@@ -1,0 +1,108 @@
+<template>
+  <style>
+    #root {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      background: transparent;
+    }
+
+    .lc-bg-clip {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      overflow: hidden; /* REQUIRED — at zoom > 1 the scaled content leaks past the frame */
+    }
+
+    .lc-zoom-outer {
+      width: 100%;
+      height: 100%;
+      transform-origin: 50% 50%; /* center scaling is what the counter-translate math assumes */
+      will-change: transform;
+    }
+
+    .lc-zoom-inner {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      will-change: transform;
+    }
+
+    /* Cover-fit of the 1932x2576 source against the 1080x1920 canvas, pre-computed:
+       scale = max(1080/1932, 1920/2576) = 0.745341 (height-bound)
+       displayed size = 1440 x 1920; left offset chosen to land the gear cluster
+       off-center (asymmetric ~40/60 split) rather than dead-center. */
+    .lc-photo {
+      position: absolute;
+      left: -317px;
+      top: 0;
+      width: 1440px;
+      height: 1920px;
+      max-width: none;
+      display: block;
+    }
+
+    /* Zero-size marker at the gear cluster's real rendered position (measured,
+       not hand-derived) so the counter-translate offset is read from layout. */
+    .lc-target-marker {
+      position: absolute;
+      left: 410px;
+      top: 1043px;
+      width: 1px;
+      height: 1px;
+      opacity: 0;
+      pointer-events: none;
+    }
+  </style>
+
+  <div id="root" data-composition-id="03-lighting-corner" data-width="1080" data-height="1920" data-duration="4.1">
+    <div id="lighting-corner-bg-clip" class="clip lc-bg-clip" data-start="0" data-duration="4.1" data-track-index="0">
+      <div class="lc-zoom-outer" id="lc-zoom-outer-03" data-layout-allow-overflow="">
+        <div class="lc-zoom-inner" id="lc-zoom-inner-03">
+          <img class="lc-photo" src="assets/03-lighting-corner-graded.jpg" alt="">
+          <div class="lc-target-marker" id="lc-target-marker-03"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    (function () {
+      var W = 1080,
+        H = 1920;
+
+      var root = document.querySelector('[data-composition-id="03-lighting-corner"]');
+      var outer = root.querySelector("#lc-zoom-outer-03");
+      var inner = root.querySelector("#lc-zoom-inner-03");
+      var marker = root.querySelector("#lc-target-marker-03");
+
+      // Measure the target's real laid-out position (synchronous — no text/fonts
+      // involved, so no async wait is needed) rather than hand-deriving the offset.
+      var rootRect = root.getBoundingClientRect();
+      var mRect = marker.getBoundingClientRect();
+      var targetX = mRect.left - rootRect.left + mRect.width / 2;
+      var targetY = mRect.top - rootRect.top + mRect.height / 2;
+
+      var offsetX = targetX - W / 2;
+      var offsetY = targetY - H / 2;
+
+      // T = -offset (nested-wrapper formula: outer scales, inner translates).
+      var counterX = -offsetX;
+      var counterY = -offsetY;
+
+      var ZOOM_SCALE = 1.55;
+      var ZOOM_DUR = 2.0;
+      var ZOOM_AT = 0.4;
+
+      var tl = gsap.timeline({ paused: true });
+
+      tl.to(outer, { scale: ZOOM_SCALE, duration: ZOOM_DUR, ease: "power3.inOut" }, ZOOM_AT);
+      tl.to(inner, { x: counterX, y: counterY, duration: ZOOM_DUR, ease: "power3.inOut" }, ZOOM_AT);
+
+      window.__timelines = window.__timelines || {};
+      window.__timelines["03-lighting-corner"] = tl;
+    })();
+  </script>
+</template>

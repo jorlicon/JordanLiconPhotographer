@@ -1,0 +1,48 @@
+{
+  "version": 1,
+  "preferences": {
+    "destination": {
+      "value": "instagram-reels",
+      "confirmed_in": [
+        "jordan-licon-studio-reel"
+      ],
+      "updated_at": "2026-09-10T00:42:21.554Z"
+    },
+    "aspect": {
+      "value": "1080x1920",
+      "confirmed_in": [
+        "jordan-licon-studio-reel"
+      ],
+      "updated_at": "2026-09-10T00:42:21.603Z"
+    },
+    "language": {
+      "value": "en",
+      "confirmed_in": [
+        "jordan-licon-studio-reel"
+      ],
+      "updated_at": "2026-09-10T00:42:21.659Z"
+    },
+    "flow": {
+      "value": "automation",
+      "confirmed_in": [
+        "jordan-licon-studio-reel"
+      ],
+      "updated_at": "2026-09-10T00:42:21.707Z"
+    },
+    "storyboard": {
+      "value": "no",
+      "confirmed_in": [
+        "jordan-licon-studio-reel"
+      ],
+      "updated_at": "2026-09-10T00:42:21.755Z"
+    },
+    "style_preset.product-launch-video": {
+      "value": "cartesian",
+      "confirmed_in": [
+        "jordan-licon-studio-reel"
+      ],
+      "updated_at": "2026-09-10T00:46:45.939Z"
+    }
+  },
+  "sightings": {}
+}
