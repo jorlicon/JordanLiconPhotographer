@@ -1228,7 +1228,21 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       pushEvent("form_start",{form_id:form.id||form.getAttribute("name")||"form",form_name:form.getAttribute("name")||form.id||"project-inquiry",page_path:location.pathname});
     });
     form.addEventListener("submit",function(){
-      var leadData={form_id:form.id||form.getAttribute("name")||"form",lead_type:"project_inquiry"};
+      var leadContext={
+        form_id:form.id||form.getAttribute("name")||"form",
+        form_name:"project-inquiry",
+        project_type:form.querySelector('[name="project_type"]')?.value||"",
+        landing_page:location.pathname,
+        page_title:document.title,
+        referrer:document.referrer||"direct"
+      };
+      var params=new URLSearchParams(window.location.search);
+      ["utm_source","utm_medium","utm_campaign","utm_content","utm_term","gclid"].forEach(function(key){
+        var value=params.get(key);
+        if(value)leadContext[key]=value;
+      });
+      try{sessionStorage.setItem("jlp_lead_context",JSON.stringify(leadContext));}catch(error){}
+      var leadData=Object.assign({lead_type:"project_inquiry"},leadContext);
       pushEvent("jlp_form_submit",leadData);
       pushEvent("submit_project_inquiry",leadData);
     });
@@ -1236,3 +1250,4 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 })();
 </script></body>
 </html>
+
